@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
-from typing import Literal
+from typing import Literal, Any
+from uuid import UUID
 
 
 class Message(BaseModel):
@@ -21,3 +22,11 @@ class ChatResponse(BaseModel):
 
     messages: list[Message]
     escalate: bool
+
+
+class SearchResult(BaseModel):
+    """Single search result with similarity score."""
+
+    id: UUID
+    content: str
+    similarity: float = Field(ge=0.0, le=1.0)
