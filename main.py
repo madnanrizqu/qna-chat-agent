@@ -1,33 +1,20 @@
-import os
-from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from openai import OpenAI
 from pydantic import BaseModel
 
-load_dotenv()
+from config import settings
 
 app = FastAPI()
 
 
 def get_openai_client():
     """Get configured OpenAI client."""
-    api_key = os.getenv("OPENAI_API_KEY")
-    base_url = os.getenv("OPENAI_BASE_URL")
-
-    print(api_key)
-    print(base_url)
-
-    if not api_key:
-        raise HTTPException(status_code=500, detail="OPENAI_API_KEY not configured")
-    if not base_url:
-        raise HTTPException(status_code=500, detail="OPENAI_BASE_URL not configured")
-
-    return OpenAI(api_key=api_key, base_url=base_url)
+    return OpenAI(api_key=settings.openai_api_key, base_url=settings.openai_base_url)
 
 
 class QuestionRequest(BaseModel):
     question: str
-    model: str = "gemini-3.1-flash-lite-preview"
+    model: str = settings.default_model
 
 
 @app.get("/")
