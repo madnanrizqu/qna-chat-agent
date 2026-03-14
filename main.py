@@ -1,8 +1,7 @@
 from fastapi import FastAPI, HTTPException
 
-from ai import ai_client
-from config import settings
-from models import Message, ChatRequest, ChatResponse
+from agent import process_chat
+from models import ChatRequest, ChatResponse
 
 app = FastAPI()
 
@@ -21,31 +20,8 @@ def chat(request: ChatRequest) -> ChatResponse:
     returns the full conversation including the AI's response.
     """
     try:
-        # Build conversation from history (if provided) + current message
-        conversation = []
-        if request.history:
-            conversation = [msg.model_dump() for msg in request.history]
-
-        # Add current user message
-        conversation.append({"role": "user", "content": request.message})
-
-        client = ai_client.get_client()
-        completion = client.chat.completions.create(
-            model=settings.default_model,
-            messages=conversation,
-        )
-
-        ai_response_content = completion.choices[0].message.content
-
-        assistant_message = Message(role="assistant", content=ai_response_content)
-
-        # Build full conversation for response
-        full_messages = (request.history or []) + [
-            Message(role="user", content=request.message),
-            assistant_message,
-        ]
-
-        return ChatResponse(messages=full_messages, escalate=False)
+        messages = process_chat(request.message, request.history)
+        return ChatResponse(messages=messages, escalate=False)
 
     except Exception as e:
         raise HTTPException(
