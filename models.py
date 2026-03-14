@@ -20,8 +20,16 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     """Response model for chat endpoint."""
 
-    messages: list[Message]
-    escalate: bool
+    messages: list[Message] = Field(
+        description=(
+            "Complete conversation history including the current user message "
+            "and your assistant response."
+        )
+    )
+
+    escalate: bool = Field(
+        description=("Whether this conversation should be escalated to a human agent.")
+    )
 
 
 class SearchResult(BaseModel):

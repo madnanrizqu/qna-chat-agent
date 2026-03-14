@@ -1,8 +1,12 @@
 """AI client configuration and initialization."""
 
+from typing import Type, TypeVar
+from pydantic import BaseModel
 from openai import OpenAI
 
 from config import settings
+
+ResponseT = TypeVar("T", bound=BaseModel)
 
 
 class AIClient:
@@ -30,6 +34,36 @@ class AIClient:
         """Reset the client instance (useful for testing or configuration changes)."""
         self._client = None
 
+    def chat_structured(
+        self,
+        model: str,
+        messages: list[dict[str, str]],
+        response_format: Type[ResponseT],
+        **kwargs,
+    ) -> ResponseT:
+        """Chat completion with structured output using beta API.
 
-# Singleton instance
+        Args:
+            model: Model identifier
+            messages: Conversation messages
+            response_format: Pydantic model class for response structure
+            **kwargs: Additional parameters (temperature, etc.)
+
+        Returns:
+            Parsed instance of response_format model
+        """
+        client = self.get_client()
+
+        completion = client.beta.chat.completions.parse(
+            model=model, messages=messages, response_format=response_format, **kwargs
+        )
+
+        parsed_response = completion.choices[0].message.parsed
+
+        if parsed_response is None:
+            raise ValueError("Failed to parse structured response from AI")
+
+        return parsed_response
+
+
 ai_client = AIClient()

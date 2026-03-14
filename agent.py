@@ -2,7 +2,7 @@ from typing import Any, Type
 
 from ai import AIClient, ai_client
 from config import settings
-from models import Message
+from models import Message, ChatResponse
 
 
 class Agent:
@@ -34,7 +34,7 @@ class Agent:
 
     def process_chat(
         self, message: str, history: list[Message] | None = None
-    ) -> list[Message]:
+    ) -> tuple[list[Message], bool]:
         """Process a chat message with the AI assistant.
 
         Args:
@@ -42,51 +42,35 @@ class Agent:
             history: Optional conversation history
 
         Returns:
-            Full conversation including the new user message and AI response
+            Tuple of (full conversation messages, escalate flag)
 
         Raises:
             Exception: If there's an error communicating with the AI
         """
         # Build conversation from history (if provided) + current message
         conversation = []
-
         if self._system_prompt:
             conversation.append({"role": "system", "content": self._system_prompt})
-
         if history:
             conversation.extend([msg.model_dump() for msg in history])
-
         conversation.append({"role": "user", "content": message})
 
-        api_params = {
-            "model": settings.default_model,
-            "messages": conversation,
-        }
+        structured_response = self._client.chat_structured(
+            model=settings.default_model,
+            messages=conversation,
+            response_format=ChatResponse,
+        )
+        full_messages = structured_response.messages
+        escalate = structured_response.escalate
 
-        if self._tools:
-            api_params["tools"] = self._tools
-
-        client = self._client.get_client()
-
-        completion = client.chat.completions.create(**api_params)
-        ai_response_content = completion.choices[0].message.content
-
-        assistant_message = Message(role="assistant", content=str(ai_response_content))
-
-        # Build full conversation for response (without system prompt)
-        full_messages = (history or []) + [
-            Message(role="user", content=message),
-            assistant_message,
-        ]
-
-        return full_messages
+        return full_messages, escalate
 
 
 SYSTEM_PROMPT = (
     "You are a helpful assistant for agent handles inbound customer questions via chat — "
     "answering questions about service plans, billing, and basic troubleshooting.\n"
     "Your primary goal is to answer the user's question accurately when not able to do so, "
-    "you are to escalate to a human agent when it cannot answer confidently..\n\n"
+    "you are to escalate to a human agent when it cannot answer confidently.\n\n"
     "TOOL USAGE GUIDE:\n"
     "1. **Use 'knowledgeBaseSearch' ONLY IF** the question is specifically about the Telecommunication company, "
     "its billing policy, service plans, or troubleshooting guide. **DO NOT use this tool for general knowledge, "

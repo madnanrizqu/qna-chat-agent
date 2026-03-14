@@ -20,8 +20,8 @@ def chat(request: ChatRequest) -> ChatResponse:
     returns the full conversation including the AI's response.
     """
     try:
-        messages = agent.process_chat(request.message, request.history)
-        return ChatResponse(messages=messages, escalate=False)
+        messages, escalate = agent.process_chat(request.message, request.history)
+        return ChatResponse(messages=messages, escalate=escalate)
 
     except Exception as e:
         raise HTTPException(
