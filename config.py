@@ -38,5 +38,7 @@ class Settings(BaseSettings):
         default=True, validation_alias="USE_CHUNKED_STORAGE"
     )
 
+    environment: str = Field(default="development", validation_alias="ENVIRONMENT")
+
 
 settings = Settings()

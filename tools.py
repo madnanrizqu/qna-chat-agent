@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import Any, Callable
 
 from embeddings import vector_store
+from logger import logger
 from models import SearchResult
 
 
@@ -25,18 +26,18 @@ def knowledge_base_search(query: str) -> str:
     Returns:
         Relevant knowledge base articles, or a message if nothing was found.
     """
-    print(f"\n    🔍 [TOOL EXECUTING] knowledgeBaseSearch")
-    print(f"       Query: '{query}'")
+    logger.debug(f"🔍 [TOOL EXECUTING] knowledgeBaseSearch")
+    logger.debug(f"   Query: '{query}'")
 
     results: list[SearchResult] = vector_store.search_similar(query)
 
     if not results:
-        print(f"       Results: ❌ No documents found")
+        logger.debug(f"   Results: ❌ No documents found")
         return "No relevant documents found in the knowledge base."
 
-    print(f"       Results: ✅ Found {len(results)} documents")
+    logger.debug(f"   Results: ✅ Found {len(results)} documents")
     for r in results:
-        print(f"         - [{r.category or 'Unknown'}] similarity={r.similarity:.2f}")
+        logger.debug(f"     - [{r.category or 'Unknown'}] similarity={r.similarity:.2f}")
 
     return "\n\n".join(
         f"[{r.category or 'Unknown'}] (similarity: {r.similarity:.2f}): {r.content}"
@@ -56,8 +57,8 @@ def escalate_to_human(reason: str) -> str:
     Returns:
         Confirmation message.
     """
-    print(f"\n    🚨 [TOOL EXECUTING] escalate_to_human")
-    print(f"       Reason: '{reason}'")
+    logger.debug(f"🚨 [TOOL EXECUTING] escalate_to_human")
+    logger.debug(f"   Reason: '{reason}'")
     return f"Escalation requested: {reason}"
 
 

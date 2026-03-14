@@ -7,6 +7,7 @@ from supabase import create_client, Client
 
 from ai import ai_client, AIClient
 from config import settings
+from logger import logger
 from models import SearchResult
 
 
@@ -267,7 +268,7 @@ class SupabaseVectorStore(VectorStore):
         Returns:
             List of SearchResult objects ranked by similarity
         """
-        print(f"Generating embedding for query: {query}")
+        logger.debug(f"Generating embedding for query: {query}")
         query_embedding = self._embedding_service.generate_embedding(query)
         client = self.get_client()
 
@@ -276,7 +277,7 @@ class SupabaseVectorStore(VectorStore):
             if settings.use_chunked_storage
             else "match_documents"
         )
-        print(
+        logger.debug(
             f"Calling {rpc_function} RPC with threshold={threshold or settings.similarity_threshold}, "
             f"limit={limit or settings.max_search_results}"
         )
@@ -288,7 +289,7 @@ class SupabaseVectorStore(VectorStore):
                 "match_count": limit or settings.max_search_results,
             },
         ).execute()
-        print(f"Received {len(result.data)} results from {rpc_function}")
+        logger.debug(f"Received {len(result.data)} results from {rpc_function}")
         return [SearchResult(**row) for row in result.data]
 
 

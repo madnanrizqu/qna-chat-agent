@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from config import settings
+from logger import logger
 from models import Message
 from prompts import build_system_prompt
 from tools import TOOLS, ToolDef
@@ -100,12 +101,12 @@ class LangChainGeminiAgentRunner(AgentRunner):
         agent = create_agent(self._llm, lc_tools)
         all_messages = self._convert_messages(messages, system_prompt)
 
-        print("\n" + "=" * 60)
-        print("🤖 ReAct Loop Started")
-        print("=" * 60)
-        print(f"📝 User Input: {messages[-1]['content']}")
-        print(f"📚 Total Messages: {len(all_messages)}")
-        print("-" * 60)
+        logger.info("=" * 60)
+        logger.info("🤖 ReAct Loop Started")
+        logger.info("=" * 60)
+        logger.info(f"📝 User Input: {messages[-1]['content']}")
+        logger.info(f"📚 Total Messages: {len(all_messages)}")
+        logger.info("-" * 60)
 
         result = agent.invoke({"messages": all_messages})
 
@@ -130,7 +131,7 @@ class LangChainGeminiAgentRunner(AgentRunner):
             output_text = str(final_message)
 
         # Trace each tool call and detect whether escalation was triggered.
-        print("\n🔄 ReAct Loop Trace:")
+        logger.info("🔄 ReAct Loop Trace:")
         tool_calls_made = []
         escalated = False
 
@@ -141,26 +142,26 @@ class LangChainGeminiAgentRunner(AgentRunner):
                     tool_input = tool_call.get("args", {})
                     tool_calls_made.append((tool_name, tool_input))
 
-                    print(f"\n  🧠 Reasoning → Action: Call tool '{tool_name}'")
-                    print(f"    📥 Tool Input: {tool_input}")
+                    logger.debug(f"  🧠 Reasoning → Action: Call tool '{tool_name}'")
+                    logger.debug(f"    📥 Tool Input: {tool_input}")
 
                     if tool_name == "escalate_to_human":
                         escalated = True
 
             if hasattr(msg, "type") and msg.type == "tool":
                 tool_output = msg.content
-                print(
+                logger.debug(
                     f"    📤 Tool Output: {tool_output[:100]}{'...' if len(tool_output) > 100 else ''}"
                 )
 
         if not tool_calls_made:
-            print("  ℹ️  No tools were called (direct answer)")
+            logger.info("  ℹ️  No tools were called (direct answer)")
 
-        print(
-            f"\n✅ Final Answer: {output_text[:100]}{'...' if len(output_text) > 100 else ''}"
+        logger.info(
+            f"✅ Final Answer: {output_text[:100]}{'...' if len(output_text) > 100 else ''}"
         )
-        print(f"🚨 Escalated: {escalated}")
-        print("=" * 60 + "\n")
+        logger.info(f"🚨 Escalated: {escalated}")
+        logger.info("=" * 60)
 
         return AgentResult(output=output_text, escalated=escalated)
 
