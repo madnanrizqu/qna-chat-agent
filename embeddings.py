@@ -54,35 +54,6 @@ class TextSplitter(ABC):
         ...
 
 
-class RecursiveTextSplitter(TextSplitter):
-    """Text splitter using LangChain's RecursiveCharacterTextSplitter."""
-
-    def __init__(self, chunk_size: int = 200, chunk_overlap: int = 50):
-        """Initialize the text splitter.
-
-        Args:
-            chunk_size: Maximum size of each chunk
-            chunk_overlap: Number of characters to overlap between chunks
-        """
-        from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-        self._splitter = RecursiveCharacterTextSplitter(
-            chunk_size=chunk_size,
-            chunk_overlap=chunk_overlap,
-        )
-
-    def split_text(self, text: str) -> list[str]:
-        """Split text into chunks.
-
-        Args:
-            text: Text to split
-
-        Returns:
-            List of text chunks
-        """
-        return self._splitter.split_text(text)
-
-
 class VectorStore(ABC):
     """Abstract interface for vector database operations."""
 
@@ -184,6 +155,35 @@ class OpenAIEmbeddingService(EmbeddingService):
         return [item.embedding for item in response.data]
 
 
+class RecursiveTextSplitter(TextSplitter):
+    """Text splitter using LangChain's RecursiveCharacterTextSplitter."""
+
+    def __init__(self, chunk_size: int = 200, chunk_overlap: int = 50):
+        """Initialize the text splitter.
+
+        Args:
+            chunk_size: Maximum size of each chunk
+            chunk_overlap: Number of characters to overlap between chunks
+        """
+        from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+        self._splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+        )
+
+    def split_text(self, text: str) -> list[str]:
+        """Split text into chunks.
+
+        Args:
+            text: Text to split
+
+        Returns:
+            List of text chunks
+        """
+        return self._splitter.split_text(text)
+
+
 class SupabaseVectorStore(VectorStore):
     """Vector store using Supabase pgvector."""
 
@@ -282,7 +282,9 @@ class SupabaseVectorStore(VectorStore):
         client = self.get_client()
 
         rpc_function = (
-            "match_document_chunks" if settings.use_chunked_storage else "match_documents"
+            "match_document_chunks"
+            if settings.use_chunked_storage
+            else "match_documents"
         )
         print(
             f"Calling {rpc_function} RPC with threshold={threshold or settings.similarity_threshold}, "
