@@ -9,7 +9,7 @@ CREATE TABLE documents (
 CREATE OR REPLACE FUNCTION match_documents(
     query_embedding VECTOR(3072),
     match_threshold FLOAT DEFAULT 0.7,
-    match_count INT DEFAULT 5
+    match_count INT DEFAULT 3
 )
 RETURNS TABLE (id UUID, content TEXT, similarity FLOAT)
 LANGUAGE plpgsql AS $$

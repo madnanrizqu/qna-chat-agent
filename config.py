@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     similarity_threshold: float = Field(
         default=0.7, validation_alias="SIMILARITY_THRESHOLD"
     )
-    max_search_results: int = Field(default=5, validation_alias="MAX_SEARCH_RESULTS")
+    max_search_results: int = Field(default=3, validation_alias="MAX_SEARCH_RESULTS")
 
 
 settings = Settings()
