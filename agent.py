@@ -1,46 +1,85 @@
-from ai import ai_client
+from typing import Any, Type
+
+from ai import AIClient, ai_client
 from config import settings
 from models import Message
 
 
-def process_chat(message: str, history: list[Message] | None = None) -> list[Message]:
+class Agent:
+    """Chat agent with configurable prompts, tools, and structured output.
+
+    Handles conversation processing with the AI model, including:
+    - System prompts for agent behavior
+    - Tool/function calling capabilities
+    - Conversation history management
     """
-    Process a chat message with the AI assistant.
 
-    Args:
-        message: The user's message
-        history: Optional conversation history
+    def __init__(
+        self,
+        client: AIClient | None = None,
+        system_prompt: str | None = None,
+        tools: list[dict[str, Any]] | None = None,
+    ):
+        """Initialize the agent with optional configuration.
 
-    Returns:
-        Full conversation including the new user message and AI response
+        Args:
+            client: AI client instance (defaults to global ai_client)
+            system_prompt: Optional system prompt to configure agent behavior
+            tools: Optional list of tool definitions for function calling
+            response_format: Optional Pydantic model for structured output
+        """
+        self._client = client or ai_client
+        self._system_prompt = system_prompt
+        self._tools = tools or []
 
-    Raises:
-        Exception: If there's an error communicating with the AI
-    """
-    # Build conversation from history (if provided) + current message
-    conversation = []
-    if history:
-        conversation = [msg.model_dump() for msg in history]
+    def process_chat(
+        self, message: str, history: list[Message] | None = None
+    ) -> list[Message]:
+        """Process a chat message with the AI assistant.
 
-    # Add current user message
-    conversation.append({"role": "user", "content": message})
+        Args:
+            message: The user's message
+            history: Optional conversation history
 
-    # Call AI client
-    client = ai_client.get_client()
-    completion = client.chat.completions.create(
-        model=settings.default_model,
-        messages=conversation,
-    )
+        Returns:
+            Full conversation including the new user message and AI response
 
-    ai_response_content = completion.choices[0].message.content
+        Raises:
+            Exception: If there's an error communicating with the AI
+        """
+        # Build conversation from history (if provided) + current message
+        conversation = []
 
-    # Build assistant message
-    assistant_message = Message(role="assistant", content=ai_response_content)
+        if self._system_prompt:
+            conversation.append({"role": "system", "content": self._system_prompt})
 
-    # Build full conversation for response
-    full_messages = (history or []) + [
-        Message(role="user", content=message),
-        assistant_message,
-    ]
+        if history:
+            conversation.extend([msg.model_dump() for msg in history])
 
-    return full_messages
+        conversation.append({"role": "user", "content": message})
+
+        api_params = {
+            "model": settings.default_model,
+            "messages": conversation,
+        }
+
+        if self._tools:
+            api_params["tools"] = self._tools
+
+        client = self._client.get_client()
+
+        completion = client.chat.completions.create(**api_params)
+        ai_response_content = completion.choices[0].message.content
+
+        assistant_message = Message(role="assistant", content=str(ai_response_content))
+
+        # Build full conversation for response (without system prompt)
+        full_messages = (history or []) + [
+            Message(role="user", content=message),
+            assistant_message,
+        ]
+
+        return full_messages
+
+
+agent = Agent()

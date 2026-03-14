@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 
-from agent import process_chat
+from agent import agent
 from models import ChatRequest, ChatResponse
 
 app = FastAPI()
@@ -20,7 +20,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     returns the full conversation including the AI's response.
     """
     try:
-        messages = process_chat(request.message, request.history)
+        messages = agent.process_chat(request.message, request.history)
         return ChatResponse(messages=messages, escalate=False)
 
     except Exception as e:
