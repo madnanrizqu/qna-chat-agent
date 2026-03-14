@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+import uvicorn
 
 from agent import agent
 from models import ChatRequest, ChatResponse
@@ -27,3 +28,8 @@ def chat(request: ChatRequest) -> ChatResponse:
         raise HTTPException(
             status_code=500, detail=f"Error processing chat request: {str(e)}"
         )
+
+
+# Running the main file directly is for debugger
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
