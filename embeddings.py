@@ -216,8 +216,13 @@ class SupabaseVectorStore(VectorStore):
         Returns:
             List of SearchResult objects ranked by similarity
         """
+        print(f"Generating embedding for query: {query}")
         query_embedding = self._embedding_service.generate_embedding(query)
         client = self.get_client()
+        print(
+            f"Calling match_documents RPC with threshold={threshold or settings.similarity_threshold}, "
+            f"limit={limit or settings.max_search_results}"
+        )
         result = client.rpc(
             "match_documents",
             {
@@ -226,6 +231,7 @@ class SupabaseVectorStore(VectorStore):
                 "match_count": limit or settings.max_search_results,
             },
         ).execute()
+        print(f"Received {len(result.data)} results from match_documents")
         return [SearchResult(**row) for row in result.data]
 
 
