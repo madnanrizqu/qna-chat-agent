@@ -131,12 +131,7 @@ class OpenAIEmbeddingService(EmbeddingService):
         Returns:
             Embedding vector as list of floats
         """
-        response = self._client.get_client().embeddings.create(
-            model=settings.embedding_model,
-            input=text,
-            dimensions=settings.embedding_dimensions,
-        )
-        return response.data[0].embedding
+        return self._client.create_embedding(text)
 
     def generate_embeddings_batch(self, texts: list[str]) -> list[list[float]]:
         """Generate embeddings for multiple texts in a single batch.
@@ -147,12 +142,7 @@ class OpenAIEmbeddingService(EmbeddingService):
         Returns:
             List of embedding vectors
         """
-        response = self._client.get_client().embeddings.create(
-            model=settings.embedding_model,
-            input=texts,
-            dimensions=settings.embedding_dimensions,
-        )
-        return [item.embedding for item in response.data]
+        return self._client.create_embeddings_batch(texts)
 
 
 class RecursiveTextSplitter(TextSplitter):

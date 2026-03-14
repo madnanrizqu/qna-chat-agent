@@ -1,21 +1,112 @@
-"""AI client configuration and initialization."""
-
-from typing import Type, TypeVar
-from pydantic import BaseModel
+from abc import ABC, abstractmethod
 from openai import OpenAI
 
 from config import settings
 
-ResponseT = TypeVar("T", bound=BaseModel)
+
+class AIClient(ABC):
+    """Abstract base class for AI client implementations.
+
+    Defines the interface that all AI client providers must implement.
+    """
+
+    @abstractmethod
+    def create_embedding(self, text: str) -> list[float]:
+        """Generate embedding vector for a single text.
+
+        Args:
+            text: Text to embed
+
+        Returns:
+            Embedding vector as list of floats
+
+        Raises:
+            Exception: If embedding generation fails
+        """
+        pass
+
+    @abstractmethod
+    def create_embeddings_batch(self, texts: list[str]) -> list[list[float]]:
+        """Generate embeddings for multiple texts in a single batch.
+
+        More efficient than calling create_embedding multiple times.
+
+        Args:
+            texts: List of texts to embed
+
+        Returns:
+            List of embedding vectors
+
+        Raises:
+            Exception: If embedding generation fails
+        """
+        pass
 
 
-class AIClient:
-    """AI client manager with lazy initialization."""
+class OpenAIClient(AIClient):
+    """OpenAI-compatible AI client implementation.
 
-    def __init__(self):
+    Supports OpenAI and OpenAI-compatible APIs (e.g., Gemini via OpenAI base URL).
+    Uses lazy initialization pattern for efficient resource management.
+    """
+
+    def __init__(self, api_key: str, base_url: str | None = None):
+        """Initialize OpenAI client.
+
+        Args:
+            api_key: API key for authentication
+            base_url: Optional base URL for OpenAI-compatible endpoints
+        """
+        self._api_key = api_key
+        self._base_url = base_url
         self._client: OpenAI | None = None
 
-    def get_client(self) -> OpenAI:
+    def create_embedding(self, text: str) -> list[float]:
+        """Generate embedding vector for a single text.
+
+        Uses the configured embedding model and dimensions from settings.
+
+        Args:
+            text: Text to embed
+
+        Returns:
+            Embedding vector as list of floats
+
+        Raises:
+            Exception: If embedding generation fails
+        """
+        client = self._get_client()
+        response = client.embeddings.create(
+            model=settings.embedding_model,
+            input=text,
+            dimensions=settings.embedding_dimensions,
+        )
+        return response.data[0].embedding
+
+    def create_embeddings_batch(self, texts: list[str]) -> list[list[float]]:
+        """Generate embeddings for multiple texts in a single batch.
+
+        Uses the configured embedding model and dimensions from settings.
+        More efficient than calling create_embedding multiple times.
+
+        Args:
+            texts: List of texts to embed
+
+        Returns:
+            List of embedding vectors
+
+        Raises:
+            Exception: If embedding generation fails
+        """
+        client = self._get_client()
+        response = client.embeddings.create(
+            model=settings.embedding_model,
+            input=texts,
+            dimensions=settings.embedding_dimensions,
+        )
+        return [item.embedding for item in response.data]
+
+    def _get_client(self) -> OpenAI:
         """Get configured OpenAI client (lazy singleton pattern).
 
         Creates and caches a single client instance on first access.
@@ -26,44 +117,13 @@ class AIClient:
         """
         if self._client is None:
             self._client = OpenAI(
-                api_key=settings.openai_api_key, base_url=settings.openai_base_url
+                api_key=self._api_key,
+                base_url=self._base_url,
             )
         return self._client
 
-    def reset(self) -> None:
-        """Reset the client instance (useful for testing or configuration changes)."""
-        self._client = None
 
-    def chat_structured(
-        self,
-        model: str,
-        messages: list[dict[str, str]],
-        response_format: Type[ResponseT],
-        **kwargs,
-    ) -> ResponseT:
-        """Chat completion with structured output using beta API.
-
-        Args:
-            model: Model identifier
-            messages: Conversation messages
-            response_format: Pydantic model class for response structure
-            **kwargs: Additional parameters (temperature, etc.)
-
-        Returns:
-            Parsed instance of response_format model
-        """
-        client = self.get_client()
-
-        completion = client.beta.chat.completions.parse(
-            model=model, messages=messages, response_format=response_format, **kwargs
-        )
-
-        parsed_response = completion.choices[0].message.parsed
-
-        if parsed_response is None:
-            raise ValueError("Failed to parse structured response from AI")
-
-        return parsed_response
-
-
-ai_client = AIClient()
+ai_client: AIClient = OpenAIClient(
+    api_key=settings.openai_api_key,
+    base_url=settings.openai_base_url,
+)
