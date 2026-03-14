@@ -20,7 +20,7 @@ class AgentRunner(ABC):
     """Abstract agent execution engine.
 
     Implementations wrap a specific framework (LangChain, LlamaIndex, etc.)
-    to run a ReAct-style tool-calling loop.
+    to run a tool-calling agent loop.
     """
 
     @abstractmethod
@@ -43,8 +43,8 @@ class AgentRunner(ABC):
         ...
 
 
-class LangChainAgentRunner(AgentRunner):
-    """ReAct agent runner using LangChain."""
+class LangChainGeminiAgentRunner(AgentRunner):
+    """ReAct agent runner using LangChain with Google Gemini."""
 
     def __init__(self, model: str, google_api_key: str):
         from langchain_google_genai import ChatGoogleGenerativeAI
@@ -90,17 +90,14 @@ class LangChainAgentRunner(AgentRunner):
         system_prompt: str,
         tools: list[ToolDef],
     ) -> AgentResult:
-        # Create Agent
         from langchain.agents import create_agent
 
-        lc_tools = [self._convert_tool(t) for t in tools]
-        agent = create_agent(self._llm, lc_tools)
-
-        # Edge case where messages empty
+        # Bail early before constructing anything if there is nothing to process.
         if not messages:
             return AgentResult(output="", escalated=False)
 
-        # Build full conversation including system prompt
+        lc_tools = [self._convert_tool(t) for t in tools]
+        agent = create_agent(self._llm, lc_tools)
         all_messages = self._convert_messages(messages, system_prompt)
 
         print("\n" + "=" * 60)
@@ -110,10 +107,9 @@ class LangChainAgentRunner(AgentRunner):
         print(f"📚 Total Messages: {len(all_messages)}")
         print("-" * 60)
 
-        # Start the loop
         result = agent.invoke({"messages": all_messages})
 
-        # Extract result from the message content
+        # Extract the final text from the last message in the result.
         output_messages = result.get("messages", [])
         if not output_messages:
             return AgentResult(output="", escalated=False)
@@ -133,12 +129,11 @@ class LangChainAgentRunner(AgentRunner):
         else:
             output_text = str(final_message)
 
-        # Print the ReAct loop trace
+        # Trace each tool call and detect whether escalation was triggered.
         print("\n🔄 ReAct Loop Trace:")
         tool_calls_made = []
         escalated = False
 
-        # Check for escalated tool calls
         for msg in output_messages:
             if hasattr(msg, "tool_calls") and msg.tool_calls:
                 for tool_call in msg.tool_calls:
@@ -171,13 +166,7 @@ class LangChainAgentRunner(AgentRunner):
 
 
 class Agent:
-    """Chat agent with configurable prompts, tools, and agentic execution.
-
-    Handles conversation processing with the AI model, including:
-    - System prompts for agent behavior
-    - Tool/function calling capabilities via ReAct loop
-    - Conversation history management
-    """
+    """Chat agent with configurable prompts, tools, and agentic execution."""
 
     def __init__(
         self,
@@ -185,12 +174,11 @@ class Agent:
         system_prompt: str | None = None,
         tools: list[ToolDef] | None = None,
     ):
-        """Initialize the agent with optional configuration.
-
+        """
         Args:
-            runner: AgentRunner instance for executing the agentic loop
-            system_prompt: Optional system prompt to configure agent behavior
-            tools: Optional list of tool definitions for function calling
+            runner: AgentRunner instance for executing the agentic loop.
+            system_prompt: Optional system prompt to configure agent behavior.
+            tools: Optional list of tool definitions for function calling.
         """
         self._runner = runner
         self._system_prompt = system_prompt or ""
@@ -202,29 +190,25 @@ class Agent:
         """Process a chat message through the agentic loop.
 
         Args:
-            message: The user's message
-            history: Optional conversation history
+            message: The user's message.
+            history: Optional conversation history.
 
         Returns:
-            Tuple of (full conversation messages, escalate flag)
-
-        Raises:
-            Exception: If there's an error communicating with the AI
+            Tuple of (full conversation messages, escalate flag).
         """
-        # Build conversation as raw dicts (runner handles framework conversion)
+        # Build conversation as raw dicts (runner handles framework conversion).
         conversation = []
         if history:
             conversation.extend([msg.model_dump() for msg in history])
         conversation.append({"role": "user", "content": message})
 
-        # Run the agent
         result: AgentResult = self._runner.run(
             messages=conversation,
             system_prompt=self._system_prompt,
             tools=self._tools,
         )
 
-        # Build return value matching the original signature
+        # Reconstruct full conversation history with the assistant's response.
         output_messages = []
         if history:
             output_messages.extend(history)
@@ -234,7 +218,7 @@ class Agent:
         return output_messages, result.escalated
 
 
-runner = LangChainAgentRunner(
+runner = LangChainGeminiAgentRunner(
     model=settings.default_model,
     google_api_key=settings.google_api_key,
 )
