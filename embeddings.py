@@ -38,6 +38,51 @@ class EmbeddingService(ABC):
         ...
 
 
+class TextSplitter(ABC):
+    """Abstract interface for text chunking."""
+
+    @abstractmethod
+    def split_text(self, text: str) -> list[str]:
+        """Split text into chunks.
+
+        Args:
+            text: Text to split
+
+        Returns:
+            List of text chunks
+        """
+        ...
+
+
+class RecursiveTextSplitter(TextSplitter):
+    """Text splitter using LangChain's RecursiveCharacterTextSplitter."""
+
+    def __init__(self, chunk_size: int = 200, chunk_overlap: int = 50):
+        """Initialize the text splitter.
+
+        Args:
+            chunk_size: Maximum size of each chunk
+            chunk_overlap: Number of characters to overlap between chunks
+        """
+        from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+        self._splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+        )
+
+    def split_text(self, text: str) -> list[str]:
+        """Split text into chunks.
+
+        Args:
+            text: Text to split
+
+        Returns:
+            List of text chunks
+        """
+        return self._splitter.split_text(text)
+
+
 class VectorStore(ABC):
     """Abstract interface for vector database operations."""
 
@@ -181,7 +226,9 @@ class SupabaseVectorStore(VectorStore):
         }
         if category is not None:
             row["category"] = category
-        result = client.table("documents").insert(row).execute()
+
+        table_name = "document_chunks" if settings.use_chunked_storage else "documents"
+        result = client.table(table_name).insert(row).execute()
         return result.data[0]["id"]
 
     def store_documents(
@@ -213,7 +260,8 @@ class SupabaseVectorStore(VectorStore):
             rows.append(row)
 
         client = self.get_client()
-        result = client.table("documents").insert(rows).execute()
+        table_name = "document_chunks" if settings.use_chunked_storage else "documents"
+        result = client.table(table_name).insert(rows).execute()
         return [row["id"] for row in result.data]
 
     def search_similar(
@@ -232,21 +280,29 @@ class SupabaseVectorStore(VectorStore):
         print(f"Generating embedding for query: {query}")
         query_embedding = self._embedding_service.generate_embedding(query)
         client = self.get_client()
+
+        rpc_function = (
+            "match_document_chunks" if settings.use_chunked_storage else "match_documents"
+        )
         print(
-            f"Calling match_documents RPC with threshold={threshold or settings.similarity_threshold}, "
+            f"Calling {rpc_function} RPC with threshold={threshold or settings.similarity_threshold}, "
             f"limit={limit or settings.max_search_results}"
         )
         result = client.rpc(
-            "match_documents",
+            rpc_function,
             {
                 "query_embedding": query_embedding,
                 "match_threshold": threshold or settings.similarity_threshold,
                 "match_count": limit or settings.max_search_results,
             },
         ).execute()
-        print(f"Received {len(result.data)} results from match_documents")
+        print(f"Received {len(result.data)} results from {rpc_function}")
         return [SearchResult(**row) for row in result.data]
 
 
 embedding_service = OpenAIEmbeddingService(ai_client)
 vector_store = SupabaseVectorStore(embedding_service)
+text_splitter = RecursiveTextSplitter(
+    chunk_size=settings.chunk_size,
+    chunk_overlap=settings.chunk_overlap,
+)

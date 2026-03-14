@@ -30,7 +30,14 @@ class Settings(BaseSettings):
     similarity_threshold: float = Field(
         default=0.6, validation_alias="SIMILARITY_THRESHOLD"
     )
-    max_search_results: int = Field(default=1, validation_alias="MAX_SEARCH_RESULTS")
+    max_search_results: int = Field(default=5, validation_alias="MAX_SEARCH_RESULTS")
+
+    chunk_size: int = Field(default=200, validation_alias="CHUNK_SIZE")
+    chunk_overlap: int = Field(default=0, validation_alias="CHUNK_OVERLAP")
+
+    use_chunked_storage: bool = Field(
+        default=True, validation_alias="USE_CHUNKED_STORAGE"
+    )
 
 
 settings = Settings()

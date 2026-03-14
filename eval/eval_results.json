@@ -1,28 +1,28 @@
 {
   "metrics": {
     "billing_policy": {
-      "recall": 0.9333333333333333,
-      "precision": 0.9655172413793104,
+      "recall": 1.0,
+      "precision": 0.8863636363636364,
       "total_queries": 30,
-      "queries_with_correct_results": 28,
-      "total_results": 29,
-      "correct_results": 28
+      "queries_with_correct_results": 30,
+      "total_results": 44,
+      "correct_results": 39
     },
     "service_plans": {
-      "recall": 0.9,
-      "precision": 1.0,
+      "recall": 1.0,
+      "precision": 0.9454545454545454,
       "total_queries": 30,
-      "queries_with_correct_results": 27,
-      "total_results": 27,
-      "correct_results": 27
+      "queries_with_correct_results": 30,
+      "total_results": 55,
+      "correct_results": 52
     },
     "troubleshooting_guide": {
-      "recall": 0.7666666666666667,
-      "precision": 0.92,
+      "recall": 0.9333333333333333,
+      "precision": 0.8461538461538461,
       "total_queries": 30,
-      "queries_with_correct_results": 23,
-      "total_results": 25,
-      "correct_results": 23
+      "queries_with_correct_results": 28,
+      "total_results": 39,
+      "correct_results": 33
     },
     "not_matching": {
       "recall": 1.0,
@@ -33,23 +33,28 @@
       "correct_results": 30
     },
     "overall": {
-      "recall": 0.8666666666666667,
-      "precision": 0.9629629629629629,
+      "recall": 0.9777777777777777,
+      "precision": 0.8985507246376812,
       "total_queries": 90,
-      "queries_with_correct_results": 78,
-      "total_results": 81,
-      "correct_results": 78
+      "queries_with_correct_results": 88,
+      "total_results": 138,
+      "correct_results": 124
     }
   },
   "detailed_results": {
     "billing_policy": [
       {
         "query": "What happens if I pay my bill late?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.674383521080017,
+            "similarity": 0.672443985939026,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.618429362773895,
             "matched_category": "billing_policy"
           }
         ],
@@ -61,7 +66,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.649997335672701,
+            "similarity": 0.649818938992155,
             "matched_category": "billing_policy"
           }
         ],
@@ -73,7 +78,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.664003252983093,
+            "similarity": 0.707519173622131,
             "matched_category": "billing_policy"
           }
         ],
@@ -81,17 +86,23 @@
       },
       {
         "query": "I want to set up automatic payments",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.648919542101608,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
       },
       {
         "query": "Tell me about auto-pay options",
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.624673016427822,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.716775229553849,
             "matched_category": "billing_policy"
           }
         ],
@@ -99,12 +110,22 @@
       },
       {
         "query": "What's the deadline for billing disputes?",
-        "num_results": 1,
+        "num_results": 3,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.703125360887533,
+            "similarity": 0.730387395356962,
             "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.621815498633581,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.610946756275108,
+            "matched_category": "troubleshooting_guide"
           }
         ],
         "correct_hit": true
@@ -115,7 +136,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.601086616516113,
+            "similarity": 0.603989481925964,
             "matched_category": "billing_policy"
           }
         ],
@@ -123,11 +144,16 @@
       },
       {
         "query": "How can I challenge my bill?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.639843366155425,
+            "similarity": 0.653457721861738,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.601392531311958,
             "matched_category": "billing_policy"
           }
         ],
@@ -138,8 +164,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.622598812270311,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.691804028534414,
             "matched_category": "billing_policy"
           }
         ],
@@ -147,11 +173,16 @@
       },
       {
         "query": "When are invoices due each month?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.631988980292618,
+            "similarity": 0.640399613404252,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.620487488537282,
             "matched_category": "billing_policy"
           }
         ],
@@ -162,8 +193,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.607870817184448,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.714605569839478,
             "matched_category": "billing_policy"
           }
         ],
@@ -175,7 +206,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.630325763147905,
+            "similarity": 0.634106127236831,
             "matched_category": "billing_policy"
           }
         ],
@@ -183,24 +214,39 @@
       },
       {
         "query": "What is the IDR 50,000 fee for?",
-        "num_results": 1,
-        "results": [
-          {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.636498031303145,
-            "matched_category": "service_plans"
-          }
-        ],
-        "correct_hit": false
-      },
-      {
-        "query": "Can I file a complaint about my bill?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.640946609861067,
+            "similarity": 0.680621423647239,
             "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
+            "similarity": 0.64645040758238,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can I file a complaint about my bill?",
+        "num_results": 3,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
+            "similarity": 0.647375387266237,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.617234871717115,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.605745290340116,
+            "matched_category": "troubleshooting_guide"
           }
         ],
         "correct_hit": true
@@ -211,7 +257,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.619655118029704,
+            "similarity": 0.661860387103516,
             "matched_category": "billing_policy"
           }
         ],
@@ -223,7 +269,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.640281794096394,
+            "similarity": 0.653748689927046,
             "matched_category": "billing_policy"
           }
         ],
@@ -234,8 +280,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.641457600419812,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.742690057433842,
             "matched_category": "billing_policy"
           }
         ],
@@ -247,7 +293,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.612251061566206,
+            "similarity": 0.610390085291567,
             "matched_category": "billing_policy"
           }
         ],
@@ -259,7 +305,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.647314723845979,
+            "similarity": 0.683485272553921,
             "matched_category": "billing_policy"
           }
         ],
@@ -270,8 +316,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.653857529163361,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.798186361789703,
             "matched_category": "billing_policy"
           }
         ],
@@ -279,11 +325,16 @@
       },
       {
         "query": "I just realized I forgot to pay my bill and it's been more than two weeks, am I going to get charged a late fee?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.660251377865929,
+            "similarity": 0.653943536390709,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.604288924507316,
             "matched_category": "billing_policy"
           }
         ],
@@ -295,7 +346,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.619676861118809,
+            "similarity": 0.65044520056922,
             "matched_category": "billing_policy"
           }
         ],
@@ -306,8 +357,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.668518284735889,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.810977123859277,
             "matched_category": "billing_policy"
           }
         ],
@@ -315,11 +366,16 @@
       },
       {
         "query": "My friend told me there's a fee if you don't pay your bill on time, can you tell me how much it is and when it kicks in?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.681418137212263,
+            "similarity": 0.667743881286668,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.624920219202007,
             "matched_category": "billing_policy"
           }
         ],
@@ -327,11 +383,21 @@
       },
       {
         "query": "I received my invoice yesterday and I think there might be an error, what is the process for filing a billing dispute?",
-        "num_results": 1,
+        "num_results": 3,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.687328757702898,
+            "similarity": 0.720272009397034,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.612334173550197,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.600983196584871,
             "matched_category": "billing_policy"
           }
         ],
@@ -342,8 +408,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.602163362245163,
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.670530537303627,
             "matched_category": "billing_policy"
           }
         ],
@@ -351,11 +417,16 @@
       },
       {
         "query": "Can you explain your late payment policy? I want to know exactly how many days I have before the penalty applies",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.669962227344513,
+            "similarity": 0.661074042320251,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.607845425605774,
             "matched_category": "billing_policy"
           }
         ],
@@ -367,7 +438,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.652755576700642,
+            "similarity": 0.647018271329201,
             "matched_category": "billing_policy"
           }
         ],
@@ -375,12 +446,17 @@
       },
       {
         "query": "I'm looking at my bill and I see an IDR 50,000 charge that I wasn't expecting, can you tell me what that's about?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.660557906561152,
+            "similarity": 0.71046266431062,
             "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
+            "similarity": 0.654147987074384,
+            "matched_category": "service_plans"
           }
         ],
         "correct_hit": true
@@ -391,7 +467,7 @@
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.655894875526428,
+            "similarity": 0.690801620483398,
             "matched_category": "billing_policy"
           }
         ],
@@ -401,11 +477,16 @@
     "service_plans": [
       {
         "query": "What plans do you offer?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.706763684749608,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.660878299114255,
+            "similarity": 0.653961183912571,
             "matched_category": "service_plans"
           }
         ],
@@ -413,11 +494,16 @@
       },
       {
         "query": "How much data do I get with Pro Plan?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.688462199729319,
+            "similarity": 0.694422711936463,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.637463396049132,
             "matched_category": "service_plans"
           }
         ],
@@ -425,11 +511,16 @@
       },
       {
         "query": "What's included in the Unlimited Plan?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.647126332816029,
+            "similarity": 0.648076081734656,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.647085032040774,
             "matched_category": "service_plans"
           }
         ],
@@ -437,9 +528,15 @@
       },
       {
         "query": "Tell me about your pricing",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.616374657586258,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
       },
       {
         "query": "What's the difference between Pro and Unlimited?",
@@ -447,7 +544,7 @@
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.640112910297621,
+            "similarity": 0.652431828766405,
             "matched_category": "service_plans"
           }
         ],
@@ -458,8 +555,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.603020042631058,
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.675610700176871,
             "matched_category": "service_plans"
           }
         ],
@@ -467,11 +564,16 @@
       },
       {
         "query": "Which package should I choose?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.646524329379933,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.601342022818934,
+            "similarity": 0.609635500664222,
             "matched_category": "service_plans"
           }
         ],
@@ -479,11 +581,16 @@
       },
       {
         "query": "How much does unlimited data cost?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.676441095324998,
+            "similarity": 0.674856025014891,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.608999394834079,
             "matched_category": "service_plans"
           }
         ],
@@ -491,11 +598,16 @@
       },
       {
         "query": "What are the monthly rates?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.622353017330174,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.60244147246997,
+            "similarity": 0.606114159921287,
             "matched_category": "service_plans"
           }
         ],
@@ -503,11 +615,16 @@
       },
       {
         "query": "Can I upgrade to a better plan?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.624543350203536,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.601379180283361,
+            "similarity": 0.604845278444403,
             "matched_category": "service_plans"
           }
         ],
@@ -515,11 +632,16 @@
       },
       {
         "query": "How much is the Pro Plan per month?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.654256261409832,
+            "similarity": 0.66087804358764,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.627338152309118,
             "matched_category": "service_plans"
           }
         ],
@@ -527,11 +649,16 @@
       },
       {
         "query": "Does the Unlimited Plan include hotspot?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.685873551051872,
+            "similarity": 0.685887132320674,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.616352961498146,
             "matched_category": "service_plans"
           }
         ],
@@ -539,11 +666,16 @@
       },
       {
         "query": "How much hotspot data comes with Pro?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.691186929890782,
+            "similarity": 0.694639576759459,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.601474845321487,
             "matched_category": "service_plans"
           }
         ],
@@ -551,17 +683,28 @@
       },
       {
         "query": "What streaming partners are included?",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
-      },
-      {
-        "query": "Is there a plan with 50GB of data?",
         "num_results": 1,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.71614851701703,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Is there a plan with 50GB of data?",
+        "num_results": 2,
+        "results": [
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.682405950046154,
+            "similarity": 0.686506800708728,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.638716941109252,
             "matched_category": "service_plans"
           }
         ],
@@ -569,11 +712,16 @@
       },
       {
         "query": "What's the cheapest plan available?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.692929011161876,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.661457517028832,
+            "similarity": 0.652597111153989,
             "matched_category": "service_plans"
           }
         ],
@@ -581,11 +729,16 @@
       },
       {
         "query": "Do all plans include unlimited calls?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.653476297855382,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.653539356048538,
+            "similarity": 0.652489843519387,
             "matched_category": "service_plans"
           }
         ],
@@ -593,11 +746,21 @@
       },
       {
         "query": "How much is IDR 299,000 plan?",
-        "num_results": 1,
+        "num_results": 3,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.724460736517516,
+            "similarity": 0.730877149544304,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
+            "similarity": 0.620721317572673,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.619414329528813,
             "matched_category": "service_plans"
           }
         ],
@@ -605,17 +768,28 @@
       },
       {
         "query": "Can I stream on weekends for free?",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
-      },
-      {
-        "query": "What's the hotspot limit on the Unlimited Plan?",
         "num_results": 1,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.724543994773871,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the hotspot limit on the Unlimited Plan?",
+        "num_results": 2,
+        "results": [
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.671332558135219,
+            "similarity": 0.673753934128432,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.602275645190328,
             "matched_category": "service_plans"
           }
         ],
@@ -623,11 +797,16 @@
       },
       {
         "query": "I'm trying to decide between the Pro Plan and the Unlimited Plan, can you break down what each one includes and how much they cost?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.694088085604944,
+            "similarity": 0.701509683874355,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.645230335565765,
             "matched_category": "service_plans"
           }
         ],
@@ -635,11 +814,16 @@
       },
       {
         "query": "I use a lot of data for streaming and hotspot, which plan would you recommend for someone who needs more than 50GB per month?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.69479714256485,
+            "similarity": 0.690662655036861,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.618068800202751,
             "matched_category": "service_plans"
           }
         ],
@@ -650,8 +834,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.651407997268265,
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.760538887817011,
             "matched_category": "service_plans"
           }
         ],
@@ -663,7 +847,7 @@
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.675864003856188,
+            "similarity": 0.688820557472064,
             "matched_category": "service_plans"
           }
         ],
@@ -675,7 +859,7 @@
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.654630421516074,
+            "similarity": 0.655375901922266,
             "matched_category": "service_plans"
           }
         ],
@@ -683,23 +867,43 @@
       },
       {
         "query": "I'm looking for an affordable plan that includes unlimited calls and at least 50GB of data, what do you have available?",
-        "num_results": 1,
+        "num_results": 4,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.717174271442459,
+            "similarity": 0.721180992056135,
             "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.641608076287297,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.604910429234373,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.603537595482948,
+            "matched_category": "troubleshooting_guide"
           }
         ],
         "correct_hit": true
       },
       {
         "query": "Can you tell me the exact monthly price for the plan that comes with unlimited data, unlimited calls, and 20GB hotspot?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.722551160466959,
+            "similarity": 0.726457265460492,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.624980311841362,
             "matched_category": "service_plans"
           }
         ],
@@ -707,11 +911,16 @@
       },
       {
         "query": "I want a plan that lets me stream for free on weekends because I usually binge watch shows on Saturday and Sunday",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.764889217469421,
+            "matched_category": "service_plans"
+          },
+          {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.70036022671706,
+            "similarity": 0.652881962949844,
             "matched_category": "service_plans"
           }
         ],
@@ -719,11 +928,16 @@
       },
       {
         "query": "I'm comparing your plans to other providers, does the Pro Plan at IDR 199,000 include any hotspot data or is that extra?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.787608798625713,
+            "similarity": 0.795719385784999,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.604743021867968,
             "matched_category": "service_plans"
           }
         ],
@@ -731,11 +945,16 @@
       },
       {
         "query": "I need a plan with a lot of hotspot data because I work remotely and use my phone as a wifi hotspot for my laptop",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.666461010712691,
+            "similarity": 0.664999385923274,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
+            "similarity": 0.606728869877133,
             "matched_category": "service_plans"
           }
         ],
@@ -749,7 +968,7 @@
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.62741048547847,
+            "similarity": 0.651974497912069,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -761,7 +980,7 @@
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.647720697929763,
+            "similarity": 0.685282354579611,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -772,8 +991,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.645236930535079,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.679845969667821,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -781,23 +1000,33 @@
       },
       {
         "query": "I have a billing error, how do I report it?",
-        "num_results": 1,
+        "num_results": 3,
         "results": [
           {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.646040974203438,
+            "similarity": 0.671421409078369,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.657505313828443,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.62005215466489,
             "matched_category": "billing_policy"
           }
         ],
-        "correct_hit": false
+        "correct_hit": true
       },
       {
         "query": "What's the customer service number?",
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.606884096411699,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.633479221644499,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -805,9 +1034,15 @@
       },
       {
         "query": "Network speed is bad",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.600008219481761,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
       },
       {
         "query": "Calls keep dropping",
@@ -815,7 +1050,7 @@
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.601453911998195,
+            "similarity": 0.635414711199183,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -826,8 +1061,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.608182295723197,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.631831398060502,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -835,8 +1070,14 @@
       },
       {
         "query": "My bill looks wrong",
-        "num_results": 0,
-        "results": [],
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
+            "similarity": 0.621890187263489,
+            "matched_category": "billing_policy"
+          }
+        ],
         "correct_hit": false
       },
       {
@@ -844,8 +1085,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.610071054980259,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.630457225699084,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -857,7 +1098,7 @@
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.620088503350238,
+            "similarity": 0.678480489947959,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -865,9 +1106,15 @@
       },
       {
         "query": "How do I check signal strength?",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.603999079465596,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
       },
       {
         "query": "What does toggling airplane mode do?",
@@ -877,17 +1124,23 @@
       },
       {
         "query": "How do I check network congestion?",
-        "num_results": 0,
-        "results": [],
-        "correct_hit": false
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.638955531026952,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
       },
       {
         "query": "What number do I call for support?",
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.615323561910313,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.630111484501008,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -898,8 +1151,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.622855708258703,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.658545911312122,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -910,8 +1163,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.663798293161818,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.718670163313136,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -922,8 +1175,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.636484238184115,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.659839075851717,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -931,15 +1184,25 @@
       },
       {
         "query": "How do I submit a billing ticket through the app?",
-        "num_results": 1,
+        "num_results": 3,
         "results": [
           {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.681465246502733,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.673166036605835,
+            "matched_category": "billing_policy"
+          },
+          {
             "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.662076115608215,
+            "similarity": 0.657942414283752,
             "matched_category": "billing_policy"
           }
         ],
-        "correct_hit": false
+        "correct_hit": true
       },
       {
         "query": "My calls sound choppy, what should I check?",
@@ -947,7 +1210,7 @@
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.627394705439894,
+            "similarity": 0.674741051292057,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -955,11 +1218,16 @@
       },
       {
         "query": "I've been having really slow internet all day and I already tried restarting my phone, is there anything else I can do to fix it?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.647894798031088,
+            "similarity": 0.682004817607608,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.603334433536025,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -967,11 +1235,16 @@
       },
       {
         "query": "My phone calls have been sounding terrible lately with lots of static and cutting out, how can I check if it's a network issue?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.634684731160195,
+            "similarity": 0.663765648568542,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.602653097631974,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -982,8 +1255,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.664267500813622,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.688089884747285,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -994,8 +1267,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.6085101107335,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.64000056505197,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1003,11 +1276,16 @@
       },
       {
         "query": "I've tried toggling airplane mode and restarting my device but my internet is still really slow, what else should I try?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.658387267070362,
+            "similarity": 0.703126511070975,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.612208243546414,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1018,8 +1296,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.672270675166268,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.712281507985713,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1031,7 +1309,7 @@
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.626429691399451,
+            "similarity": 0.681806267661453,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1039,11 +1317,21 @@
       },
       {
         "query": "I want to submit a ticket about a billing error but I'm not sure if I should do it through the MyTelco app or call customer service",
-        "num_results": 1,
+        "num_results": 3,
         "results": [
           {
+            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
+            "similarity": 0.717551350593567,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.703343545991957,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.723996049405107,
+            "similarity": 0.668792208479224,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1051,11 +1339,16 @@
       },
       {
         "query": "I've been experiencing dropped calls and poor signal strength for the past few days, is there a way to troubleshoot this on my end?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.684930318022858,
+            "similarity": 0.716976408688143,
+            "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.654255889831569,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1066,8 +1359,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
-            "similarity": 0.633654606227424,
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.669547577012163,
             "matched_category": "troubleshooting_guide"
           }
         ],
