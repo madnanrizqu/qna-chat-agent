@@ -39,8 +39,9 @@ def load_data_directory(data_path: str = "data") -> list[str]:
 
     print(f"📂 Found {len(txt_files)} documents in {data_dir}")
 
-    # Read document contents
+    # Read document contents and derive categories from filenames
     documents = []
+    categories = []
     for txt_file in txt_files:
         try:
             content = txt_file.read_text(encoding="utf-8").strip()
@@ -48,8 +49,10 @@ def load_data_directory(data_path: str = "data") -> list[str]:
                 print(f"⚠️  Skipping empty file: {txt_file.name}")
                 continue
 
+            category = txt_file.stem  # e.g., "billing_policy" from "billing_policy.txt"
             documents.append(content)
-            print(f"  • {txt_file.name} ({len(content)} chars)")
+            categories.append(category)
+            print(f"  • {txt_file.name} ({len(content)} chars) → category: {category}")
 
         except Exception as e:
             print(f"❌ Error reading {txt_file.name}: {e}")
@@ -59,14 +62,14 @@ def load_data_directory(data_path: str = "data") -> list[str]:
         print("⚠️  No valid documents to load")
         return []
 
-    # Batch insert into vector store
+    # Batch insert into vector store with categories
     print(f"\n🔄 Generating embeddings and storing {len(documents)} documents...")
     try:
-        doc_ids = vector_store.store_documents(documents)
+        doc_ids = vector_store.store_documents(documents, categories)
         print(f"✅ Successfully loaded {len(doc_ids)} documents")
         print(f"\nDocument IDs:")
         for i, doc_id in enumerate(doc_ids, 1):
-            print(f"  {i}. {doc_id}")
+            print(f"  {i}. {doc_id} (category: {categories[i-1]})")
         return doc_ids
 
     except Exception as e:

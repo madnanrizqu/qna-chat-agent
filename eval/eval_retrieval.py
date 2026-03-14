@@ -10,48 +10,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from embeddings import vector_store
 
 
-def load_document_content() -> dict[str, str]:
-    """Load source document content for category matching.
-
-    Returns:
-        Mapping of category name to document content
-    """
-    data_dir = Path(__file__).parent.parent / "data"
-
-    categories = {}
-    for file_path in data_dir.glob("*.txt"):
-        category = file_path.stem  # e.g., "billing_policy"
-        categories[category] = file_path.read_text()
-
-    return categories
-
-
-def determine_category(content: str, document_content: dict[str, str]) -> str | None:
-    """Determine which category a search result belongs to.
-
-    Args:
-        content: Search result content
-        document_content: Mapping of category to source document text
-
-    Returns:
-        Category name or None if no match
-    """
-    # Check which source document contains this content
-    for category, doc_text in document_content.items():
-        # Since docs might be chunked, check if result is substring of source
-        # or if they share significant overlap
-        if content in doc_text or doc_text in content:
-            return category
-
-        # Check for partial matches (at least 20 chars overlap)
-        content_clean = content.strip()
-        if len(content_clean) >= 20:
-            if content_clean in doc_text:
-                return category
-
-    return None
-
-
 def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
     """Run retrieval evaluation and generate metrics.
 
@@ -62,9 +20,6 @@ def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
     # Load queries
     with open(queries_file) as f:
         queries = json.load(f)
-
-    # Load source documents for category matching
-    document_content = load_document_content()
 
     # Run evaluation
     results = {}
@@ -84,10 +39,9 @@ def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
         for query in query_list:
             search_results = vector_store.search_similar(query)
 
-            # Determine categories of returned results
+            # Collect result metadata
             result_categories = []
             for result in search_results:
-                result_cat = determine_category(result.content, document_content)
                 result_categories.append(
                     {
                         "content": (
@@ -96,7 +50,7 @@ def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
                             else result.content
                         ),
                         "similarity": result.similarity,
-                        "matched_category": result_cat,
+                        "matched_category": result.category,
                     }
                 )
 

@@ -29,4 +29,5 @@ class SearchResult(BaseModel):
 
     id: UUID
     content: str
+    category: str | None = None
     similarity: float = Field(ge=0.0, le=1.0)

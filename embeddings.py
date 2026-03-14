@@ -51,11 +51,12 @@ class VectorStore(ABC):
         ...
 
     @abstractmethod
-    def store_document(self, content: str) -> str:
+    def store_document(self, content: str, category: str | None = None) -> str:
         """Store a document with its embedding.
 
         Args:
             content: Document text content
+            category: Optional category label for the document
 
         Returns:
             Document ID
@@ -63,11 +64,14 @@ class VectorStore(ABC):
         ...
 
     @abstractmethod
-    def store_documents(self, documents: list[str]) -> list[str]:
+    def store_documents(
+        self, documents: list[str], categories: list[str | None] | None = None
+    ) -> list[str]:
         """Store multiple documents with their embeddings in a batch.
 
         Args:
             documents: List of document content strings
+            categories: Optional list of category labels (must match length of documents)
 
         Returns:
             List of document IDs
@@ -159,46 +163,55 @@ class SupabaseVectorStore(VectorStore):
             )
         return self._client
 
-    def store_document(self, content: str) -> str:
+    def store_document(self, content: str, category: str | None = None) -> str:
         """Store a document with its embedding.
 
         Args:
             content: Document text content
+            category: Optional category label for the document
 
         Returns:
             Document ID (UUID as string)
         """
         embedding = self._embedding_service.generate_embedding(content)
         client = self.get_client()
-        result = (
-            client.table("documents")
-            .insert(
-                {
-                    "content": content,
-                    "embedding": embedding,
-                }
-            )
-            .execute()
-        )
+        row = {
+            "content": content,
+            "embedding": embedding,
+        }
+        if category is not None:
+            row["category"] = category
+        result = client.table("documents").insert(row).execute()
         return result.data[0]["id"]
 
-    def store_documents(self, documents: list[str]) -> list[str]:
+    def store_documents(
+        self, documents: list[str], categories: list[str | None] | None = None
+    ) -> list[str]:
         """Store multiple documents with their embeddings in a batch.
 
         Args:
             documents: List of document content strings
+            categories: Optional list of category labels (must match length of documents)
 
         Returns:
             List of document IDs (UUIDs as strings)
         """
+        if categories is not None and len(categories) != len(documents):
+            raise ValueError(
+                f"Length mismatch: {len(documents)} documents but {len(categories)} categories"
+            )
+
         embeddings = self._embedding_service.generate_embeddings_batch(documents)
-        rows = [
-            {
+        rows = []
+        for i, (content, emb) in enumerate(zip(documents, embeddings)):
+            row = {
                 "content": content,
                 "embedding": emb,
             }
-            for content, emb in zip(documents, embeddings)
-        ]
+            if categories is not None and categories[i] is not None:
+                row["category"] = categories[i]
+            rows.append(row)
+
         client = self.get_client()
         result = client.table("documents").insert(rows).execute()
         return [row["id"] for row in result.data]
