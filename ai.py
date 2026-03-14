@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from openai import OpenAI
+from google import genai
+from google.genai import types
 
 from config import settings
 
@@ -43,23 +44,21 @@ class AIClient(ABC):
         pass
 
 
-class OpenAIClient(AIClient):
-    """OpenAI-compatible AI client implementation.
+class GeminiAIClient(AIClient):
+    """Native Google Gemini AI client implementation.
 
-    Supports OpenAI and OpenAI-compatible APIs (e.g., Gemini via OpenAI base URL).
-    Uses lazy initialization pattern for efficient resource management.
+    Uses the official Google Generative AI SDK for embeddings.
+    Implements lazy initialization pattern for efficient resource management.
     """
 
-    def __init__(self, api_key: str, base_url: str | None = None):
-        """Initialize OpenAI client.
+    def __init__(self, api_key: str):
+        """Initialize Gemini client.
 
         Args:
-            api_key: API key for authentication
-            base_url: Optional base URL for OpenAI-compatible endpoints
+            api_key: Google API key for authentication
         """
         self._api_key = api_key
-        self._base_url = base_url
-        self._client: OpenAI | None = None
+        self._client: genai.Client | None = None
 
     def create_embedding(self, text: str) -> list[float]:
         """Generate embedding vector for a single text.
@@ -76,12 +75,18 @@ class OpenAIClient(AIClient):
             Exception: If embedding generation fails
         """
         client = self._get_client()
-        response = client.embeddings.create(
-            model=settings.embedding_model,
-            input=text,
-            dimensions=settings.embedding_dimensions,
+
+        config = types.EmbedContentConfig(
+            output_dimensionality=settings.embedding_dimensions
         )
-        return response.data[0].embedding
+
+        result = client.models.embed_content(
+            model=settings.embedding_model,
+            contents=text,
+            config=config,
+        )
+
+        return result.embeddings[0].values
 
     def create_embeddings_batch(self, texts: list[str]) -> list[list[float]]:
         """Generate embeddings for multiple texts in a single batch.
@@ -99,31 +104,33 @@ class OpenAIClient(AIClient):
             Exception: If embedding generation fails
         """
         client = self._get_client()
-        response = client.embeddings.create(
-            model=settings.embedding_model,
-            input=texts,
-            dimensions=settings.embedding_dimensions,
-        )
-        return [item.embedding for item in response.data]
 
-    def _get_client(self) -> OpenAI:
-        """Get configured OpenAI client (lazy singleton pattern).
+        config = types.EmbedContentConfig(
+            output_dimensionality=settings.embedding_dimensions
+        )
+
+        result = client.models.embed_content(
+            model=settings.embedding_model,
+            contents=texts,
+            config=config,
+        )
+
+        return [emb.values for emb in result.embeddings]
+
+    def _get_client(self) -> genai.Client:
+        """Get configured Gemini client (lazy singleton pattern).
 
         Creates and caches a single client instance on first access.
-        The OpenAI client is thread-safe and maintains its own connection pool.
+        The Gemini client is thread-safe and maintains its own connection pool.
 
         Returns:
-            OpenAI: Configured OpenAI client instance
+            genai.Client: Configured Gemini client instance
         """
         if self._client is None:
-            self._client = OpenAI(
-                api_key=self._api_key,
-                base_url=self._base_url,
-            )
+            self._client = genai.Client(api_key=self._api_key)
         return self._client
 
 
-ai_client: AIClient = OpenAIClient(
-    api_key=settings.openai_api_key,
-    base_url=settings.openai_base_url,
+ai_client: AIClient = GeminiAIClient(
+    api_key=settings.google_api_key,
 )

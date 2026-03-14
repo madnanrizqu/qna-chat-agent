@@ -11,8 +11,6 @@ class Settings(BaseSettings):
         case_sensitive=True,
     )
 
-    openai_api_key: str = Field(validation_alias="OPENAI_API_KEY")
-    openai_base_url: str = Field(validation_alias="OPENAI_BASE_URL")
     google_api_key: str = Field(validation_alias="GOOGLE_API_KEY")
     default_model: str = Field(
         default="gemini-3.1-flash-lite-preview", validation_alias="DEFAULT_MODEL"
