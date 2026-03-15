@@ -132,3 +132,8 @@ While I don't have experience in selecting observability toolings, in the archit
 
 4. Extensability: The tooling should support custom score attachment (both automated and human-annotated) on individual traces, integration with existing infrastructure components (Prometheus, Grafana, alerting systems), and API access for running batch evaluation jobs against stored traces — enabling the retrieval relevance and tone accuracy evaluations described in the test cases
 
+### Detect and respond to drop of quality
+
+Detecting actual drop in quality requires to monitor substantial decrease all metrics in long enough time period. A small enough drop for any metrics could be attributed to statistical chance or a substantial drop in one of the metrics in a short period of time could be attributed to either statistical chance of a chat query so abnormal that the agent responds in unexpected fashion
+
+Regarding how to respond, the other away around applies. The exact reason for the drop of quality should be pin pointed out, since its unlikely all components of the agentic system has degraded at same time. The overall drop would most likely be attributed to failures on one of the components only
