@@ -1,0 +1,626 @@
+[
+  {
+    "id": "direct_conv_01",
+    "category": "direct_conversational",
+    "description": "Simple greeting",
+    "message": "Hello!",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "direct_conv_02",
+    "category": "direct_conversational",
+    "description": "Morning greeting",
+    "message": "Good morning",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "direct_conv_03",
+    "category": "direct_conversational",
+    "description": "Casual check-in",
+    "message": "How are you?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "direct_conv_04",
+    "category": "direct_conversational",
+    "description": "Expressing thanks",
+    "message": "Thank you for your help!",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "direct_conv_05",
+    "category": "direct_conversational",
+    "description": "Saying goodbye",
+    "message": "Goodbye",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "direct_conv_06",
+    "category": "direct_conversational",
+    "description": "Greeting with thanks",
+    "message": "Hi, just wanted to say thanks",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_01",
+    "category": "off_topic",
+    "description": "General knowledge question",
+    "message": "What is the capital of France?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": ["Paris"]
+    }
+  },
+  {
+    "id": "off_topic_02",
+    "category": "off_topic",
+    "description": "Device recommendation question",
+    "message": "What's the best phone for gaming?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_03",
+    "category": "off_topic",
+    "description": "Device storage question",
+    "message": "How do I free up storage on my Android phone?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_04",
+    "category": "off_topic",
+    "description": "General tech knowledge question",
+    "message": "What's the difference between 4G and 5G?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_05",
+    "category": "off_topic",
+    "description": "Completely unrelated request",
+    "message": "Can you help me with my math homework?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_06",
+    "category": "off_topic",
+    "description": "Hardware repair question",
+    "message": "My phone screen is cracked, what should I do?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_01",
+    "category": "kb_retrieval_billing",
+    "description": "Late payment fee question",
+    "message": "What is the late payment fee?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["50,000"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_02",
+    "category": "kb_retrieval_billing",
+    "description": "Billing dispute window",
+    "message": "How long do I have to dispute a bill?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["30 days"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_03",
+    "category": "kb_retrieval_billing",
+    "description": "Auto-pay enrollment",
+    "message": "How do I set up auto-pay for my bill?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["MyTelco"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_04",
+    "category": "kb_retrieval_billing",
+    "description": "Late payment consequences",
+    "message": "What happens if I pay my bill late?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["50,000"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_05",
+    "category": "kb_retrieval_billing",
+    "description": "Disputing a charge",
+    "message": "How can I dispute a charge on my account?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["30 days"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_06",
+    "category": "kb_retrieval_billing",
+    "description": "Payment methods available",
+    "message": "What payment methods do you accept?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["MyTelco"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_01",
+    "category": "kb_retrieval_plans",
+    "description": "Pro Plan cost",
+    "message": "How much does the Pro Plan cost?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["199,000"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_02",
+    "category": "kb_retrieval_plans",
+    "description": "Unlimited Plan cost",
+    "message": "What is the price of the Unlimited Plan?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["299,000"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_03",
+    "category": "kb_retrieval_plans",
+    "description": "Hotspot data on Pro Plan",
+    "message": "How much hotspot data does the Pro Plan include?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["5GB"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_04",
+    "category": "kb_retrieval_plans",
+    "description": "Hotspot data on Unlimited Plan",
+    "message": "How much hotspot data comes with the Unlimited Plan?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["20GB"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_05",
+    "category": "kb_retrieval_plans",
+    "description": "Streaming benefits",
+    "message": "Do your plans include any streaming benefits?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["streaming", "weekend"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_06",
+    "category": "kb_retrieval_plans",
+    "description": "Available plans overview",
+    "message": "What plans are available?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["Pro", "Unlimited"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_01",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "Slow internet fix",
+    "message": "My internet is very slow, what should I do?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["restart"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_02",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "Call quality issues",
+    "message": "I'm experiencing poor call quality, how can I fix it?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["MyTelco"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_03",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "Billing error support",
+    "message": "I think there's an error on my bill, how do I report it?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["123"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_04",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "SIM card replacement",
+    "message": "How do I get a replacement SIM card?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["authorized"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_05",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "Contacting support",
+    "message": "How do I contact customer support?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["123"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_06",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "Airplane mode toggle for connectivity",
+    "message": "My data connection keeps dropping, any quick fix?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch"],
+      "escalate": false,
+      "response_should_contain": ["airplane mode"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_01",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "International roaming inquiry",
+    "message": "Do you offer international roaming packages?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_02",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "Number porting request",
+    "message": "Can I port my number from another carrier?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_03",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "Family plan inquiry",
+    "message": "What are your family or shared plan options?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_04",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "Data rollover question",
+    "message": "Does unused data roll over to the next month?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_05",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "eSIM support inquiry",
+    "message": "Do you support eSIM activation?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_06",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "5G coverage inquiry",
+    "message": "Is 5G available in my area?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_01",
+    "category": "ambiguous_vague",
+    "description": "Vague help request",
+    "message": "Help me",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_02",
+    "category": "ambiguous_vague",
+    "description": "Vague problem statement",
+    "message": "I have a problem",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_03",
+    "category": "ambiguous_vague",
+    "description": "Vague information request",
+    "message": "I need information",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_04",
+    "category": "ambiguous_vague",
+    "description": "Vague error report",
+    "message": "Something is wrong",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_05",
+    "category": "ambiguous_vague",
+    "description": "Vague assistance request",
+    "message": "Can you assist?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_06",
+    "category": "ambiguous_vague",
+    "description": "Vague uncertainty",
+    "message": "I'm not sure what to do",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_01",
+    "category": "escalation_explicit",
+    "description": "Request for human agent",
+    "message": "I want to speak to a human agent",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_02",
+    "category": "escalation_explicit",
+    "description": "Transfer to real person",
+    "message": "Transfer me to a real person please",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_03",
+    "category": "escalation_explicit",
+    "description": "Supervisor request",
+    "message": "I need to talk to a supervisor",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_04",
+    "category": "escalation_explicit",
+    "description": "Direct support request",
+    "message": "Can I speak with customer support directly?",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_05",
+    "category": "escalation_explicit",
+    "description": "Frustrated live agent request",
+    "message": "This isn't helping, connect me to a live agent",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_06",
+    "category": "escalation_explicit",
+    "description": "Formal complaint with manager",
+    "message": "I'd like to file a formal complaint with a manager",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  }
+]

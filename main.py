@@ -27,7 +27,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     """
     logger.info(f"POST /chat - Request started | message='{request.message[:50]}...'")
     try:
-        messages, escalate = agent.process_chat(request.message, request.history)
+        messages, escalate, _ = agent.process_chat(request.message, request.history)
         logger.info(f"POST /chat - Request completed")
         return ChatResponse(messages=messages, escalate=escalate)
 

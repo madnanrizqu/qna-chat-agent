@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 from config import settings
@@ -15,6 +15,7 @@ class AgentResult:
 
     output: str
     escalated: bool = False
+    tools_called: list[str] = field(default_factory=list)
 
 
 class AgentRunner(ABC):
@@ -47,12 +48,13 @@ class AgentRunner(ABC):
 class LangChainGeminiAgentRunner(AgentRunner):
     """ReAct agent runner using LangChain with Google Gemini."""
 
-    def __init__(self, model: str, google_api_key: str):
+    def __init__(self, model: str, google_api_key: str, disable_cache: bool = False):
         from langchain_google_genai import ChatGoogleGenerativeAI
 
         self._llm = ChatGoogleGenerativeAI(
             model=model,
             google_api_key=google_api_key,
+            cache=not disable_cache,
         )
 
     def _convert_tool(self, tool_def: ToolDef) -> Any:
@@ -163,7 +165,11 @@ class LangChainGeminiAgentRunner(AgentRunner):
         logger.info(f"🚨 Escalated: {escalated}")
         logger.info("=" * 60)
 
-        return AgentResult(output=output_text, escalated=escalated)
+        return AgentResult(
+            output=output_text,
+            escalated=escalated,
+            tools_called=[name for name, _ in tool_calls_made],
+        )
 
 
 class Agent:
@@ -187,7 +193,7 @@ class Agent:
 
     def process_chat(
         self, message: str, history: list[Message] | None = None
-    ) -> tuple[list[Message], bool]:
+    ) -> tuple[list[Message], bool, list[str]]:
         """Process a chat message through the agentic loop.
 
         Args:
@@ -195,7 +201,7 @@ class Agent:
             history: Optional conversation history.
 
         Returns:
-            Tuple of (full conversation messages, escalate flag).
+            Tuple of (full conversation messages, escalate flag, tools called).
         """
         # Build conversation as raw dicts (runner handles framework conversion).
         conversation = []
@@ -216,7 +222,7 @@ class Agent:
         output_messages.append(Message(role="user", content=message))
         output_messages.append(Message(role="assistant", content=result.output))
 
-        return output_messages, result.escalated
+        return output_messages, result.escalated, result.tools_called
 
 
 runner = LangChainGeminiAgentRunner(
