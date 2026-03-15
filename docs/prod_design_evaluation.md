@@ -137,3 +137,13 @@ While I don't have experience in selecting observability toolings, in the archit
 Detecting actual drop in quality requires to monitor substantial decrease all metrics in long enough time period. A small enough drop for any metrics could be attributed to statistical chance or a substantial drop in one of the metrics in a short period of time could be attributed to either statistical chance of a chat query so abnormal that the agent responds in unexpected fashion
 
 Regarding how to respond, the other away around applies. The exact reason for the drop of quality should be pin pointed out, since its unlikely all components of the agentic system has degraded at same time. The overall drop would most likely be attributed to failures on one of the components only
+
+## Failure mode analysis
+
+### Scenario 1 - Hallucinated answers
+
+This means the agent incorrectly retrieve more incorrect chunks for a given query. The agent right now is configured to return `max_search_results` of 5, hallucination would be mean the LLM is provided with more wrong context which leads to the LLM concluding a wrong answer. The debug step for this scenario would be to analyze the `category` of queries that perform badly, then for the badly performed categories, all queries needs to be analyzed against the vector database.
+
+### Scenario 2 - Degrade in performance after knowledge base update
+
+Usually when a new document is inserted to the embedding, the embedding of the whole collection of documents are not updated much. I think, in cases where the new documents has totally different characteristic as the already embedded documents, the embeddings of the whole document could be updated unexpectedly. This would likely lead to drop in retrieval scores compared to before the updates since the future queries are now matched against an embedding that is not representative. The debug step for this scenario would be to pinpoint the exact time of the continued drop of retrieval for most queries. From there, the exact document(s) update must be pointed out to find the culprit update. Finally, we need to consider to change the document(s) to match the valid documents in the vector database, if this is not possible then we need to consider to drop the document(s)
