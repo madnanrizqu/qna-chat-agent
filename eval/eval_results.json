@@ -1549,5 +1549,21 @@
         "correct_hit": true
       }
     ]
+  },
+  "summary": {
+    "timestamp": "2026-03-15T01:05:31.767827+00:00",
+    "queries_file": "/Users/madnanrizqu/Code/Project/qna-chat-agent/eval/retrieval_queries.json",
+    "total_categories": 4
+  },
+  "metadata": {
+    "model": "gemini-3.1-flash-lite-preview",
+    "embedding_model": "gemini-embedding-001",
+    "embedding_dimensions": 3072,
+    "similarity_threshold": 0.6,
+    "max_search_results": 5,
+    "chunk_size": 200,
+    "chunk_overlap": 0,
+    "use_chunked_storage": true,
+    "environment": "development"
   }
 }

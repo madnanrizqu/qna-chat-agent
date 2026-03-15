@@ -4,10 +4,12 @@ import json
 import sys
 from pathlib import Path
 from collections import defaultdict
+from datetime import datetime, timezone
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from embeddings import vector_store
+from config import settings
 
 
 def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
@@ -176,6 +178,22 @@ def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
     output_data = {
         "metrics": metrics,
         "detailed_results": results,
+        "summary": {
+            "timestamp": datetime.now(tz=timezone.utc).isoformat(),
+            "queries_file": str(queries_file),
+            "total_categories": len(metrics) - 1,  # Exclude 'overall' from count
+        },
+        "metadata": {
+            "model": settings.default_model,
+            "embedding_model": settings.embedding_model,
+            "embedding_dimensions": settings.embedding_dimensions,
+            "similarity_threshold": settings.similarity_threshold,
+            "max_search_results": settings.max_search_results,
+            "chunk_size": settings.chunk_size,
+            "chunk_overlap": settings.chunk_overlap,
+            "use_chunked_storage": settings.use_chunked_storage,
+            "environment": settings.environment,
+        },
     }
 
     with open(output_file, "w") as f:
