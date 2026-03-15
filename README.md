@@ -70,3 +70,51 @@ As why Google Gemini's is chosen specifically, we chose the provider because the
 With the assumption the knowledge base provided in ./data is complete, the next pressing limitation is that actual production queries are not clearly known. We designed the evaluation test cases of the agent in ./eval based queries that are predicted to be used by the consumer. While the predictions are reasonable, actual production queries might differ. In the future, there needs to be a feedback loop to monitor production queries and eventually update the evaluation system so that it more closely match actual customer queries.
 
 Besides this limitation there are operational limitations that we couldn't complete for first version of this project, which are documented in ./docs/tech_debt.md
+
+---
+
+## Quick Start
+
+**Prerequisites:** Python 3.13+, [`uv`](https://docs.astral.sh/uv/), a Google Gemini API key, and a Supabase project with the pgvector extension enabled.
+
+**1. Install dependencies**
+
+```bash
+uv sync
+```
+
+**2. Configure environment**
+
+```bash
+cp .env.example .env
+# Fill in GOOGLE_API_KEY, VECTOR_DATABASE_URL, and VECTOR_DATABASE_API_KEY
+```
+
+**3. Set up the database**
+
+Run the SQL in `./sql/vector_database.sql` against your Supabase project to create the tables and RPC functions.
+
+**4. Load documents into the knowledge base**
+
+```bash
+uv run python scripts/load_documents.py
+```
+
+**5. Start the server**
+
+```bash
+uv run fastapi dev main.py
+```
+
+The API is now available at `http://localhost:8000`. Send a chat message:
+
+uv run fastapi dev main.py
+```
+
+The API is now available at `http://localhost:8000`. Send a chat message:
+
+```bash
+curl -X POST http://localhost:8000/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "What service plans do you offer?"}'
+```
