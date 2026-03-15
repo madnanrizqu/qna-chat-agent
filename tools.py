@@ -26,7 +26,7 @@ def knowledge_base_search(query: str) -> str:
     Returns:
         Relevant knowledge base articles, or a message if nothing was found.
     """
-    logger.debug(f"🔍 [TOOL EXECUTING] knowledgeBaseSearch")
+    logger.debug(f"🔍 [TOOL EXECUTING] knowledge_base_search")
     logger.debug(f"   Query: '{query}'")
 
     results: list[SearchResult] = vector_store.search_similar(query)
@@ -37,7 +37,9 @@ def knowledge_base_search(query: str) -> str:
 
     logger.debug(f"   Results: ✅ Found {len(results)} documents")
     for r in results:
-        logger.debug(f"     - [{r.category or 'Unknown'}] similarity={r.similarity:.2f}")
+        logger.debug(
+            f"     - [{r.category or 'Unknown'}] similarity={r.similarity:.2f}"
+        )
 
     return "\n\n".join(
         f"[{r.category or 'Unknown'}] (similarity: {r.similarity:.2f}): {r.content}"
@@ -64,7 +66,7 @@ def escalate_to_human(reason: str) -> str:
 
 TOOLS = [
     ToolDef(
-        name="knowledgeBaseSearch",
+        name="knowledge_base_search",
         description=(
             "Search the telecommunications company knowledge base for information "
             "about service plans, billing policies, and troubleshooting guides. "

@@ -162,7 +162,7 @@
     "message": "What is the late payment fee?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["50,000"],
       "response_should_not_contain": []
@@ -175,7 +175,7 @@
     "message": "How long do I have to dispute a bill?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["30 days"],
       "response_should_not_contain": []
@@ -188,7 +188,7 @@
     "message": "How do I set up auto-pay for my bill?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["MyTelco"],
       "response_should_not_contain": []
@@ -201,7 +201,7 @@
     "message": "What happens if I pay my bill late?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["50,000"],
       "response_should_not_contain": []
@@ -214,7 +214,7 @@
     "message": "How can I dispute a charge on my account?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["30 days"],
       "response_should_not_contain": []
@@ -227,7 +227,7 @@
     "message": "What payment methods do you accept?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["MyTelco"],
       "response_should_not_contain": []
@@ -240,7 +240,7 @@
     "message": "How much does the Pro Plan cost?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["199,000"],
       "response_should_not_contain": []
@@ -253,7 +253,7 @@
     "message": "What is the price of the Unlimited Plan?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["299,000"],
       "response_should_not_contain": []
@@ -266,7 +266,7 @@
     "message": "How much hotspot data does the Pro Plan include?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["5GB"],
       "response_should_not_contain": []
@@ -279,7 +279,7 @@
     "message": "How much hotspot data comes with the Unlimited Plan?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["20GB"],
       "response_should_not_contain": []
@@ -292,7 +292,7 @@
     "message": "Do your plans include any streaming benefits?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["streaming", "weekend"],
       "response_should_not_contain": []
@@ -305,7 +305,7 @@
     "message": "What plans are available?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["Pro", "Unlimited"],
       "response_should_not_contain": []
@@ -318,7 +318,7 @@
     "message": "My internet is very slow, what should I do?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["restart"],
       "response_should_not_contain": []
@@ -331,7 +331,7 @@
     "message": "I'm experiencing poor call quality, how can I fix it?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["MyTelco"],
       "response_should_not_contain": []
@@ -344,7 +344,7 @@
     "message": "I think there's an error on my bill, how do I report it?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["123"],
       "response_should_not_contain": []
@@ -357,7 +357,7 @@
     "message": "How do I get a replacement SIM card?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["authorized"],
       "response_should_not_contain": []
@@ -370,7 +370,7 @@
     "message": "How do I contact customer support?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["123"],
       "response_should_not_contain": []
@@ -383,7 +383,7 @@
     "message": "My data connection keeps dropping, any quick fix?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch"],
+      "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["airplane mode"],
       "response_should_not_contain": []
@@ -396,7 +396,7 @@
     "message": "Do you offer international roaming packages?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
       "escalate": true,
       "response_should_contain": [],
       "response_should_not_contain": []
@@ -409,7 +409,7 @@
     "message": "Can I port my number from another carrier?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
       "escalate": true,
       "response_should_contain": [],
       "response_should_not_contain": []
@@ -422,7 +422,7 @@
     "message": "What are your family or shared plan options?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
       "escalate": true,
       "response_should_contain": [],
       "response_should_not_contain": []
@@ -435,7 +435,7 @@
     "message": "Does unused data roll over to the next month?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
       "escalate": true,
       "response_should_contain": [],
       "response_should_not_contain": []
@@ -448,7 +448,7 @@
     "message": "Do you support eSIM activation?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
       "escalate": true,
       "response_should_contain": [],
       "response_should_not_contain": []
@@ -461,7 +461,7 @@
     "message": "Is 5G available in my area?",
     "history": null,
     "expected": {
-      "tools_called": ["knowledgeBaseSearch", "escalate_to_human"],
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
       "escalate": true,
       "response_should_contain": [],
       "response_should_not_contain": []
