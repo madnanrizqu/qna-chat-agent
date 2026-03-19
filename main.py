@@ -32,7 +32,7 @@ def chat(request: ChatRequest) -> ChatResponse:
         return ChatResponse(messages=messages, escalate=escalate)
 
     except Exception as e:
-        logger.error(f"POST /chat - Request failed")
+        logger.error(f"POST /chat - Request failed. Error: {e}")
         raise HTTPException(
             status_code=500, detail=f"Error processing chat request: {str(e)}"
         )

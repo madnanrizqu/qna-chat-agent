@@ -9,7 +9,10 @@ from datetime import datetime, timezone
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from agent import Agent, LangChainGeminiAgentRunner  # noqa: E402  (after sys.path mutation)
+from agent import (
+    Agent,
+    LangChainGeminiAgentRunner,
+)  # noqa: E402  (after sys.path mutation)
 from models import Message  # noqa: E402
 from config import settings  # noqa: E402
 from prompts import build_system_prompt  # noqa: E402
@@ -419,7 +422,6 @@ if __name__ == "__main__":
     eval_runner = LangChainGeminiAgentRunner(
         model=settings.default_model,
         google_api_key=settings.google_api_key,
-        disable_cache=True,
     )
     eval_agent = Agent(
         runner=eval_runner,

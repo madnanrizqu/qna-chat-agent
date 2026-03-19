@@ -48,13 +48,12 @@ class AgentRunner(ABC):
 class LangChainGeminiAgentRunner(AgentRunner):
     """ReAct agent runner using LangChain with Google Gemini."""
 
-    def __init__(self, model: str, google_api_key: str, disable_cache: bool = False):
+    def __init__(self, model: str, google_api_key: str):
         from langchain_google_genai import ChatGoogleGenerativeAI
 
         self._llm = ChatGoogleGenerativeAI(
             model=model,
             google_api_key=google_api_key,
-            cache=not disable_cache,
         )
 
     def _convert_tool(self, tool_def: ToolDef) -> Any:
