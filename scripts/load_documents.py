@@ -11,6 +11,7 @@ from pathlib import Path
 # Add parent directory to path to import from root
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from config import settings
 from embeddings import vector_store, text_splitter
 
 
@@ -39,7 +40,8 @@ def load_data_directory(data_path: str = "data") -> list[str]:
 
     print(f"📂 Found {len(txt_files)} documents in {data_dir}")
 
-    # Read document contents, chunk them, and derive categories from filenames
+    # Read document contents and derive categories from filenames
+    # Conditionally chunk based on settings
     documents = []
     categories = []
     for txt_file in txt_files:
@@ -51,23 +53,30 @@ def load_data_directory(data_path: str = "data") -> list[str]:
 
             category = txt_file.stem  # e.g., "billing_policy" from "billing_policy.txt"
 
-            # Extract title from first line (e.g., "Document 1 — Billing Policy")
-            first_line = content.split("\n", 1)[0]
-            title = first_line.strip()
+            if settings.use_chunked_storage:
+                # Chunked mode: split documents into chunks
+                # Extract title from first line (e.g., "Document 1 — Billing Policy")
+                first_line = content.split("\n", 1)[0]
+                title = first_line.strip()
 
-            # Chunk the document
-            chunks = text_splitter.split_text(content)
-            print(
-                f"  • {txt_file.name} ({len(content)} chars) → {len(chunks)} chunks → category: {category}"
-            )
+                # Chunk the document
+                chunks = text_splitter.split_text(content)
+                print(
+                    f"  • {txt_file.name} ({len(content)} chars) → {len(chunks)} chunks → category: {category}"
+                )
 
-            # Each chunk inherits the parent file's category
-            for chunk in chunks:
-                # Post process: If chunk doesn't start with the title, prepend it
-                if not chunk.startswith(title):
-                    chunk = f"{title}\n{chunk}"
-                documents.append(chunk)
+                # Each chunk inherits the parent file's category
+                for chunk in chunks:
+                    # Post process: If chunk doesn't start with the title, prepend it
+                    if not chunk.startswith(title):
+                        chunk = f"{title}\n{chunk}"
+                    documents.append(chunk)
+                    categories.append(category)
+            else:
+                # Non-chunked mode: store whole documents
+                documents.append(content)
                 categories.append(category)
+                print(f"  • {txt_file.name} ({len(content)} chars) → category: {category}")
 
         except Exception as e:
             print(f"❌ Error reading {txt_file.name}: {e}")
@@ -78,18 +87,22 @@ def load_data_directory(data_path: str = "data") -> list[str]:
         return []
 
     # Batch insert into vector store with categories
-    print(f"\n🔄 Generating embeddings and storing {len(documents)} chunks...")
+    item_type = "chunks" if settings.use_chunked_storage else "documents"
+    print(f"\n🔄 Generating embeddings and storing {len(documents)} {item_type}...")
     try:
         doc_ids = vector_store.store_documents(documents, categories)
-        print(f"✅ Successfully loaded {len(doc_ids)} chunks")
-        print(f"\nChunk IDs:")
+        print(f"✅ Successfully loaded {len(doc_ids)} {item_type}")
+        print(f"\n{item_type.capitalize()} IDs:")
         for i, doc_id in enumerate(doc_ids, 1):
-            preview = (
-                documents[i - 1][:60] + "..."
-                if len(documents[i - 1]) > 60
-                else documents[i - 1]
-            )
-            print(f"  {i}. {doc_id} (category: {categories[i-1]}) - {preview}")
+            if settings.use_chunked_storage:
+                preview = (
+                    documents[i - 1][:60] + "..."
+                    if len(documents[i - 1]) > 60
+                    else documents[i - 1]
+                )
+                print(f"  {i}. {doc_id} (category: {categories[i-1]}) - {preview}")
+            else:
+                print(f"  {i}. {doc_id} (category: {categories[i-1]})")
         return doc_ids
 
     except Exception as e:
@@ -114,7 +127,8 @@ if __name__ == "__main__":
     try:
         doc_ids = load_data_directory(args.data_dir)
         if doc_ids:
-            print(f"\n✨ Done! {len(doc_ids)} chunks are now searchable.")
+            item_type = "chunks" if settings.use_chunked_storage else "documents"
+            print(f"\n✨ Done! {len(doc_ids)} {item_type} are now searchable.")
         sys.exit(0)
     except Exception as e:
         print(f"\n❌ Failed to load documents: {e}")

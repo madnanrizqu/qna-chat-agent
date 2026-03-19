@@ -1,4 +1,4 @@
-from pydantic import Field
+from pydantic import Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -29,7 +29,16 @@ class Settings(BaseSettings):
     similarity_threshold: float = Field(
         default=0.6, validation_alias="SIMILARITY_THRESHOLD"
     )
-    max_search_results: int = Field(default=5, validation_alias="MAX_SEARCH_RESULTS")
+    max_search_results: int | None = Field(
+        default=None, validation_alias="MAX_SEARCH_RESULTS"
+    )
+
+    @model_validator(mode="after")
+    def set_max_search_results_default(self):
+        """Set max_search_results based on use_chunked_storage if not explicitly provided."""
+        if self.max_search_results is None:
+            self.max_search_results = 5 if self.use_chunked_storage else 1
+        return self
 
     chunk_size: int = Field(default=200, validation_alias="CHUNK_SIZE")
     chunk_overlap: int = Field(default=0, validation_alias="CHUNK_OVERLAP")
