@@ -11,7 +11,7 @@ This document describes the chunking strategy used to improve retrieval quality 
 **Issues:**
 
 - **Low similarity scores** (0.60-0.70 range) due to semantic dilution — a query about "late payment fees" matched a document containing late fees, billing disputes, AND auto-pay info
-- **Poor recall** (86.67%) — 9 queries returned zero results because they fell below the 0.6 similarity threshold
+- **Poor recall** (85.55%) — 10 queries returned zero results because they fell below the 0.6 similarity threshold
 - **Missing context** — broad document embeddings couldn't capture specific topics within the document
 
 ## Solution: Semantic Chunking with Title Context
@@ -83,20 +83,20 @@ Chunk 2: "Document 1 — Billing Policy\n- Auto-pay enrollment is available via 
 
 ## Results Comparison
 
-| Metric                | Baseline (No Chunking) | Chunking + Title Context   | Improvement |
-| --------------------- | ---------------------- | -------------------------- | ----------- |
-| **Overall Recall**    | 86.67% (78/90 queries) | **97.78%** (88/90 queries) | **+11.11%** |
-| **Overall Precision** | 96.30% (78/81 results) | 89.86% (124/138 results)   | -6.44%      |
-| **Avg Similarity**    | 0.60-0.70              | 0.65-0.80                  | +0.05-0.10  |
+| Metric                | Baseline (No Chunking) | Chunking + Title Context | Improvement |
+| --------------------- | ---------------------- | ------------------------ | ----------- |
+| **Overall Recall**    | 85.55%                 | **95.55%**               | **+10.00%** |
+| **Overall Precision** | 96.25%                 | 86.42%                   | -9.83%      |
+| **Avg Similarity**    | 0.60-0.70              | 0.65-0.80                | +0.05-0.10  |
 
 ### Per-Category Breakdown
 
-| Category              | Recall: Before → After        | Precision: Before → After |
-| --------------------- | ----------------------------- | ------------------------- |
-| billing_policy        | 93.33% → **100%** (+6.67%)    | 96.55% → 88.64% (-7.91%)  |
-| service_plans         | 90.00% → **100%** (+10%)      | 100% → 94.55% (-5.45%)    |
-| troubleshooting_guide | 76.67% → **93.33%** (+16.66%) | 92.00% → 84.62% (-7.38%)  |
-| not_matching          | 100% → 100% (0%)              | 100% → 100% (0%)          |
+| Category              | Recall: Before → After | Precision: Before → After |
+| --------------------- | ---------------------- | ------------------------- |
+| billing_policy        | 90.00% → **96.67%**    | 96.42% → 83.33%           |
+| service_plans         | 90.00% → **96.67%**    | 100% → 90.00%             |
+| troubleshooting_guide | 76.67% → **93.33%**    | 92.00% → 82.00%           |
+| not_matching          | 100% → 100% (0%)       | 100% → 100% (0%)          |
 
 **Key observations:**
 
@@ -150,9 +150,8 @@ The LLM can synthesize a complete answer from multiple focused chunks rather tha
 - Missing information (low recall) is worse than including some noise (lower precision)
 
 ### Storage and Compute
-lan details (0.72)
-2. Service Plans: Streaming partners info (0.64)
-3. Troubleshooting: Slow internet chunk (0.60) ← slightly less relevant but still contextual
+
+lan details (0.72) 2. Service Plans: Streaming partners info (0.64) 2. Service Plans: Streaming partners info (0.64) 3. Troubleshooting: Slow internet chunk (0.60) ← slightly less relevant but still contextual
 
 The LLM can synthesize a complete answer from multiple focused chunks rather than sifting through entire documents.
 
@@ -160,9 +159,9 @@ The LLM can synthesize a complete answer from multiple focused chunks rather tha
 
 ### Precision vs Recall
 
-- **Precision drop (96% → 90%)** is acceptable for RAG
+- **Precision drop (95% → 86%)** should be acceptable for MPV RAG
 - The LLM naturally filters out less-relevant chunks during answer generation
-- Missing information (low recall) is worse than including some noise (lower precision)
+- Missing information (low recall) can be argued to be worse than including some noise (lower precision)
 
 ### Storage and Compute
 
@@ -172,6 +171,6 @@ The LLM can synthesize a complete answer from multiple focused chunks rather tha
 
 ## Conclusion
 
-The chunking strategy delivers a **11% recall improvement** while maintaining **90% precision**, making it a clear win over the baseline. The combination of semantic splitting at natural boundaries (`chunk_size=200`), zero overlap (due to self-contained bullets), and title post-processing creates embeddings that are both focused and contextually grounded.
+The chunking strategy delivers a **11% recall improvement** while having **86% precision**, making it an arguable improvement over baseline. The combination of semantic splitting at natural boundaries (`chunk_size=200`), zero overlap (due to self-contained bullets), and title post-processing creates embeddings that are both focused and contextually grounded.
 
 For bullet-point documents like ours, this approach is optimal. For prose documents (paragraphs, articles), consider adding `chunk_overlap=50-100` to preserve context across chunk boundaries.

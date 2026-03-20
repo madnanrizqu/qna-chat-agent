@@ -44,7 +44,7 @@ This again tries to make sure the style and tone and language are appropriate fo
 
 ### Chucking & Embedding Strategy
 
-To determine what strategy to use we first try to introduce a baseline approach of embedding each document as one chuck. After evaluating the precision and recall of this baseline, we use introduce targeted chunking and document title injection post processing. Our approach managed to delivers a **11% recall improvement** while maintaining **90% precision**, making it a clear win over the baseline. The details of the strategy can be found in ./docs/chunking-strategy.md
+To determine what strategy to use we first try to introduce a baseline approach of embedding each document as one chuck. After evaluating the precision and recall of this baseline, we use introduce targeted chunking and document title injection post processing. Our approach managed to delivers a **11% recall improvement** while having **86% precision**, making it a clear win over the baseline. The details of the strategy can be found in ./docs/chunking-strategy.md
 
 On document injection side, we specifically use LangChain's RecursiveTextSplitter to split the text with 200 `chuck_size` and 0 `chuck_overlap`. We also did some post processing inform of injecting the documents title to the chunk if not exists yet, this is relevant for bullet points that are splited alone at the end which makes the chunk lose important context. After embedding the chucks, the vector values are stored in Supabase's postgres using pgvector extension. The code responsible for document injection are in ./embeddings.py and ./scripts/load_documents.py
 
@@ -109,7 +109,8 @@ uv run fastapi dev main.py
 The API is now available at `http://localhost:8000`. Send a chat message:
 
 uv run fastapi dev main.py
-```
+
+````
 
 The API is now available at `http://localhost:8000`. Send a chat message:
 
@@ -117,4 +118,5 @@ The API is now available at `http://localhost:8000`. Send a chat message:
 curl -X POST http://localhost:8000/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "What service plans do you offer?"}'
+`  -d '{"message": "What service plans do you offer?"}'
 ```

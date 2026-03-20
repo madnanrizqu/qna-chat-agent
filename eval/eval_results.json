@@ -1,27 +1,27 @@
 {
   "metrics": {
     "billing_policy": {
-      "recall": 1.0,
-      "precision": 0.8863636363636364,
+      "recall": 0.9666666666666667,
+      "precision": 0.8333333333333334,
       "total_queries": 30,
-      "queries_with_correct_results": 30,
-      "total_results": 44,
-      "correct_results": 39
+      "queries_with_correct_results": 29,
+      "total_results": 42,
+      "correct_results": 35
     },
     "service_plans": {
-      "recall": 1.0,
-      "precision": 0.9454545454545454,
+      "recall": 0.9666666666666667,
+      "precision": 0.9137931034482759,
       "total_queries": 30,
-      "queries_with_correct_results": 30,
-      "total_results": 55,
-      "correct_results": 52
+      "queries_with_correct_results": 29,
+      "total_results": 58,
+      "correct_results": 53
     },
     "troubleshooting_guide": {
       "recall": 0.9333333333333333,
-      "precision": 0.8461538461538461,
+      "precision": 0.825,
       "total_queries": 30,
       "queries_with_correct_results": 28,
-      "total_results": 39,
+      "total_results": 40,
       "correct_results": 33
     },
     "not_matching": {
@@ -33,12 +33,12 @@
       "correct_results": 30
     },
     "overall": {
-      "recall": 0.9777777777777777,
-      "precision": 0.8985507246376812,
+      "recall": 0.9555555555555556,
+      "precision": 0.8642857142857143,
       "total_queries": 90,
-      "queries_with_correct_results": 88,
-      "total_results": 138,
-      "correct_results": 124
+      "queries_with_correct_results": 86,
+      "total_results": 140,
+      "correct_results": 121
     }
   },
   "detailed_results": {
@@ -48,13 +48,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.672443985939026,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.706065696839435,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.618429362773895,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.610250848837222,
             "matched_category": "billing_policy"
           }
         ],
@@ -65,8 +65,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.649818938992155,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.677845378050494,
             "matched_category": "billing_policy"
           }
         ],
@@ -77,8 +77,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.707519173622131,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.698002478420809,
             "matched_category": "billing_policy"
           }
         ],
@@ -86,23 +86,17 @@
       },
       {
         "query": "I want to set up automatic payments",
-        "num_results": 1,
-        "results": [
-          {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.648919542101608,
-            "matched_category": "billing_policy"
-          }
-        ],
-        "correct_hit": true
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
       },
       {
         "query": "Tell me about auto-pay options",
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.716775229553849,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.650977395329282,
             "matched_category": "billing_policy"
           }
         ],
@@ -113,13 +107,13 @@
         "num_results": 3,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.730387395356962,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.734401730823725,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.621815498633581,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.615115674602341,
             "matched_category": "billing_policy"
           },
           {
@@ -135,8 +129,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.603989481925964,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.607775128351161,
             "matched_category": "billing_policy"
           }
         ],
@@ -144,16 +138,11 @@
       },
       {
         "query": "How can I challenge my bill?",
-        "num_results": 2,
+        "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.653457721861738,
-            "matched_category": "billing_policy"
-          },
-          {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.601392531311958,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.656721870400853,
             "matched_category": "billing_policy"
           }
         ],
@@ -164,8 +153,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.691804028534414,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.645559670428074,
             "matched_category": "billing_policy"
           }
         ],
@@ -176,13 +165,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.640399613404252,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.671989342211406,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.620487488537282,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.63915627948847,
             "matched_category": "billing_policy"
           }
         ],
@@ -193,8 +182,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.714605569839478,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.642911214915252,
             "matched_category": "billing_policy"
           }
         ],
@@ -205,8 +194,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.634106127236831,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.655950667390137,
             "matched_category": "billing_policy"
           }
         ],
@@ -214,16 +203,21 @@
       },
       {
         "query": "What is the IDR 50,000 fee for?",
-        "num_results": 2,
+        "num_results": 3,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.680621423647239,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.68540861097524,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.64645040758238,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.647232630683965,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.629875114597347,
             "matched_category": "service_plans"
           }
         ],
@@ -231,16 +225,11 @@
       },
       {
         "query": "Can I file a complaint about my bill?",
-        "num_results": 3,
+        "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.647375387266237,
-            "matched_category": "billing_policy"
-          },
-          {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.617234871717115,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.665464401352615,
             "matched_category": "billing_policy"
           },
           {
@@ -256,8 +245,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.661860387103516,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.648538710307601,
             "matched_category": "billing_policy"
           }
         ],
@@ -268,8 +257,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.653748689927046,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.675015311690467,
             "matched_category": "billing_policy"
           }
         ],
@@ -280,8 +269,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.742690057433842,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.673992573559956,
             "matched_category": "billing_policy"
           }
         ],
@@ -292,8 +281,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.610390085291567,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.648605047041629,
             "matched_category": "billing_policy"
           }
         ],
@@ -304,8 +293,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.683485272553921,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.661613244750886,
             "matched_category": "billing_policy"
           }
         ],
@@ -316,8 +305,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.798186361789703,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.722207269734361,
             "matched_category": "billing_policy"
           }
         ],
@@ -325,16 +314,11 @@
       },
       {
         "query": "I just realized I forgot to pay my bill and it's been more than two weeks, am I going to get charged a late fee?",
-        "num_results": 2,
+        "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.653943536390709,
-            "matched_category": "billing_policy"
-          },
-          {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.604288924507316,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.682696624445115,
             "matched_category": "billing_policy"
           }
         ],
@@ -345,8 +329,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.65044520056922,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.640208478011221,
             "matched_category": "billing_policy"
           }
         ],
@@ -357,8 +341,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.810977123859277,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.734240049042705,
             "matched_category": "billing_policy"
           }
         ],
@@ -369,13 +353,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.667743881286668,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.697278196106311,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.624920219202007,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.616371443432589,
             "matched_category": "billing_policy"
           }
         ],
@@ -383,22 +367,17 @@
       },
       {
         "query": "I received my invoice yesterday and I think there might be an error, what is the process for filing a billing dispute?",
-        "num_results": 3,
+        "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.720272009397034,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.729304996646048,
             "matched_category": "billing_policy"
           },
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
             "similarity": 0.612334173550197,
             "matched_category": "troubleshooting_guide"
-          },
-          {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.600983196584871,
-            "matched_category": "billing_policy"
           }
         ],
         "correct_hit": true
@@ -408,8 +387,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.670530537303627,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.62344730286772,
             "matched_category": "billing_policy"
           }
         ],
@@ -420,13 +399,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.661074042320251,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.687495391815627,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.607845425605774,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.617865223224915,
             "matched_category": "billing_policy"
           }
         ],
@@ -434,11 +413,16 @@
       },
       {
         "query": "I've been a customer for years and I just got hit with a late fee, is there any way to get it waived or contest it?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.647018271329201,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.625803880537251,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.607907862649542,
             "matched_category": "billing_policy"
           }
         ],
@@ -446,16 +430,21 @@
       },
       {
         "query": "I'm looking at my bill and I see an IDR 50,000 charge that I wasn't expecting, can you tell me what that's about?",
-        "num_results": 2,
+        "num_results": 3,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.71046266431062,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.70553423729336,
             "matched_category": "billing_policy"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.654147987074384,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.649700024706156,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.642531024655395,
             "matched_category": "service_plans"
           }
         ],
@@ -466,8 +455,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.690801620483398,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.686114868107881,
             "matched_category": "billing_policy"
           }
         ],
@@ -480,13 +469,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.706763684749608,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.663838962039705,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.653961183912571,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.662821809909147,
             "matched_category": "service_plans"
           }
         ],
@@ -497,13 +486,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.694422711936463,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.682509761006252,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.637463396049132,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.641601848124908,
             "matched_category": "service_plans"
           }
         ],
@@ -514,13 +503,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.648076081734656,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.661957682021089,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.647085032040774,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.619045904704206,
             "matched_category": "service_plans"
           }
         ],
@@ -528,23 +517,17 @@
       },
       {
         "query": "Tell me about your pricing",
-        "num_results": 1,
-        "results": [
-          {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.616374657586258,
-            "matched_category": "service_plans"
-          }
-        ],
-        "correct_hit": true
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
       },
       {
         "query": "What's the difference between Pro and Unlimited?",
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.652431828766405,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.617078194604742,
             "matched_category": "service_plans"
           }
         ],
@@ -555,8 +538,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.675610700176871,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.624199956846252,
             "matched_category": "service_plans"
           }
         ],
@@ -567,13 +550,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.646524329379933,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.625282455311483,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.609635500664222,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.607010667889378,
             "matched_category": "service_plans"
           }
         ],
@@ -584,13 +567,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.674856025014891,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.678333459198463,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.608999394834079,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.649786588511463,
             "matched_category": "service_plans"
           }
         ],
@@ -598,16 +581,21 @@
       },
       {
         "query": "What are the monthly rates?",
-        "num_results": 2,
+        "num_results": 3,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.622353017330174,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.620801642036634,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.616321472244618,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.606114159921287,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.600827741524267,
             "matched_category": "service_plans"
           }
         ],
@@ -618,13 +606,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.624543350203536,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.614592203561832,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.604845278444403,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.600425511535194,
             "matched_category": "service_plans"
           }
         ],
@@ -635,13 +623,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.66087804358764,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.651986794588202,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.627338152309118,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.606313019050221,
             "matched_category": "service_plans"
           }
         ],
@@ -652,13 +640,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.685887132320674,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.697451425206326,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.616352961498146,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.64083142767329,
             "matched_category": "service_plans"
           }
         ],
@@ -669,13 +657,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.694639576759459,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.672882200398849,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.601474845321487,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.652339341818222,
             "matched_category": "service_plans"
           }
         ],
@@ -686,8 +674,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.71614851701703,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.623520199341779,
             "matched_category": "service_plans"
           }
         ],
@@ -698,13 +686,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.686506800708728,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.676230590118831,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.638716941109252,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.661064904610842,
             "matched_category": "service_plans"
           }
         ],
@@ -715,13 +703,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.692929011161876,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.667870958574387,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.652597111153989,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.665823121614196,
             "matched_category": "service_plans"
           }
         ],
@@ -732,13 +720,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.653476297855382,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.666708747540881,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.652489843519387,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.638255927146899,
             "matched_category": "service_plans"
           }
         ],
@@ -749,19 +737,19 @@
         "num_results": 3,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.730877149544304,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.735717864547051,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.620721317572673,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.724390560243268,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.639106409443189,
             "matched_category": "billing_policy"
-          },
-          {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.619414329528813,
-            "matched_category": "service_plans"
           }
         ],
         "correct_hit": true
@@ -771,8 +759,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.724543994773871,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.622957006827471,
             "matched_category": "service_plans"
           }
         ],
@@ -783,13 +771,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.673753934128432,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.680201227592983,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.602275645190328,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.630149304866831,
             "matched_category": "service_plans"
           }
         ],
@@ -800,13 +788,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.701509683874355,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.671626588300079,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.645230335565765,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.655806981132755,
             "matched_category": "service_plans"
           }
         ],
@@ -817,13 +805,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.690662655036861,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.684606925342821,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.618068800202751,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.672763308616098,
             "matched_category": "service_plans"
           }
         ],
@@ -834,8 +822,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.760538887817011,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.681445075862675,
             "matched_category": "service_plans"
           }
         ],
@@ -843,11 +831,16 @@
       },
       {
         "query": "I'm currently on the Pro Plan but I feel like 50GB isn't enough for me, what would I get if I upgraded to the Unlimited Plan?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.688820557472064,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.65136318988409,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.643188836289473,
             "matched_category": "service_plans"
           }
         ],
@@ -855,11 +848,16 @@
       },
       {
         "query": "My family uses a lot of hotspot data and I want to know if 20GB of hotspot on the Unlimited Plan is shared or per device",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.655375901922266,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.664487163875353,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.61520860285813,
             "matched_category": "service_plans"
           }
         ],
@@ -870,13 +868,13 @@
         "num_results": 4,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.721180992056135,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.704402221823533,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.641608076287297,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.70129776000981,
             "matched_category": "service_plans"
           },
           {
@@ -897,13 +895,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.726457265460492,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.728187929363873,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.624980311841362,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.697168912893017,
             "matched_category": "service_plans"
           }
         ],
@@ -914,13 +912,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.764889217469421,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.718911302251935,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.652881962949844,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.653073327884481,
             "matched_category": "service_plans"
           }
         ],
@@ -928,17 +926,22 @@
       },
       {
         "query": "I'm comparing your plans to other providers, does the Pro Plan at IDR 199,000 include any hotspot data or is that extra?",
-        "num_results": 2,
+        "num_results": 3,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.795719385784999,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.772920696624707,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.604743021867968,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.748566977807879,
             "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.61707744256816,
+            "matched_category": "billing_policy"
           }
         ],
         "correct_hit": true
@@ -948,13 +951,13 @@
         "num_results": 2,
         "results": [
           {
-            "content": "Document 2 \u2014 Service Plans\n- Pro Plan: IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot\n-...",
-            "similarity": 0.664999385923274,
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.670737206571972,
             "matched_category": "service_plans"
           },
           {
-            "content": "Document 2 \u2014 Service Plans\n- All plans include free access to streaming partners on weekends",
-            "similarity": 0.606728869877133,
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.653073843647977,
             "matched_category": "service_plans"
           }
         ],
@@ -1003,8 +1006,8 @@
         "num_results": 3,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.671421409078369,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.664558191842819,
             "matched_category": "billing_policy"
           },
           {
@@ -1013,8 +1016,8 @@
             "matched_category": "troubleshooting_guide"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.62005215466489,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.610802026212518,
             "matched_category": "billing_policy"
           }
         ],
@@ -1073,8 +1076,8 @@
         "num_results": 1,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.621890187263489,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.605751592092264,
             "matched_category": "billing_policy"
           }
         ],
@@ -1187,18 +1190,18 @@
         "num_results": 3,
         "results": [
           {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.694882532801704,
+            "matched_category": "billing_policy"
+          },
+          {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
             "similarity": 0.681465246502733,
             "matched_category": "troubleshooting_guide"
           },
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.673166036605835,
-            "matched_category": "billing_policy"
-          },
-          {
-            "content": "Document 1 \u2014 Billing Policy\n- Late payment fee of IDR 50,000 applies after 14 days overdue\n- Custome...",
-            "similarity": 0.657942414283752,
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.606416082764632,
             "matched_category": "billing_policy"
           }
         ],
@@ -1264,12 +1267,17 @@
       },
       {
         "query": "I noticed an overcharge on my latest bill and I want to report it, should I use the app or is there a phone number I can call?",
-        "num_results": 1,
+        "num_results": 2,
         "results": [
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
             "similarity": 0.64000056505197,
             "matched_category": "troubleshooting_guide"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.623254436947538,
+            "matched_category": "billing_policy"
           }
         ],
         "correct_hit": true
@@ -1320,8 +1328,8 @@
         "num_results": 3,
         "results": [
           {
-            "content": "Document 1 \u2014 Billing Policy\n- Auto-pay enrollment is available via the MyTelco app",
-            "similarity": 0.717551350593567,
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.740618429798437,
             "matched_category": "billing_policy"
           },
           {
@@ -1551,7 +1559,7 @@
     ]
   },
   "summary": {
-    "timestamp": "2026-03-15T01:05:31.767827+00:00",
+    "timestamp": "2026-03-19T10:58:59.399769+00:00",
     "queries_file": "/Users/madnanrizqu/Code/Project/qna-chat-agent/eval/retrieval_queries.json",
     "total_categories": 4
   },
