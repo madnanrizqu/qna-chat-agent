@@ -78,6 +78,32 @@
     }
   },
   {
+    "id": "direct_conv_07",
+    "category": "direct_conversational",
+    "description": "Wishing well",
+    "message": "Have a nice day!",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "direct_conv_08",
+    "category": "direct_conversational",
+    "description": "Acknowledging response",
+    "message": "Alright, thanks for the info",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
     "id": "off_topic_01",
     "category": "off_topic",
     "description": "General knowledge question",
@@ -147,6 +173,32 @@
     "category": "off_topic",
     "description": "Hardware repair question",
     "message": "My phone screen is cracked, what should I do?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_07",
+    "category": "off_topic",
+    "description": "Cooking question",
+    "message": "What's a good recipe for banana bread?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "off_topic_08",
+    "category": "off_topic",
+    "description": "Fitness question",
+    "message": "How do I train for a marathon?",
     "history": null,
     "expected": {
       "tools_called": [],
@@ -234,6 +286,32 @@
     }
   },
   {
+    "id": "kb_billing_07",
+    "category": "kb_retrieval_billing",
+    "description": "Bill generation date",
+    "message": "When is my bill generated?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search"],
+      "escalate": false,
+      "response_should_contain": ["1st"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_billing_08",
+    "category": "kb_retrieval_billing",
+    "description": "Billing cycle day",
+    "message": "What day of the month does billing happen?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search"],
+      "escalate": false,
+      "response_should_contain": ["1st"],
+      "response_should_not_contain": []
+    }
+  },
+  {
     "id": "kb_plans_01",
     "category": "kb_retrieval_plans",
     "description": "Pro Plan cost",
@@ -308,6 +386,32 @@
       "tools_called": ["knowledge_base_search"],
       "escalate": false,
       "response_should_contain": ["Pro", "Unlimited"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_07",
+    "category": "kb_retrieval_plans",
+    "description": "Basic Plan details",
+    "message": "What does the Basic Plan include?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search"],
+      "escalate": false,
+      "response_should_contain": ["99,000"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_plans_08",
+    "category": "kb_retrieval_plans",
+    "description": "Basic Plan price",
+    "message": "How much is the Basic Plan?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search"],
+      "escalate": false,
+      "response_should_contain": ["99,000"],
       "response_should_not_contain": []
     }
   },
@@ -390,6 +494,32 @@
     }
   },
   {
+    "id": "kb_troubleshoot_07",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "Free support call",
+    "message": "Is it free to call customer support?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search"],
+      "escalate": false,
+      "response_should_contain": ["123"],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_troubleshoot_08",
+    "category": "kb_retrieval_troubleshooting",
+    "description": "SIM replacement ID requirement",
+    "message": "Do I need to bring ID for a SIM replacement?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search"],
+      "escalate": false,
+      "response_should_contain": ["ID"],
+      "response_should_not_contain": []
+    }
+  },
+  {
     "id": "kb_not_in_kb_01",
     "category": "kb_retrieval_not_in_kb",
     "description": "International roaming inquiry",
@@ -459,6 +589,32 @@
     "category": "kb_retrieval_not_in_kb",
     "description": "5G coverage inquiry",
     "message": "Is 5G available in my area?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_07",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "Account suspension request",
+    "message": "Can I temporarily suspend my account?",
+    "history": null,
+    "expected": {
+      "tools_called": ["knowledge_base_search", "escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "kb_not_in_kb_08",
+    "category": "kb_retrieval_not_in_kb",
+    "description": "Student discount inquiry",
+    "message": "Do you offer student discounts?",
     "history": null,
     "expected": {
       "tools_called": ["knowledge_base_search", "escalate_to_human"],
@@ -546,6 +702,32 @@
     }
   },
   {
+    "id": "ambiguous_07",
+    "category": "ambiguous_vague",
+    "description": "Vague confusion",
+    "message": "I'm confused",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "ambiguous_08",
+    "category": "ambiguous_vague",
+    "description": "Vague question",
+    "message": "What are my options?",
+    "history": null,
+    "expected": {
+      "tools_called": [],
+      "escalate": false,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
     "id": "escalation_01",
     "category": "escalation_explicit",
     "description": "Request for human agent",
@@ -615,6 +797,32 @@
     "category": "escalation_explicit",
     "description": "Formal complaint with manager",
     "message": "I'd like to file a formal complaint with a manager",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_07",
+    "category": "escalation_explicit",
+    "description": "Demanding human now",
+    "message": "Get me a human right now",
+    "history": null,
+    "expected": {
+      "tools_called": ["escalate_to_human"],
+      "escalate": true,
+      "response_should_contain": [],
+      "response_should_not_contain": []
+    }
+  },
+  {
+    "id": "escalation_08",
+    "category": "escalation_explicit",
+    "description": "Refusing bot interaction",
+    "message": "I don't want to talk to a bot, transfer me",
     "history": null,
     "expected": {
       "tools_called": ["escalate_to_human"],

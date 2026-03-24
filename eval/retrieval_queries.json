@@ -10,6 +10,8 @@
     "How can I challenge my bill?",
     "Do you offer autopay discounts?",
     "When are invoices due each month?",
+    "When is my bill generated?",
+    "What date does billing happen?",
     "How do I enroll in auto-pay?",
     "Is there a penalty for overdue payments?",
     "What is the IDR 50,000 fee for?",
@@ -20,6 +22,8 @@
     "What are the consequences of not paying on time?",
     "Can I contest charges on my invoice?",
     "Where can I manage auto-pay in MyTelco?",
+    "What day of the month does my billing cycle start?",
+    "Is billing always on the first of the month or does it vary?",
     "I just realized I forgot to pay my bill and it's been more than two weeks, am I going to get charged a late fee?",
     "I noticed a charge on my invoice that I don't recognize and I want to know how I can dispute it before the deadline passes",
     "I've been thinking about setting up auto-pay so I don't have to worry about missing payments, how do I do that through the MyTelco app?",
@@ -29,7 +33,9 @@
     "Can you explain your late payment policy? I want to know exactly how many days I have before the penalty applies",
     "I've been a customer for years and I just got hit with a late fee, is there any way to get it waived or contest it?",
     "I'm looking at my bill and I see an IDR 50,000 charge that I wasn't expecting, can you tell me what that's about?",
-    "I want to dispute a charge on my latest invoice but I'm not sure if I'm still within the 30 day window to do so"
+    "I want to dispute a charge on my latest invoice but I'm not sure if I'm still within the 30 day window to do so",
+    "I just signed up last week and I'm wondering when I'll receive my first bill, is it always generated on the 1st of the month?",
+    "I need to plan my monthly budget and I want to know exactly when my MyTelco bill is generated so I can make sure I have enough funds in my account"
   ],
   "service_plans": [
     "What plans do you offer?",
@@ -42,6 +48,8 @@
     "How much does unlimited data cost?",
     "What are the monthly rates?",
     "Can I upgrade to a better plan?",
+    "What's the Basic Plan?",
+    "Tell me about the cheapest plan",
     "How much is the Pro Plan per month?",
     "Does the Unlimited Plan include hotspot?",
     "How much hotspot data comes with Pro?",
@@ -52,6 +60,8 @@
     "How much is IDR 299,000 plan?",
     "Can I stream on weekends for free?",
     "What's the hotspot limit on the Unlimited Plan?",
+    "How much data do I get with the Basic Plan for IDR 99,000?",
+    "Does the Basic Plan include unlimited calls?",
     "I'm trying to decide between the Pro Plan and the Unlimited Plan, can you break down what each one includes and how much they cost?",
     "I use a lot of data for streaming and hotspot, which plan would you recommend for someone who needs more than 50GB per month?",
     "I heard that your plans come with free streaming on weekends, can you tell me more about which streaming partners are included?",
@@ -61,7 +71,9 @@
     "Can you tell me the exact monthly price for the plan that comes with unlimited data, unlimited calls, and 20GB hotspot?",
     "I want a plan that lets me stream for free on weekends because I usually binge watch shows on Saturday and Sunday",
     "I'm comparing your plans to other providers, does the Pro Plan at IDR 199,000 include any hotspot data or is that extra?",
-    "I need a plan with a lot of hotspot data because I work remotely and use my phone as a wifi hotspot for my laptop"
+    "I need a plan with a lot of hotspot data because I work remotely and use my phone as a wifi hotspot for my laptop",
+    "I'm on a tight budget and I saw there's a Basic Plan for IDR 99,000 per month, can you tell me exactly what's included in that plan?",
+    "I don't use much data and mostly just make phone calls, would the Basic Plan at IDR 99,000 be a good fit for me or should I go with something higher?"
   ],
   "troubleshooting_guide": [
     "My internet is slow, what should I do?",
@@ -74,6 +86,8 @@
     "Lost my SIM card",
     "My bill looks wrong",
     "How do I reach customer support?",
+    "How do I fix slow internet?",
+    "Where to replace SIM?",
     "Should I restart my device for slow internet?",
     "How do I check signal strength?",
     "What does toggling airplane mode do?",
@@ -84,6 +98,8 @@
     "Do I need an ID to replace my SIM card?",
     "How do I submit a billing ticket through the app?",
     "My calls sound choppy, what should I check?",
+    "What should I do to improve call quality issues?",
+    "Is it free to call 123 from other networks?",
     "I've been having really slow internet all day and I already tried restarting my phone, is there anything else I can do to fix it?",
     "My phone calls have been sounding terrible lately with lots of static and cutting out, how can I check if it's a network issue?",
     "I lost my SIM card while traveling and I need to get a replacement as soon as possible, what do I need to bring to the store?",
@@ -93,7 +109,9 @@
     "My call quality has been awful this week and I suspect it might be network congestion in my area, how do I check that on the app?",
     "I want to submit a ticket about a billing error but I'm not sure if I should do it through the MyTelco app or call customer service",
     "I've been experiencing dropped calls and poor signal strength for the past few days, is there a way to troubleshoot this on my end?",
-    "I accidentally damaged my SIM card and need a new one, can I go to any store or does it have to be an authorized location with my ID?"
+    "I accidentally damaged my SIM card and need a new one, can I go to any store or does it have to be an authorized location with my ID?",
+    "My internet has been really slow today and I'm wondering if I should restart my device or if there's something else I should check like signal strength?",
+    "I damaged my SIM card and need to get it replaced, can I go to any authorized store and what do I need to bring with me for identification?"
   ],
   "not_matching": [
     "What's the weather today?",
@@ -106,6 +124,8 @@
     "What's the capital of France?",
     "How do I bake a cake?",
     "What movies are playing tonight?",
+    "Best coffee shops nearby",
+    "How do I tie a tie?",
     "Can you recommend a good restaurant?",
     "What is the meaning of life?",
     "How tall is Mount Everest?",
@@ -116,6 +136,8 @@
     "How do I learn to play guitar?",
     "What's the best laptop to buy?",
     "Translate this to Spanish",
+    "How do I improve my resume for a marketing position?",
+    "What are good exercises for lower back pain?",
     "I'm planning a road trip next month and I want to know what the best route is from Jakarta to Bali by car",
     "Can you help me write a cover letter for a software engineering job that I'm applying to next week?",
     "I've been thinking about adopting a pet and I want to know the pros and cons of getting a cat versus a dog",
@@ -125,6 +147,8 @@
     "I'm looking for recommendations on the best hiking trails in Southeast Asia for someone who is a beginner hiker",
     "My car is making a weird noise when I turn the steering wheel and I want to know if it's something serious",
     "I need help planning a birthday party for my daughter who is turning 7 next month and she loves unicorns",
-    "Can you tell me about the history of the Roman Empire and why it eventually collapsed after so many centuries?"
+    "Can you tell me about the history of the Roman Empire and why it eventually collapsed after so many centuries?",
+    "I'm thinking about learning a new language and I can't decide between Japanese and Korean, which one would be more useful for someone living in Southeast Asia?",
+    "I've been wanting to start a small garden on my apartment balcony but I'm not sure which plants would survive in a tropical climate with limited sunlight"
   ]
 }

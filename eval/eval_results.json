@@ -1,44 +1,44 @@
 {
   "metrics": {
     "billing_policy": {
-      "recall": 0.9666666666666667,
-      "precision": 0.8333333333333334,
-      "total_queries": 30,
-      "queries_with_correct_results": 29,
-      "total_results": 42,
-      "correct_results": 35
+      "recall": 0.9722222222222222,
+      "precision": 0.8545454545454545,
+      "total_queries": 36,
+      "queries_with_correct_results": 35,
+      "total_results": 55,
+      "correct_results": 47
     },
     "service_plans": {
-      "recall": 0.9666666666666667,
-      "precision": 0.9137931034482759,
-      "total_queries": 30,
-      "queries_with_correct_results": 29,
-      "total_results": 58,
-      "correct_results": 53
+      "recall": 0.9722222222222222,
+      "precision": 0.8904109589041096,
+      "total_queries": 36,
+      "queries_with_correct_results": 35,
+      "total_results": 73,
+      "correct_results": 65
     },
     "troubleshooting_guide": {
-      "recall": 0.9333333333333333,
-      "precision": 0.825,
-      "total_queries": 30,
-      "queries_with_correct_results": 28,
-      "total_results": 40,
-      "correct_results": 33
+      "recall": 0.9444444444444444,
+      "precision": 0.8478260869565217,
+      "total_queries": 36,
+      "queries_with_correct_results": 34,
+      "total_results": 46,
+      "correct_results": 39
     },
     "not_matching": {
       "recall": 1.0,
       "precision": 1.0,
-      "total_queries": 30,
-      "queries_with_correct_results": 30,
+      "total_queries": 36,
+      "queries_with_correct_results": 36,
       "total_results": 0,
-      "correct_results": 30
+      "correct_results": 36
     },
     "overall": {
-      "recall": 0.9555555555555556,
-      "precision": 0.8642857142857143,
-      "total_queries": 90,
-      "queries_with_correct_results": 86,
-      "total_results": 140,
-      "correct_results": 121
+      "recall": 0.9629629629629629,
+      "precision": 0.867816091954023,
+      "total_queries": 108,
+      "queries_with_correct_results": 104,
+      "total_results": 174,
+      "correct_results": 151
     }
   },
   "detailed_results": {
@@ -178,6 +178,40 @@
         "correct_hit": true
       },
       {
+        "query": "When is my bill generated?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.709665898352793,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.639124848790458,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What date does billing happen?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.690664094130046,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.659694572082,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
         "query": "How do I enroll in auto-pay?",
         "num_results": 1,
         "results": [
@@ -307,6 +341,40 @@
           {
             "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
             "similarity": 0.722207269734361,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What day of the month does my billing cycle start?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.669276515798362,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.634529311493913,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Is billing always on the first of the month or does it vary?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.677099090382322,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.65110202444816,
             "matched_category": "billing_policy"
           }
         ],
@@ -458,6 +526,45 @@
             "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
             "similarity": 0.686114868107881,
             "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I just signed up last week and I'm wondering when I'll receive my first bill, is it always generated on the 1st of the month?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.720663909971468,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.654318014044643,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I need to plan my monthly budget and I want to know exactly when my MyTelco bill is generated so I can make sure I have enough funds in my account",
+        "num_results": 3,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Customers can request a billing dispute within 30 days of the invoice ...",
+            "similarity": 0.722869763887487,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.666372795838405,
+            "matched_category": "billing_policy"
+          },
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.619041545048314,
+            "matched_category": "troubleshooting_guide"
           }
         ],
         "correct_hit": true
@@ -613,6 +720,40 @@
           {
             "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
             "similarity": 0.600425511535194,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the Basic Plan?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.653405861081441,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.61988731504161,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Tell me about the cheapest plan",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.65589626501756,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.652158522091269,
             "matched_category": "service_plans"
           }
         ],
@@ -778,6 +919,45 @@
           {
             "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
             "similarity": 0.630149304866831,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much data do I get with the Basic Plan for IDR 99,000?",
+        "num_results": 3,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.78643356480802,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.737555701269002,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.658670982201647,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Does the Basic Plan include unlimited calls?",
+        "num_results": 2,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.662610033906134,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.647733793338004,
             "matched_category": "service_plans"
           }
         ],
@@ -962,6 +1142,50 @@
           }
         ],
         "correct_hit": true
+      },
+      {
+        "query": "I'm on a tight budget and I saw there's a Basic Plan for IDR 99,000 per month, can you tell me exactly what's included in that plan?",
+        "num_results": 3,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.761205420565962,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.722298466474276,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.67526342420201,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I don't use much data and mostly just make phone calls, would the Basic Plan at IDR 99,000 be a good fit for me or should I go with something higher?",
+        "num_results": 3,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.776245521083242,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Unlimited Plan: IDR 299,000/month \u2014 Unlimited data, calls, and 20GB hot...",
+            "similarity": 0.72907533375164,
+            "matched_category": "service_plans"
+          },
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.638506732076015,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
       }
     ],
     "troubleshooting_guide": [
@@ -1096,6 +1320,30 @@
         "correct_hit": true
       },
       {
+        "query": "How do I fix slow internet?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.64718770284213,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Where to replace SIM?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.68223990903856,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
         "query": "Should I restart my device for slow internet?",
         "num_results": 1,
         "results": [
@@ -1214,6 +1462,30 @@
           {
             "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
             "similarity": 0.674741051292057,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What should I do to improve call quality issues?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.693412489912291,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Is it free to call 123 from other networks?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.658365310722833,
             "matched_category": "troubleshooting_guide"
           }
         ],
@@ -1373,6 +1645,30 @@
           }
         ],
         "correct_hit": true
+      },
+      {
+        "query": "My internet has been really slow today and I'm wondering if I should restart my device or if there's something else I should check like signal strength?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.712415451901259,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I damaged my SIM card and need to get it replaced, can I go to any authorized store and what do I need to bring with me for identification?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For billing errors: submit a ticket via the app or call 123 (fr...",
+            "similarity": 0.693794699372442,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
       }
     ],
     "not_matching": [
@@ -1432,6 +1728,18 @@
       },
       {
         "query": "What movies are playing tonight?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Best coffee shops nearby",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I tie a tie?",
         "num_results": 0,
         "results": [],
         "correct_hit": true
@@ -1497,6 +1805,18 @@
         "correct_hit": true
       },
       {
+        "query": "How do I improve my resume for a marketing position?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What are good exercises for lower back pain?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
         "query": "I'm planning a road trip next month and I want to know what the best route is from Jakarta to Bali by car",
         "num_results": 0,
         "results": [],
@@ -1555,11 +1875,23 @@
         "num_results": 0,
         "results": [],
         "correct_hit": true
+      },
+      {
+        "query": "I'm thinking about learning a new language and I can't decide between Japanese and Korean, which one would be more useful for someone living in Southeast Asia?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been wanting to start a small garden on my apartment balcony but I'm not sure which plants would survive in a tropical climate with limited sunlight",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
       }
     ]
   },
   "summary": {
-    "timestamp": "2026-03-19T10:58:59.399769+00:00",
+    "timestamp": "2026-03-24T04:44:50.898597+00:00",
     "queries_file": "/Users/madnanrizqu/Code/Project/qna-chat-agent/eval/retrieval_queries.json",
     "total_categories": 4
   },

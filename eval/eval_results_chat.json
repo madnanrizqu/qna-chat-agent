@@ -1,76 +1,76 @@
 {
   "metrics": {
     "overall": {
-      "total_cases": 48,
-      "passed_cases": 41,
-      "accuracy": 0.8541666666666666,
-      "tool_accuracy": 0.875,
-      "escalation_accuracy": 0.875,
-      "content_accuracy": 0.9583333333333334
+      "total_cases": 64,
+      "passed_cases": 58,
+      "accuracy": 0.90625,
+      "tool_accuracy": 0.921875,
+      "escalation_accuracy": 0.921875,
+      "content_accuracy": 0.953125
     },
     "by_category": {
       "direct_conversational": {
-        "total_cases": 6,
-        "passed_cases": 6,
+        "total_cases": 8,
+        "passed_cases": 8,
         "accuracy": 1.0,
         "tool_accuracy": 1.0,
         "escalation_accuracy": 1.0,
         "content_accuracy": 1.0
       },
       "off_topic": {
-        "total_cases": 6,
-        "passed_cases": 4,
-        "accuracy": 0.6666666666666666,
-        "tool_accuracy": 0.8333333333333334,
-        "escalation_accuracy": 0.8333333333333334,
-        "content_accuracy": 0.8333333333333334
+        "total_cases": 8,
+        "passed_cases": 6,
+        "accuracy": 0.75,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
+        "content_accuracy": 0.875
       },
       "kb_retrieval_billing": {
-        "total_cases": 6,
-        "passed_cases": 5,
-        "accuracy": 0.8333333333333334,
-        "tool_accuracy": 0.8333333333333334,
-        "escalation_accuracy": 0.8333333333333334,
-        "content_accuracy": 0.8333333333333334
+        "total_cases": 8,
+        "passed_cases": 7,
+        "accuracy": 0.875,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
+        "content_accuracy": 0.875
       },
       "kb_retrieval_plans": {
-        "total_cases": 6,
-        "passed_cases": 6,
+        "total_cases": 8,
+        "passed_cases": 8,
         "accuracy": 1.0,
         "tool_accuracy": 1.0,
         "escalation_accuracy": 1.0,
         "content_accuracy": 1.0
       },
       "kb_retrieval_troubleshooting": {
-        "total_cases": 6,
-        "passed_cases": 6,
-        "accuracy": 1.0,
-        "tool_accuracy": 1.0,
-        "escalation_accuracy": 1.0,
-        "content_accuracy": 1.0
+        "total_cases": 8,
+        "passed_cases": 7,
+        "accuracy": 0.875,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
+        "content_accuracy": 0.875
       },
       "kb_retrieval_not_in_kb": {
-        "total_cases": 6,
-        "passed_cases": 4,
-        "accuracy": 0.6666666666666666,
-        "tool_accuracy": 0.6666666666666666,
-        "escalation_accuracy": 0.6666666666666666,
+        "total_cases": 8,
+        "passed_cases": 7,
+        "accuracy": 0.875,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
         "content_accuracy": 1.0
       },
       "ambiguous_vague": {
-        "total_cases": 6,
-        "passed_cases": 6,
+        "total_cases": 8,
+        "passed_cases": 8,
         "accuracy": 1.0,
         "tool_accuracy": 1.0,
         "escalation_accuracy": 1.0,
         "content_accuracy": 1.0
       },
       "escalation_explicit": {
-        "total_cases": 6,
-        "passed_cases": 4,
-        "accuracy": 0.6666666666666666,
-        "tool_accuracy": 0.6666666666666666,
-        "escalation_accuracy": 0.6666666666666666,
+        "total_cases": 8,
+        "passed_cases": 7,
+        "accuracy": 0.875,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
         "content_accuracy": 1.0
       }
     }
@@ -203,7 +203,7 @@
           "failures": []
         }
       },
-      "response": "Goodbye! If you have any other questions in the future, feel free to reach out. Have a great day!",
+      "response": "Goodbye! Have a great day. If you need any assistance in the future, feel free to reach out.",
       "error": null
     },
     {
@@ -229,7 +229,59 @@
           "failures": []
         }
       },
-      "response": "You're very welcome! I'm happy to help. Is there anything else I can assist you with today?",
+      "response": "You are very welcome! I'm happy I could help. Is there anything else I can assist you with today?",
+      "error": null
+    },
+    {
+      "id": "direct_conv_07",
+      "category": "direct_conversational",
+      "message": "Have a nice day!",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Thank you! I hope you have a wonderful day as well. How can I help you today?",
+      "error": null
+    },
+    {
+      "id": "direct_conv_08",
+      "category": "direct_conversational",
+      "message": "Alright, thanks for the info",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "You're very welcome! If you have any more questions in the future, feel free to reach out. Have a great day!",
       "error": null
     },
     {
@@ -283,7 +335,7 @@
           "failures": []
         }
       },
-      "response": "The \"best\" phone for gaming can be subjective, as it depends on whether you prioritize raw performance, display quality, battery life, or specific gaming features like shoulder triggers.\n\nCurrently, top contenders often include:\n\n*   **ASUS ROG Phone Series:** Widely considered the gold standard for dedicated mobile gaming. They feature advanced cooling systems, high-refresh-rate AMOLED displays, customizable shoulder triggers, and aggressive software optimizations.\n*   **Samsung Galaxy S24 Ultra:** Offers a fantastic all-around experience with top-tier processing power (Snapdragon 8 Gen 3 for Galaxy), a beautiful, large display, and excellent thermal management, making it great for high-end gaming.\n*   **RedMagic Series:** These are very popular for their aggressive pricing and the inclusion of built-in cooling fans, which help prevent thermal throttling during long gaming sessions.\n*   **iPhone 15 Pro / 16 Pro:** Apple's latest devices offer industry-leading single-core performance and console-quality gaming experiences, supported by a vast ecosystem of high-quality games.\n\n**When choosing, consider these factors:**\n*   **Processor:** Look for the latest flagship chips (e.g., Snapdragon 8 Gen 3 or Apple A-series).\n*   **Display:** A high refresh rate (120Hz or higher) and low touch-sampling rate are crucial for competitive gaming.\n*   **Cooling:** Essential if you play graphically demanding games for long periods.\n*   **Battery & Charging:** Look for large batteries and fast charging speeds to keep you in the game longer.\n\nAre you looking for a phone to play a specific type of game, or are you looking for recommendations based on a particular budget?",
+      "response": "Choosing the \"best\" phone for gaming really depends on your budget and whether you prefer a device designed specifically for gaming or a high-end flagship that handles everything well.\n\nHere are a few top contenders currently on the market:\n\n### Dedicated Gaming Phones\nThese devices are built specifically for performance, featuring active cooling systems (fans), shoulder triggers, and massive batteries.\n*   **ASUS ROG Phone 8 Pro:** Widely considered the king of gaming phones. It has incredible performance, a great display, and unique software features for gamers.\n*   **RedMagic 9 Pro:** Offers excellent value for the performance. It features a built-in physical cooling fan and a completely flat back design, which many gamers prefer.\n\n### High-End Flagships (Great for Gaming & Everyday Use)\nIf you want a phone that is also an amazing camera and daily driver, these are hard to beat:\n*   **Samsung Galaxy S24 Ultra:** Powered by the Snapdragon 8 Gen 3 for Galaxy, it has a stunning screen and excellent thermal management for long sessions.\n*   **iPhone 15 Pro / 15 Pro Max:** Thanks to Apple's A17 Pro chip, these phones are incredibly powerful and now support \"console-quality\" games (like *Resident Evil* and *Death Stranding*) natively.\n\n### Things to look for when choosing:\n1.  **Processor (SoC):** Look for the latest Qualcomm Snapdragon 8 Gen 3 or Apple A17 Pro for the best performance.\n2.  **Display:** Aim for at least a 120Hz refresh rate for smooth gameplay.\n3.  **Cooling:** If you play graphically intense games (like *Genshin Impact* or *Warzone Mobile*), look for phones that emphasize thermal management to avoid the phone slowing down (throttling) when it gets hot.\n4.  **Battery:** High-performance gaming drains battery quickly; look for at least 5,000mAh or fast charging capabilities.\n\nAre you looking for something at a specific price point, or do you have a preference between Android and iOS?",
       "error": null
     },
     {
@@ -309,7 +361,7 @@
           "failures": []
         }
       },
-      "response": "Freeing up storage on your Android phone can be done in a few easy steps. Here are some of the most effective ways to clear space:\n\n1.  **Use the \"Free up space\" tool:** Most Android phones have a built-in tool. Go to **Settings > Storage > Free up space**. This will often suggest removing junk files, duplicate photos, and large files.\n2.  **Delete unused apps:** Go to **Settings > Apps** and review your list. If you see apps you don't use anymore, uninstall them.\n3.  **Clear app cache:** Over time, apps accumulate temporary data (cache). Go to **Settings > Apps**, select an app (like Chrome or a social media app), tap **Storage**, and then tap **Clear cache**. *Note: Do not tap \"Clear data\" unless you want to reset the app completely.*\n4.  **Manage Photos and Videos:** High-resolution photos and videos take up the most space. Use the **Google Photos app** to back up your photos to the cloud, then use the \"Free up space\" feature within that app to remove copies already safely backed up on your device.\n5.  **Clean out your Downloads folder:** Files you download from the web often stay in your \"Downloads\" folder indefinitely. Use your phone's **Files app** (often called \"Files by Google\" or \"My Files\") to check the Downloads folder and delete things you no longer need.\n6.  **Move files to the cloud:** Use services like Google Drive, Dropbox, or OneDrive to move large documents or files off your device and into cloud storage.\n\nIf you are noticing these storage issues specifically because of an app provided by our company, please let me know, and I can check if there are specific troubleshooting steps for that app!",
+      "response": "Freeing up storage on an Android phone can be done in a few easy steps. Here are the most effective ways to clear space:\n\n1.  **Use the \"Free up space\" tool:**\n    *   Open your **Settings** app.\n    *   Tap **Storage**.\n    *   Look for a button that says **Free up space** (or \"Manage storage\"). This will show you files you can safely delete, such as junk files, unused apps, and large media.\n\n2.  **Uninstall unused apps:**\n    *   Go to **Settings** > **Apps** (or **Apps & notifications**).\n    *   Review your list of apps and uninstall any that you no longer use.\n\n3.  **Clear cache for apps:**\n    *   Go to **Settings** > **Apps**.\n    *   Select an app (like Chrome or Instagram) and tap **Storage & cache**.\n    *   Tap **Clear cache**. (Do not tap \"Clear storage\" or \"Clear data\" unless you want to log out of the app or delete its internal settings).\n\n4.  **Manage photos and videos:**\n    *   If you use **Google Photos**, open the app and tap your profile icon.\n    *   Select **Free up space**. This will remove photos and videos from your device that have already been backed up to the cloud.\n    *   Alternatively, move large video files to a computer or cloud storage service.\n\n5.  **Check your \"Downloads\" folder:**\n    *   Open the **Files by Google** app (or any file manager).\n    *   Go to the **Downloads** folder and delete files you don\u2019t need anymore.\n\nIf you are having trouble with a specific app provided by our service, let me know and I can look into troubleshooting steps for that specifically!",
       "error": null
     },
     {
@@ -335,7 +387,7 @@
           "failures": []
         }
       },
-      "response": "The main differences between 4G and 5G come down to speed, capacity, and latency:\n\n*   **Speed:** 5G is significantly faster than 4G. While 4G can offer decent speeds for streaming and browsing, 5G is designed to deliver much higher data transfer rates, making downloads and uploads almost instantaneous.\n*   **Latency:** This is the delay between sending a request and receiving a response. 5G has much lower latency than 4G, which is crucial for real-time applications like online gaming, video conferencing, and emerging technologies like autonomous vehicles.\n*   **Capacity:** 5G is built to handle a much higher density of connected devices simultaneously. This means that in crowded areas (like stadiums or concerts), you are less likely to experience a drop in service compared to 4G.\n\nIn short, 5G is an evolution of cellular technology designed to provide a more reliable, faster, and more responsive connection for a wider range of devices.",
+      "response": "The main differences between 4G and 5G come down to speed, latency, and capacity:\n\n*   **Speed:** 5G is significantly faster than 4G. While 4G provides fast mobile internet, 5G offers much higher download and upload speeds, which allows for quicker streaming, faster file downloads, and a smoother overall experience.\n*   **Latency:** Latency is the time it takes for data to travel from your device to a server and back. 5G has much lower latency than 4G, which is crucial for activities that require near-instant communication, such as online gaming, video conferencing, and emerging technologies like remote surgery or autonomous vehicles.\n*   **Capacity:** 5G is designed to handle a much higher density of connected devices simultaneously. This means that in crowded areas\u2014like stadiums or concerts\u2014where 4G networks might slow down or become congested, 5G should remain stable and fast.\n\nIn short, 5G is an evolution of 4G that provides a faster, more responsive, and more reliable connection, especially in areas with many connected users.",
       "error": null
     },
     {
@@ -361,7 +413,7 @@
           "failures": []
         }
       },
-      "response": "I'm afraid I can't help with your math homework. My primary role is to assist with questions related to our telecommunications services, such as billing, service plans, and technical troubleshooting. \n\nIf you have any questions about your account or services, feel free to ask!",
+      "response": "I would be happy to help! Please go ahead and share the math problem you are working on.",
       "error": null
     },
     {
@@ -390,7 +442,59 @@
           "failures": []
         }
       },
-      "response": "I am sorry to hear about your cracked screen. I have escalated your request to one of our human support agents who will be able to assist you further with repair options or insurance coverage details. Someone will be with you shortly to help.",
+      "response": "I am sorry to hear about your cracked screen. Since I don't have specific instructions in our system regarding hardware repairs, I have escalated your request to a human agent who will be able to assist you further with the next steps. They will be with you shortly.",
+      "error": null
+    },
+    {
+      "id": "off_topic_07",
+      "category": "off_topic",
+      "message": "What's a good recipe for banana bread?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Banana bread is a classic! Here is a simple and delicious recipe:\n\n### Ingredients:\n*   **2 to 3 very ripe bananas**, mashed (the browner, the better!)\n*   **1/3 cup melted butter**\n*   **1/2 cup sugar** (you can use up to 3/4 cup if you like it sweeter)\n*   **1 egg**, beaten\n*   **1 teaspoon vanilla extract**\n*   **1 teaspoon baking soda**\n*   **Pinch of salt**\n*   **1 1/2 cups all-purpose flour**\n\n### Instructions:\n1.  **Preheat:** Set your oven to 350\u00b0F (175\u00b0C) and grease a 4x8-inch loaf pan.\n2.  **Mix Wet Ingredients:** In a mixing bowl, mash the ripe bananas with a fork until smooth. Stir in the melted butter.\n3.  **Add Dry Ingredients:** Mix in the baking soda and salt. Stir in the sugar, beaten egg, and vanilla extract.\n4.  **Add Flour:** Mix in the flour until just combined\u2014be careful not to overmix!\n5.  **Bake:** Pour the batter into your prepared loaf pan. Bake for 50 to 60 minutes, or until a tester inserted into the center comes out clean.\n6.  **Cool:** Let it cool in the pan for a few minutes, then transfer to a wire rack to cool completely before slicing.\n\n**Optional additions:** Feel free to fold in 1/2 cup of walnuts, pecans, or chocolate chips if you like! Enjoy!",
+      "error": null
+    },
+    {
+      "id": "off_topic_08",
+      "category": "off_topic",
+      "message": "How do I train for a marathon?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Training for a marathon is a significant undertaking that generally requires a structured approach over 16 to 20 weeks. While I don't have a specific training plan, here are the core components you should include:\n\n1.  **Build a Base:** Before starting a formal marathon plan, you should ideally have a base of running regularly (15\u201320 miles per week) for a few months to avoid injury.\n2.  **Follow a Plan:** Look for a reputable plan tailored to your experience level (beginner, intermediate, or advanced). Common programs include those from Hal Higdon, Jeff Galloway (run-walk method), or local running clubs.\n3.  **Include Key Runs:**\n    *   **Easy Runs:** The bulk of your mileage should be done at a conversational pace to build aerobic capacity.\n    *   **Long Runs:** Usually done once a week, these gradually increase in distance to build endurance.\n    *   **Speed/Tempo Work:** These help improve your cardiovascular efficiency and pacing (often for intermediate/advanced runners).\n4.  **Incorporate Rest and Recovery:** Rest days are critical for muscle repair and injury prevention. Don't skip them.\n5.  **Cross-Training:** Low-impact activities like cycling, swimming, or strength training help build muscle and reduce the risk of overuse injuries.\n6.  **Nutrition and Hydration:** Practice your race-day fueling (gels, chews, electrolytes) during your long training runs so you know what works for your stomach.\n7.  **Listen to Your Body:** If you feel persistent pain rather than normal muscle soreness, take a break. It is better to miss a few days of training than to be sidelined by a serious injury.\n\nIf you are new to long-distance running, it is always a good idea to consult with a doctor before beginning a rigorous training program. Do you have a specific race date in mind, or are you just starting your research?",
       "error": null
     },
     {
@@ -420,7 +524,7 @@
           "failures": []
         }
       },
-      "response": "The late payment fee is IDR 50,000, which is applied if your bill remains unpaid 14 days after the due date.",
+      "response": "The late payment fee for your account is IDR 50,000, which is applied if payment is not received within 14 days of the due date.",
       "error": null
     },
     {
@@ -450,7 +554,7 @@
           "failures": []
         }
       },
-      "response": "You can request a billing dispute within 30 days of the invoice date.",
+      "response": "You can request a billing dispute within 30 days of the invoice date. \n\nIf you would like to start this process, you can submit a ticket through our app or call us at 123.",
       "error": null
     },
     {
@@ -480,7 +584,7 @@
           "failures": []
         }
       },
-      "response": "To set up auto-pay, you can enroll through the **MyTelco app**. If you have any trouble finding the option within the app or need further assistance, please let me know!",
+      "response": "To set up auto-pay, you can easily enroll through the MyTelco app. Please log in to your account there, navigate to the billing section, and follow the prompts to enable auto-pay.",
       "error": null
     },
     {
@@ -510,7 +614,7 @@
           "failures": []
         }
       },
-      "response": "If your bill is paid more than 14 days after the due date, a late payment fee of IDR 50,000 will be applied to your account.\n\nTo avoid this in the future, you may want to consider enrolling in auto-pay through our MyTelco app. Please let me know if you need help setting that up!",
+      "response": "If your payment is received more than 14 days after your bill's due date, a late payment fee of IDR 50,000 will be applied to your account. \n\nTo avoid future late fees, you may want to consider enrolling in auto-pay through the MyTelco app.",
       "error": null
     },
     {
@@ -540,7 +644,7 @@
           "failures": []
         }
       },
-      "response": "To dispute a charge on your account, please note that requests must be made within 30 days of the invoice date. \n\nCould you please provide the specific charge you are concerned about? I can guide you further or connect you with a human agent to ensure your dispute is processed correctly.",
+      "response": "To dispute a charge on your account, please contact our customer support team directly. \n\nAccording to our billing policy, billing disputes must be requested within 30 days of the invoice date. Since I cannot process the dispute myself, I would be happy to connect you with a human agent who can assist you with this process. Would you like me to do that now?",
       "error": null
     },
     {
@@ -573,7 +677,67 @@
           ]
         }
       },
-      "response": "I apologize, but I don't have access to the specific list of accepted payment methods at this time. I am connecting you with a human agent who can provide you with the correct information. Please wait a moment.",
+      "response": "I apologize, but I am unable to access the specific list of accepted payment methods at this moment. I have escalated your request to a human agent who will be able to provide you with the correct information. Thank you for your patience.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_07",
+      "category": "kb_retrieval_billing",
+      "message": "When is my bill generated?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Your bill is generated on the 1st of every month.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_08",
+      "category": "kb_retrieval_billing",
+      "message": "What day of the month does billing happen?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Bills are generated on the 1st of every month.",
       "error": null
     },
     {
@@ -633,7 +797,7 @@
           "failures": []
         }
       },
-      "response": "The Unlimited Plan is priced at IDR 299,000 per month. This plan includes unlimited data, unlimited calls, and 20GB of hotspot data. Additionally, all our plans, including this one, come with free access to our streaming partners on weekends.",
+      "response": "The Unlimited Plan is priced at IDR 299,000 per month. This plan includes unlimited data and calls, as well as 20GB of hotspot data. Additionally, all plans include free access to our streaming partners on weekends.",
       "error": null
     },
     {
@@ -693,7 +857,7 @@
           "failures": []
         }
       },
-      "response": "The Unlimited Plan comes with 20GB of hotspot data per month.",
+      "response": "The Unlimited Plan includes 20GB of hotspot data per month.",
       "error": null
     },
     {
@@ -723,7 +887,7 @@
           "failures": []
         }
       },
-      "response": "Yes, all of our service plans include free access to our streaming partners on weekends. Let me know if you would like more details on a specific plan!",
+      "response": "Yes, all of our service plans include free access to our streaming partners on weekends.",
       "error": null
     },
     {
@@ -753,7 +917,67 @@
           "failures": []
         }
       },
-      "response": "We offer a few different plans to suit your needs. All of our plans include free access to our streaming partners on weekends:\n\n*   **Basic Plan:** IDR 99,000/month \u2014 Includes 10GB of data and unlimited calls.\n*   **Pro Plan:** IDR 199,000/month \u2014 Includes 50GB of data, unlimited calls, and 5GB of hotspot data.\n*   **Unlimited Plan:** IDR 299,000/month \u2014 Includes unlimited data, unlimited calls, and 20GB of hotspot data.\n\nDo any of these sound like what you are looking for, or would you like more details on a specific plan?",
+      "response": "We offer the following service plans:\n\n*   **Basic Plan:** IDR 99,000/month \u2014 10GB data, unlimited calls.\n*   **Pro Plan:** IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot.\n*   **Unlimited Plan:** IDR 299,000/month \u2014 Unlimited data, unlimited calls, and 20GB hotspot.\n\nAll of our plans include free access to streaming partners on weekends. Let me know if you would like more details about a specific plan!",
+      "error": null
+    },
+    {
+      "id": "kb_plans_07",
+      "category": "kb_retrieval_plans",
+      "message": "What does the Basic Plan include?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Basic Plan costs IDR 99,000 per month and includes 10GB of data, unlimited calls, and free access to streaming partners on weekends.",
+      "error": null
+    },
+    {
+      "id": "kb_plans_08",
+      "category": "kb_retrieval_plans",
+      "message": "How much is the Basic Plan?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Basic Plan costs IDR 99,000 per month. This plan includes 10GB of data and unlimited calls. Additionally, all plans include free access to our streaming partners on weekends.",
       "error": null
     },
     {
@@ -783,7 +1007,7 @@
           "failures": []
         }
       },
-      "response": "I am sorry to hear you are experiencing slow internet speeds. To troubleshoot this, please try the following steps:\n\n*   **Restart your device:** Powering your device off and back on can often resolve temporary connection issues.\n*   **Check your signal strength:** Ensure you have a strong signal. If you are in a location with weak coverage, this will impact your speeds.\n*   **Toggle Airplane Mode:** Turn on Airplane Mode for a few seconds and then turn it off again to force your device to reconnect to the network.\n\nIf the issue persists after trying these steps, please let me know, and I can look into further troubleshooting or escalate this for you.",
+      "response": "I'm sorry to hear your internet is slow. Please try the following steps to resolve the issue:\n\n*   **Restart your device:** A quick restart often resolves connectivity issues.\n*   **Check your signal strength:** Ensure you are in an area with good coverage.\n*   **Toggle Airplane Mode:** Turn on Airplane Mode for a few seconds, then turn it off to refresh your network connection.\n\nIf you are still experiencing issues after trying these steps, please let me know, and I can escalate this to a human agent for further assistance.",
       "error": null
     },
     {
@@ -813,7 +1037,7 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear you're experiencing poor call quality. Here are a few troubleshooting steps you can try:\n\n*   **Check signal strength:** Ensure you are in an area with good reception.\n*   **Toggle Airplane Mode:** Turn Airplane Mode on for 10 seconds and then off again to reset your connection to the network.\n*   **Restart your device:** This can often resolve temporary connection glitches.\n*   **Check for network congestion:** You can check for reported network issues in your area via the MyTelco app.\n\nIf these steps don't resolve the issue, please let me know, and I can look into further options for you.",
+      "response": "I'm sorry to hear you're experiencing poor call quality. Here are a few steps you can try to improve it:\n\n1. **Check for network congestion:** Please check the **MyTelco app** to see if there are any known network issues or congestion in your area.\n2. **Toggle Airplane Mode:** Turn on Airplane Mode for about 10 seconds and then turn it off again. This forces your device to reconnect to the nearest cell tower, which can often resolve signal issues.\n3. **Restart your device:** A simple restart can fix many temporary glitches that might be affecting your call quality.\n4. **Check your signal strength:** Take a look at the signal bars on your phone. If you are in an area with low bars, moving closer to a window or an open area may help.\n\nIf these steps don't resolve the issue, please let me know, and I can escalate this to a human agent for further assistance.",
       "error": null
     },
     {
@@ -843,7 +1067,7 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear there's an issue with your bill. You can report a billing error by following these steps:\n\n*   **Submit a ticket:** You can do this directly through the MyTelco app.\n*   **Call customer support:** You can speak with a representative by dialing **123** (this call is free from any network).\n\nPlease note that you should request a billing dispute within **30 days** of the invoice date.",
+      "response": "I'm sorry to hear there is an issue with your bill. You can report a billing error by following these steps:\n\n*   **Submit a ticket:** You can do this directly through the MyTelco app.\n*   **Call us:** You can speak with a representative by dialing 123 (this call is free from any network).\n\nPlease note that you should request a billing dispute within 30 days of the invoice date. Let me know if you need any further assistance!",
       "error": null
     },
     {
@@ -873,7 +1097,7 @@
           "failures": []
         }
       },
-      "response": "To get a replacement SIM card, you can visit any of our authorized stores. Please make sure to bring a valid form of identification with you.",
+      "response": "You can get a replacement SIM card by visiting any of our authorized stores. Please make sure to bring a valid form of identification with you.",
       "error": null
     },
     {
@@ -903,7 +1127,7 @@
           "failures": []
         }
       },
-      "response": "You can contact our customer support team by calling **123** (which is free from any network). Alternatively, if you have a billing issue, you can submit a support ticket directly through our mobile app.",
+      "response": "You can contact our customer support team by calling **123**, which is free from any network. Alternatively, if you have a billing issue, you can submit a support ticket directly through our app.",
       "error": null
     },
     {
@@ -933,7 +1157,70 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear you're having trouble with your data connection. Here are a few quick troubleshooting steps you can try:\n\n*   **Restart your device:** This often refreshes your connection to the network.\n*   **Toggle Airplane Mode:** Turn Airplane Mode on for about 10 seconds, then turn it off again. This forces your phone to reconnect to the nearest cell tower.\n*   **Check your signal:** Ensure you are in an area with good network coverage.\n\nIf the issue persists after trying these steps, please let me know, and I can look into further troubleshooting or escalate this for you.",
+      "response": "I'm sorry to hear you're experiencing drops in your data connection. Please try these quick troubleshooting steps:\n\n1.  **Toggle Airplane Mode:** Turn Airplane Mode on for about 10 seconds, then turn it off. This forces your device to reconnect to the nearest cell tower.\n2.  **Restart your device:** A simple restart can often resolve temporary connection glitches.\n3.  **Check your signal:** Ensure you are in an area with stable coverage.\n\nIf these steps do not resolve the issue, please let me know, and I can look into further options or escalate this for you.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_07",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "Is it free to call customer support?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": "Unexpected tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": false,
+          "actual": true,
+          "reason": "Agent escalated unexpectedly"
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Missing required phrase: '123'"
+          ]
+        }
+      },
+      "response": "I apologize, but I don't have information on whether calling customer support is free of charge. I have escalated your request to a human representative who will be able to assist you further with this inquiry.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_08",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "Do I need to bring ID for a SIM replacement?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Yes, you will need to bring a valid government-issued ID with you to any authorized store to process a SIM card replacement.",
       "error": null
     },
     {
@@ -965,7 +1252,7 @@
           "failures": []
         }
       },
-      "response": "I apologize, but I couldn't find specific information about international roaming packages in our current plan details. I am connecting you with a live agent who can provide you with more information on our roaming options. Please wait a moment.",
+      "response": "I apologize, but I do not have information regarding international roaming packages in our current service offerings. I have escalated your request to a live agent who will be able to provide you with more detailed information. Please hold while I connect you.",
       "error": null
     },
     {
@@ -997,7 +1284,7 @@
           "failures": []
         }
       },
-      "response": "I apologize, but I don't have the specific details on our number porting process in my system right now. I am escalating your request to a live agent who will be able to assist you with porting your number from another carrier. Please wait a moment.",
+      "response": "Yes, you can certainly port your number to us from another carrier. I have escalated your request to a human agent who can guide you through the specific steps and requirements to complete the transfer. They will be with you shortly to assist you further.",
       "error": null
     },
     {
@@ -1028,38 +1315,39 @@
           "failures": []
         }
       },
-      "response": "I do not currently have information about specific \"family\" or \"shared\" plans in our system. The plans currently available are individual plans:\n\n*   **Basic Plan:** IDR 99,000/month \u2014 10GB data, unlimited calls.\n*   **Pro Plan:** IDR 199,000/month \u2014 50GB data, unlimited calls, 5GB hotspot.\n*   **Unlimited Plan:** IDR 299,000/month \u2014 Unlimited data, unlimited calls, 20GB hotspot.\n\nAll these plans include free access to our streaming partners on weekends.\n\nIf you would like to speak with an agent to see if there are any unlisted options or promotional bundles available, please let me know and I can connect you.",
+      "response": "We currently offer several individual service plans, including our Basic, Pro, and Unlimited options. However, we do not have specific \"family\" or \"shared\" plans available at this time. \n\nIf you'd like to sign up multiple lines, you can simply add individual plans to your account. Would you like more details on any of the plans listed below?\n\n*   **Basic Plan (IDR 99,000/month):** 10GB data, unlimited calls.\n*   **Pro Plan (IDR 199,000/month):** 50GB data, unlimited calls, 5GB hotspot.\n*   **Unlimited Plan (IDR 299,000/month):** Unlimited data, unlimited calls, 20GB hotspot.\n\nAll plans include free access to our streaming partners on weekends!",
       "error": null
     },
     {
       "id": "kb_not_in_kb_04",
       "category": "kb_retrieval_not_in_kb",
       "message": "Does unused data roll over to the next month?",
-      "passed": false,
+      "passed": true,
       "checks": {
         "tools": {
-          "passed": false,
+          "passed": true,
           "expected": [
             "knowledge_base_search",
             "escalate_to_human"
           ],
           "actual": [
-            "knowledge_base_search"
+            "knowledge_base_search",
+            "escalate_to_human"
           ],
-          "reason": "Missing tools: ['escalate_to_human']"
+          "reason": null
         },
         "escalation": {
-          "passed": false,
+          "passed": true,
           "expected": true,
-          "actual": false,
-          "reason": "Expected escalation but agent did not escalate"
+          "actual": true,
+          "reason": null
         },
         "content": {
           "passed": true,
           "failures": []
         }
       },
-      "response": "I've checked our current service plans, and they do not include a data rollover feature. Your data allowance resets on the 1st of every month when your new billing cycle begins.",
+      "response": "I apologize, but I couldn't find specific information regarding data rollover in our current service plan documents. I have escalated your request to a human agent who will be able to provide you with an accurate answer. They will be with you shortly!",
       "error": null
     },
     {
@@ -1091,7 +1379,7 @@
           "failures": []
         }
       },
-      "response": "I am sorry, but I do not have information regarding our eSIM activation policies. I have connected you with a human representative who will be able to assist you further with this request.",
+      "response": "I apologize, but I do not have information in our records confirming whether we support eSIM activation. I am escalating your request to a live agent who will be able to provide you with the most accurate information. Please stay on the line.",
       "error": null
     },
     {
@@ -1123,7 +1411,71 @@
           "failures": []
         }
       },
-      "response": "I am unable to access your specific location data to determine 5G coverage, and I don't have a tool available to check that information for you. I have escalated your request to a human agent who will be able to assist you further. They should be with you shortly.",
+      "response": "I apologize, but I don't have access to your specific location or a real-time coverage map to check 5G availability. I've connected you with a human agent who will be able to check your area and provide you with more detailed information. They will be with you shortly.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_07",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Can I temporarily suspend my account?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I don't have information regarding temporary account suspension policies. I am escalating your request to a human agent who will be able to assist you further. Please wait a moment.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_08",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Do you offer student discounts?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I don't have information regarding student discounts in our current service plans. I have escalated your inquiry to a human agent who will be able to provide you with the most accurate and up-to-date information. They will be with you shortly.",
       "error": null
     },
     {
@@ -1149,7 +1501,7 @@
           "failures": []
         }
       },
-      "response": "Hello! I'm here to help. Could you please let me know what you need assistance with today? Whether it's about a service plan, a billing question, or some troubleshooting, I'll do my best to get you the information you need.",
+      "response": "Hello! I'm here to help. Could you please let me know what you need assistance with today? For example, are you having trouble with your service, looking for information about your plan, or do you have a question about your bill?",
       "error": null
     },
     {
@@ -1175,7 +1527,7 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear that. I'd like to help you resolve it.\n\nCould you please tell me a bit more about what's going on? For example, are you having trouble with your internet connection, a billing issue, or something else related to your service?",
+      "response": "I'm sorry to hear you're having trouble. I'd like to help you resolve this. \n\nCould you please provide a little more detail about what is happening? For example, are you experiencing an issue with your service plan, a billing question, or a technical problem with your equipment?",
       "error": null
     },
     {
@@ -1201,7 +1553,7 @@
           "failures": []
         }
       },
-      "response": "I'd be happy to help! Could you please let me know what kind of information you are looking for? For example, are you inquiring about a service plan, a question about your bill, or do you need help troubleshooting a service issue?",
+      "response": "I'd be happy to help! Could you please let me know what kind of information you are looking for? \n\nFor example, do you have a question about your service plan, a recent bill, or are you experiencing an issue with your connection that you'd like to troubleshoot?",
       "error": null
     },
     {
@@ -1227,7 +1579,7 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear you're having trouble. To help me assist you, could you please tell me a bit more about what's going on?\n\nFor example:\n*   Are you having issues with your internet or phone service?\n*   Do you have a question about your bill or account?\n*   Is a specific device not working correctly?\n\nOnce I know a little more, I'll do my best to help you resolve it.",
+      "response": "I'm sorry to hear that you're having trouble. Could you please tell me a bit more about what's going on? \n\nAre you experiencing issues with your service (like internet or phone connectivity), or is your question regarding a bill or your account? The more details you can provide, the better I can assist you.",
       "error": null
     },
     {
@@ -1253,7 +1605,7 @@
           "failures": []
         }
       },
-      "response": "I would be happy to assist you! How can I help you today? Are you looking for information about your service plan, a billing question, or do you need help troubleshooting an issue?",
+      "response": "Hello! I would be happy to assist you. What can I help you with today?",
       "error": null
     },
     {
@@ -1279,7 +1631,59 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear you're feeling stuck. I'm here to help with any questions you have regarding your service plans, billing, or if you're experiencing technical issues with your connection.\n\nCould you let me know a little more about what's going on, or what you're trying to accomplish today?",
+      "response": "I'm sorry to hear you're feeling stuck. I'm here to help with any questions you might have about your telecommunications service, such as billing, your plan, or troubleshooting issues.\n\nCould you let me know what's going on or what you need assistance with?",
+      "error": null
+    },
+    {
+      "id": "ambiguous_07",
+      "category": "ambiguous_vague",
+      "message": "I'm confused",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear that! I'm here to help. Could you tell me a little more about what's going on?\n\nAre you having trouble with your service, a question about your bill, or something else related to your account? Let me know, and I'll do my best to clear things up for you.",
+      "error": null
+    },
+    {
+      "id": "ambiguous_08",
+      "category": "ambiguous_vague",
+      "message": "What are my options?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "To better assist you, could you please clarify what you are looking for? For example, are you interested in changing your service plan, checking your billing options, or troubleshooting an issue?",
       "error": null
     },
     {
@@ -1309,7 +1713,7 @@
           "failures": []
         }
       },
-      "response": "I have escalated your request to a human agent who will be with you shortly to assist you further.",
+      "response": "I have escalated your request to a human agent. They will be with you shortly to assist you further.",
       "error": null
     },
     {
@@ -1339,35 +1743,37 @@
           "failures": []
         }
       },
-      "response": "I have initiated a transfer to a live agent for you. Please hold for a moment while I connect you.",
+      "response": "Of course. I am connecting you with a live agent who will be able to assist you further. Please hold for just a moment.",
       "error": null
     },
     {
       "id": "escalation_03",
       "category": "escalation_explicit",
       "message": "I need to talk to a supervisor",
-      "passed": false,
+      "passed": true,
       "checks": {
         "tools": {
-          "passed": false,
+          "passed": true,
           "expected": [
             "escalate_to_human"
           ],
-          "actual": [],
-          "reason": "Missing tools: ['escalate_to_human']"
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
         },
         "escalation": {
-          "passed": false,
+          "passed": true,
           "expected": true,
-          "actual": false,
-          "reason": "Expected escalation but agent did not escalate"
+          "actual": true,
+          "reason": null
         },
         "content": {
           "passed": true,
           "failures": []
         }
       },
-      "response": "I can certainly help you get connected with someone who can assist you further. To make sure I get you to the right person, could you please tell me a little bit about what you need assistance with today?",
+      "response": "I have initiated a request for a supervisor to assist you. A member of our management team will be with you shortly to address your concerns. Please remain on the line.",
       "error": null
     },
     {
@@ -1397,7 +1803,7 @@
           "failures": []
         }
       },
-      "response": "Of course. I am connecting you to a live customer support representative who will be able to assist you further. Please hold for just a moment.",
+      "response": "I have initiated a request for you to speak with a human customer support agent. Someone will be with you shortly to assist you further.",
       "error": null
     },
     {
@@ -1427,7 +1833,7 @@
           "failures": []
         }
       },
-      "response": "I understand. I am connecting you to a live agent now who will be able to assist you further. Please wait a moment.",
+      "response": "I understand. I am escalating your request to a live agent who will be able to assist you further. Please hold for a moment.",
       "error": null
     },
     {
@@ -1455,12 +1861,72 @@
           "failures": []
         }
       },
-      "response": "I'm sorry to hear that you've had an experience that requires a formal complaint. I would like to help resolve this for you. \n\nPlease provide me with a brief summary of the issue you are experiencing, and I will escalate this to a supervisor or the appropriate department for further review.",
+      "response": "I understand you would like to speak with a manager to file a formal complaint. I can certainly help you get connected with the right team.\n\nSo I can best direct your request, could you please tell me a little more about the issue you are experiencing?",
+      "error": null
+    },
+    {
+      "id": "escalation_07",
+      "category": "escalation_explicit",
+      "message": "Get me a human right now",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I have requested a human agent to assist you. They will be with you shortly.",
+      "error": null
+    },
+    {
+      "id": "escalation_08",
+      "category": "escalation_explicit",
+      "message": "I don't want to talk to a bot, transfer me",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I understand. I am connecting you with a human representative now who will be able to assist you further. Please wait a moment.",
       "error": null
     }
   ],
   "summary": {
-    "timestamp": "2026-03-19T11:05:43.999872+00:00",
+    "timestamp": "2026-03-24T04:57:55.977010+00:00",
     "test_file": "/Users/madnanrizqu/Code/Project/qna-chat-agent/eval/chat_test_cases.json",
     "total_categories": 8
   },
