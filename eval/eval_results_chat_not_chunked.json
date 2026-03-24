@@ -1,0 +1,1950 @@
+{
+  "metrics": {
+    "overall": {
+      "total_cases": 64,
+      "passed_cases": 54,
+      "accuracy": 0.84375,
+      "tool_accuracy": 0.875,
+      "escalation_accuracy": 0.875,
+      "content_accuracy": 0.90625
+    },
+    "by_category": {
+      "direct_conversational": {
+        "total_cases": 8,
+        "passed_cases": 8,
+        "accuracy": 1.0,
+        "tool_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "content_accuracy": 1.0
+      },
+      "off_topic": {
+        "total_cases": 8,
+        "passed_cases": 6,
+        "accuracy": 0.75,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
+        "content_accuracy": 0.875
+      },
+      "kb_retrieval_billing": {
+        "total_cases": 8,
+        "passed_cases": 5,
+        "accuracy": 0.625,
+        "tool_accuracy": 0.625,
+        "escalation_accuracy": 0.625,
+        "content_accuracy": 0.625
+      },
+      "kb_retrieval_plans": {
+        "total_cases": 8,
+        "passed_cases": 8,
+        "accuracy": 1.0,
+        "tool_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "content_accuracy": 1.0
+      },
+      "kb_retrieval_troubleshooting": {
+        "total_cases": 8,
+        "passed_cases": 6,
+        "accuracy": 0.75,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
+        "content_accuracy": 0.75
+      },
+      "kb_retrieval_not_in_kb": {
+        "total_cases": 8,
+        "passed_cases": 7,
+        "accuracy": 0.875,
+        "tool_accuracy": 0.875,
+        "escalation_accuracy": 0.875,
+        "content_accuracy": 1.0
+      },
+      "ambiguous_vague": {
+        "total_cases": 8,
+        "passed_cases": 8,
+        "accuracy": 1.0,
+        "tool_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "content_accuracy": 1.0
+      },
+      "escalation_explicit": {
+        "total_cases": 8,
+        "passed_cases": 6,
+        "accuracy": 0.75,
+        "tool_accuracy": 0.75,
+        "escalation_accuracy": 0.75,
+        "content_accuracy": 1.0
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "direct_conv_01",
+      "category": "direct_conversational",
+      "message": "Hello!",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Hello! How can I help you today?",
+      "error": null
+    },
+    {
+      "id": "direct_conv_02",
+      "category": "direct_conversational",
+      "message": "Good morning",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Good morning! How can I help you today?",
+      "error": null
+    },
+    {
+      "id": "direct_conv_03",
+      "category": "direct_conversational",
+      "message": "How are you?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm doing great, thank you for asking! How can I help you today?",
+      "error": null
+    },
+    {
+      "id": "direct_conv_04",
+      "category": "direct_conversational",
+      "message": "Thank you for your help!",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "You are very welcome! I'm glad I could help. If you have any other questions in the future, feel free to reach out. Have a great day!",
+      "error": null
+    },
+    {
+      "id": "direct_conv_05",
+      "category": "direct_conversational",
+      "message": "Goodbye",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Goodbye! Have a great day. If you need any assistance in the future, feel free to reach out.",
+      "error": null
+    },
+    {
+      "id": "direct_conv_06",
+      "category": "direct_conversational",
+      "message": "Hi, just wanted to say thanks",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "You are very welcome! I'm happy I could help. If you have any other questions in the future, feel free to reach out. Have a great day!",
+      "error": null
+    },
+    {
+      "id": "direct_conv_07",
+      "category": "direct_conversational",
+      "message": "Have a nice day!",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Thank you! I hope you have a wonderful day as well. How can I help you today?",
+      "error": null
+    },
+    {
+      "id": "direct_conv_08",
+      "category": "direct_conversational",
+      "message": "Alright, thanks for the info",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "You're very welcome! If you have any more questions in the future, feel free to ask. Have a great day!",
+      "error": null
+    },
+    {
+      "id": "off_topic_01",
+      "category": "off_topic",
+      "message": "What is the capital of France?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Found forbidden phrase: 'Paris'"
+          ]
+        }
+      },
+      "response": "The capital of France is Paris.",
+      "error": null
+    },
+    {
+      "id": "off_topic_02",
+      "category": "off_topic",
+      "message": "What's the best phone for gaming?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Choosing the \"best\" gaming phone really depends on your budget and what kind of games you play, but currently, a few models consistently stand out at the top of the market:\n\n1.  **ASUS ROG Phone 8 Pro:** This is widely considered the ultimate gaming smartphone. It features a dedicated gaming-focused design, an overclocked processor, advanced cooling systems, and physical \"AirTrigger\" shoulder buttons that give you a huge advantage in shooters.\n2.  **Samsung Galaxy S24 Ultra:** If you want a phone that is an incredible daily driver *and* an absolute beast for gaming, this is it. Its display is stunning, and the Snapdragon 8 Gen 3 for Galaxy chipset handles even the most demanding games with ease.\n3.  **iPhone 15 Pro / 15 Pro Max:** Thanks to the A17 Pro chip, these phones are incredibly powerful. They have excellent thermal management and access to exclusive high-end titles that are increasingly being ported to iOS.\n4.  **RedMagic 9 Pro:** This is a great choice if you want high-end gaming specs for a lower price point. It even includes a built-in physical cooling fan, which helps prevent the phone from slowing down during long gaming sessions.\n\n**To help you narrow it down, are you looking for:**\n*   A phone that is strictly for gaming, or one you'll use for everything?\n*   A specific budget range?\n*   Do you prefer Android or iOS?",
+      "error": null
+    },
+    {
+      "id": "off_topic_03",
+      "category": "off_topic",
+      "message": "How do I free up storage on my Android phone?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Freeing up storage on your Android phone can be done in a few quick steps. Here are the most effective ways to clear space:\n\n1.  **Use \"Free up space\" in Google Files:**\n    *   Open the **Files by Google** app (or go to **Settings > Storage** and look for a \"Free up space\" or \"Clean\" option).\n    *   The app will automatically suggest deleting junk files, duplicate files, large files, and backed-up photos.\n\n2.  **Delete Unused Apps:**\n    *   Go to **Settings > Apps > See all apps**. \n    *   Look through the list for apps you no longer use and uninstall them.\n\n3.  **Clear App Cache:**\n    *   For apps you use frequently (like social media or browsers), the cache can grow very large.\n    *   Go to **Settings > Apps**, select a specific app, tap **Storage & cache**, and then tap **Clear cache**. (Note: Do not tap \"Clear storage\" or \"Clear data\" unless you want to log out of the app and reset your settings within it.)\n\n4.  **Manage Photos and Videos:**\n    *   Open **Google Photos**.\n    *   Tap your profile icon at the top right and select **Free up space**. This will remove photos and videos from your device that have already been backed up to the cloud.\n\n5.  **Move Files to the Cloud or an SD Card:**\n    *   If your phone has a microSD card slot, move your photos, videos, and music files to the card.\n    *   Alternatively, upload large files to cloud services like Google Drive, Dropbox, or OneDrive, and then delete them from your phone's internal storage.\n\n6.  **Clear Downloads:**\n    *   Open your **Files** app or **Downloads** folder and delete large files (like PDFs, installers, or videos) that you have finished using.\n\nIf you are seeing a specific error message or if your phone is still running out of space after trying these steps, please let me know!",
+      "error": null
+    },
+    {
+      "id": "off_topic_04",
+      "category": "off_topic",
+      "message": "What's the difference between 4G and 5G?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The main differences between 4G and 5G come down to speed, latency, and capacity:\n\n*   **Speed:** 5G is significantly faster than 4G. While 4G can reach speeds of up to 100 Mbps (and higher with LTE-Advanced), 5G has the potential to reach speeds up to 10 Gbps. This allows for near-instant downloading of large files and smoother high-definition streaming.\n*   **Latency:** Latency is the delay between sending information and receiving a response. 5G offers much lower latency than 4G, which is crucial for real-time applications like online gaming, autonomous vehicles, and remote medical procedures.\n*   **Capacity:** 5G networks are designed to handle a much higher density of connected devices simultaneously. This is essential as more \"Internet of Things\" (IoT) devices\u2014like smart home appliances and sensors\u2014come online.\n\nIn short, 5G is not just an upgrade to speed; it is built to support a more connected, responsive, and data-intensive future.",
+      "error": null
+    },
+    {
+      "id": "off_topic_05",
+      "category": "off_topic",
+      "message": "Can you help me with my math homework?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I would be happy to help! Please go ahead and share the math problem you are working on, and I'll do my best to explain how to solve it.",
+      "error": null
+    },
+    {
+      "id": "off_topic_06",
+      "category": "off_topic",
+      "message": "My phone screen is cracked, what should I do?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": "Unexpected tools: ['escalate_to_human', 'knowledge_base_search']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": false,
+          "actual": true,
+          "reason": "Agent escalated unexpectedly"
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear your screen is cracked. Since I don't have specific instructions in my system for hardware repairs, I am connecting you to a live support agent who can assist you with repair options, insurance claims, or service center locations. Please hold for just a moment.",
+      "error": null
+    },
+    {
+      "id": "off_topic_07",
+      "category": "off_topic",
+      "message": "What's a good recipe for banana bread?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Banana bread is a classic! Here is a simple and delicious recipe:\n\n### Ingredients:\n*   2 to 3 very ripe bananas, peeled and mashed\n*   1/3 cup melted butter\n*   1/2 teaspoon baking soda\n*   1 pinch salt\n*   3/4 cup sugar (1/2 cup if you prefer it less sweet)\n*   1 large egg, beaten\n*   1 teaspoon vanilla extract\n*   1 1/2 cups of all-purpose flour\n\n### Instructions:\n1.  **Preheat:** Preheat your oven to 350\u00b0F (175\u00b0C) and grease a 4x8-inch loaf pan.\n2.  **Mix:** In a mixing bowl, mash the ripe bananas with a fork until smooth. Stir the melted butter into the mashed bananas.\n3.  **Combine:** Mix in the baking soda and salt. Stir in the sugar, beaten egg, and vanilla extract. Mix in the flour.\n4.  **Bake:** Pour the batter into your prepared loaf pan. Bake for 50 to 60 minutes, or until a toothpick inserted into the center comes out clean.\n5.  **Cool:** Let it cool in the pan for a few minutes, then move to a wire rack to cool completely before slicing.\n\nEnjoy your baking! Let me know if you have any other questions.",
+      "error": null
+    },
+    {
+      "id": "off_topic_08",
+      "category": "off_topic",
+      "message": "How do I train for a marathon?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Training for a marathon is an exciting goal! While I am here to help you with questions specifically related to your telecommunications service, billing, or technical troubleshooting, I can offer some general advice on preparing for a marathon:\n\n1.  **Start with a plan:** Look for a beginner-friendly marathon training plan (usually lasting 16\u201320 weeks). Apps like Nike Run Club or websites like Hal Higdon offer excellent, structured schedules.\n2.  **Build a base:** Before starting a formal plan, ensure you have a solid \"base\" of running (e.g., running consistently for a few months).\n3.  **Consistency is key:** Focus on completing your scheduled runs rather than worrying about speed. The goal for a first marathon is simply to finish safely.\n4.  **Incorporate cross-training and rest:** Strength training (to prevent injury) and rest days are just as important as the miles you log.\n5.  **Listen to your body:** If you feel pain that isn't just typical muscle soreness, take an extra rest day. \n6.  **Proper Gear:** Invest in a good pair of running shoes from a specialty running store to ensure you have the right support for your gait.\n\nIf you have any questions regarding your service plan, data usage, or any technical issues with your equipment, feel free to ask!",
+      "error": null
+    },
+    {
+      "id": "kb_billing_01",
+      "category": "kb_retrieval_billing",
+      "message": "What is the late payment fee?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The late payment fee for your account is IDR 50,000, which is applied to your account if payment is not received within 14 days after the due date.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_02",
+      "category": "kb_retrieval_billing",
+      "message": "How long do I have to dispute a bill?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "You can request a billing dispute within 30 days of the invoice date.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_03",
+      "category": "kb_retrieval_billing",
+      "message": "How do I set up auto-pay for my bill?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": "Unexpected tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": false,
+          "actual": true,
+          "reason": "Agent escalated unexpectedly"
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Missing required phrase: 'MyTelco'"
+          ]
+        }
+      },
+      "response": "I'm sorry, but I couldn't find specific instructions for setting up auto-pay in our system. I am escalating your request to a human agent who will be able to assist you with this directly. Someone will be with you shortly!",
+      "error": null
+    },
+    {
+      "id": "kb_billing_04",
+      "category": "kb_retrieval_billing",
+      "message": "What happens if I pay my bill late?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "If your bill is paid late, a late payment fee of IDR 50,000 will be applied to your account if the payment is more than 14 days overdue. \n\nTo avoid this in the future, you may want to consider enrolling in auto-pay through the MyTelco app. Let me know if you need help with that!",
+      "error": null
+    },
+    {
+      "id": "kb_billing_05",
+      "category": "kb_retrieval_billing",
+      "message": "How can I dispute a charge on my account?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": "Unexpected tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": false,
+          "actual": true,
+          "reason": "Agent escalated unexpectedly"
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Missing required phrase: '30 days'"
+          ]
+        }
+      },
+      "response": "I apologize, but I am unable to provide the specific steps for disputing a charge through our automated system. I have connected you with a human agent who will be able to assist you further with this billing matter. Please stay on the line.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_06",
+      "category": "kb_retrieval_billing",
+      "message": "What payment methods do you accept?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": "Unexpected tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": false,
+          "actual": true,
+          "reason": "Agent escalated unexpectedly"
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Missing required phrase: 'MyTelco'"
+          ]
+        }
+      },
+      "response": "I apologize, but I do not have access to a list of our accepted payment methods. I have connected you with a human agent who will be able to assist you with this information. They will be with you shortly.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_07",
+      "category": "kb_retrieval_billing",
+      "message": "When is my bill generated?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Your bill is generated on the 1st of every month.",
+      "error": null
+    },
+    {
+      "id": "kb_billing_08",
+      "category": "kb_retrieval_billing",
+      "message": "What day of the month does billing happen?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Bills are generated on the 1st of every month.",
+      "error": null
+    },
+    {
+      "id": "kb_plans_01",
+      "category": "kb_retrieval_plans",
+      "message": "How much does the Pro Plan cost?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Pro Plan costs IDR 199,000 per month. This plan includes 50GB of data, unlimited calls, and 5GB of hotspot access.",
+      "error": null
+    },
+    {
+      "id": "kb_plans_02",
+      "category": "kb_retrieval_plans",
+      "message": "What is the price of the Unlimited Plan?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Unlimited Plan is priced at IDR 299,000 per month. This plan includes unlimited data, unlimited calls, and a 20GB hotspot, plus free access to our streaming partners.",
+      "error": null
+    },
+    {
+      "id": "kb_plans_03",
+      "category": "kb_retrieval_plans",
+      "message": "How much hotspot data does the Pro Plan include?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Pro Plan includes 5GB of hotspot data per month.",
+      "error": null
+    },
+    {
+      "id": "kb_plans_04",
+      "category": "kb_retrieval_plans",
+      "message": "How much hotspot data comes with the Unlimited Plan?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Unlimited Plan includes 20GB of hotspot data per month.",
+      "error": null
+    },
+    {
+      "id": "kb_plans_05",
+      "category": "kb_retrieval_plans",
+      "message": "Do your plans include any streaming benefits?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Yes, all of our service plans include free access to our streaming partners on weekends! \n\nHere is a quick overview of our plans for your reference:\n\n*   **Basic Plan (IDR 99,000/month):** 10GB data and unlimited calls.\n*   **Pro Plan (IDR 199,000/month):** 50GB data, unlimited calls, and 5GB hotspot.\n*   **Unlimited Plan (IDR 299,000/month):** Unlimited data, unlimited calls, and 20GB hotspot.\n\nLet me know if you would like more details on any of these plans!",
+      "error": null
+    },
+    {
+      "id": "kb_plans_06",
+      "category": "kb_retrieval_plans",
+      "message": "What plans are available?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "We offer three main service plans:\n\n*   **Basic Plan:** IDR 99,000/month \u2014 Includes 10GB of data and unlimited calls.\n*   **Pro Plan:** IDR 199,000/month \u2014 Includes 50GB of data, unlimited calls, and 5GB of hotspot data.\n*   **Unlimited Plan:** IDR 299,000/month \u2014 Includes unlimited data, unlimited calls, and 20GB of hotspot data.\n\nAdditionally, all of our plans come with free access to our streaming partners on weekends. Let me know if you would like more details on any of these!",
+      "error": null
+    },
+    {
+      "id": "kb_plans_07",
+      "category": "kb_retrieval_plans",
+      "message": "What does the Basic Plan include?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Basic Plan is IDR 99,000 per month and includes:\n\n*   10GB of data\n*   Unlimited calls\n*   Free access to streaming partners on weekends",
+      "error": null
+    },
+    {
+      "id": "kb_plans_08",
+      "category": "kb_retrieval_plans",
+      "message": "How much is the Basic Plan?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "The Basic Plan is IDR 99,000 per month. It includes 10GB of data and unlimited calls. All our plans also come with free access to our streaming partners.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_01",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "My internet is very slow, what should I do?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear your internet is slow. Please try the following steps to resolve the issue:\n\n*   **Restart your device:** Turning your device off and back on can often resolve temporary connection problems.\n*   **Check signal strength:** Ensure you are in an area with good coverage.\n*   **Toggle airplane mode:** Turn airplane mode on, wait a few seconds, and turn it off again to force your device to reconnect to the network.\n\nIf these steps do not help, please let me know, and I can look into further troubleshooting options or connect you with a representative.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_02",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "I'm experiencing poor call quality, how can I fix it?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear you're experiencing poor call quality. Here are a few steps you can try to resolve the issue:\n\n*   **Check signal strength:** Ensure you have a stable connection.\n*   **Toggle Airplane Mode:** Turn Airplane Mode on for 10 seconds and then off again to force your device to reconnect to the network.\n*   **Restart your device:** This often resolves temporary network registration issues.\n*   **Check for network congestion:** You can check for reported service issues in your area by using the MyTelco app.\n\nIf these steps don't improve your call quality, please let me know, and I can escalate this for further assistance!",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_03",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "I think there's an error on my bill, how do I report it?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Missing required phrase: '123'"
+          ]
+        }
+      },
+      "response": "I'm sorry to hear that you've noticed a discrepancy on your bill.\n\nAccording to our billing policy, you can request a billing dispute within **30 days of the invoice date**.\n\nTo look into this further or to formally report the error, could you please provide your account number or the specific details of the charge you believe is incorrect? Alternatively, if you would prefer to speak with a representative to resolve this, I can escalate your request to a human agent.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_04",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "How do I get a replacement SIM card?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "To get a replacement SIM card, you can visit any of our authorized store locations. Please make sure to bring a valid form of identification with you.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_05",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "How do I contact customer support?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "You can contact our customer support team by calling **123** (which is free from any network) or by submitting a ticket through our official app.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_06",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "My data connection keeps dropping, any quick fix?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear you're having trouble with your data connection. Here are a few quick troubleshooting steps you can try:\n\n*   **Restart your device:** This often resolves temporary network glitches.\n*   **Toggle Airplane Mode:** Turn on Airplane mode, wait about 10 seconds, and then turn it off. This forces your phone to reconnect to the nearest cell tower.\n*   **Check your signal strength:** Ensure you are in an area with good coverage.\n\nIf the issue persists, please let me know, and I can assist you further or escalate this to a human agent if needed.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_07",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "Is it free to call customer support?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": "Unexpected tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": false,
+          "actual": true,
+          "reason": "Agent escalated unexpectedly"
+        },
+        "content": {
+          "passed": false,
+          "failures": [
+            "Missing required phrase: '123'"
+          ]
+        }
+      },
+      "response": "I apologize, but I am unable to confirm whether there are charges for calling customer support as that information is not currently available in our system. I have escalated your request to a human representative who will be able to assist you further with this inquiry.",
+      "error": null
+    },
+    {
+      "id": "kb_troubleshoot_08",
+      "category": "kb_retrieval_troubleshooting",
+      "message": "Do I need to bring ID for a SIM replacement?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "Yes, you will need to bring a valid ID with you if you visit an authorized store for a SIM card replacement.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_01",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Do you offer international roaming packages?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry, but I don't have information about international roaming packages in my system. I am connecting you with a human agent who will be able to assist you further with this request.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_02",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Can I port my number from another carrier?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I don't have the specific information regarding our number porting policy in my current resources. I am connecting you with a live agent who will be able to assist you with this request.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_03",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "What are your family or shared plan options?",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search"
+          ],
+          "reason": "Missing tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": true,
+          "actual": false,
+          "reason": "Expected escalation but agent did not escalate"
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "We currently offer three main service plans, but please note that we do not have specific \"family\" or \"shared\" plans at this time. All of our plans are individual subscriptions:\n\n*   **Basic Plan (IDR 99,000/month):** Includes 10GB of data and unlimited calls.\n*   **Pro Plan (IDR 199,000/month):** Includes 50GB of data, unlimited calls, and 5GB of hotspot.\n*   **Unlimited Plan (IDR 299,000/month):** Includes unlimited data, unlimited calls, and 20GB of hotspot.\n\nAll plans include free access to our streaming partners on weekends. If you would like to manage multiple lines under one account, I can escalate you to a representative to discuss potential billing arrangements. Would you like me to do that?",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_04",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Does unused data roll over to the next month?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I do not have information regarding whether unused data rolls over on our current service plans. I have escalated your request to a human agent who will be able to provide you with the correct information. They will be with you shortly.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_05",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Do you support eSIM activation?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I don't have information about our eSIM activation policies in my current resources. I am escalating your request to a human agent who will be able to provide you with the correct information. They will be with you shortly.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_06",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Is 5G available in my area?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I am sorry, I do not have access to real-time coverage maps. I am connecting you with a live agent who can look into 5G availability for your specific location. Please hold for just a moment.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_07",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Can I temporarily suspend my account?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I do not have information regarding account suspension policies in our current guide. I have escalated your request to a human agent who will be able to provide you with the correct information and assist you further.",
+      "error": null
+    },
+    {
+      "id": "kb_not_in_kb_08",
+      "category": "kb_retrieval_not_in_kb",
+      "message": "Do you offer student discounts?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "actual": [
+            "knowledge_base_search",
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I apologize, but I couldn't find any information regarding student discounts in our system. I am escalating your request to a live agent who will be able to provide you with more specific information. Please stay on the line.",
+      "error": null
+    },
+    {
+      "id": "ambiguous_01",
+      "category": "ambiguous_vague",
+      "message": "Help me",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'd be happy to help! Could you please let me know what you need assistance with? For example, are you having trouble with your service, looking for information on a plan, or do you have a question about your bill?",
+      "error": null
+    },
+    {
+      "id": "ambiguous_02",
+      "category": "ambiguous_vague",
+      "message": "I have a problem",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear that you're having a problem. I'd be happy to help you with that.\n\nCould you please provide a little more detail about what is going on? For example, are you having trouble with your service, a billing issue, or something else?",
+      "error": null
+    },
+    {
+      "id": "ambiguous_03",
+      "category": "ambiguous_vague",
+      "message": "I need information",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'd be happy to help! Could you please let me know what kind of information you are looking for? For example, are you having trouble with your service, or do you have a question about your billing or a plan?",
+      "error": null
+    },
+    {
+      "id": "ambiguous_04",
+      "category": "ambiguous_vague",
+      "message": "Something is wrong",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear that you're experiencing an issue. To help you better, could you please provide a little more information?\n\nFor example:\n* Is it a problem with your internet connection or your phone service?\n* Are you seeing a specific error message?\n* Is there an issue with your recent bill?\n\nOnce I know a bit more, I can look into it for you or help you troubleshoot.",
+      "error": null
+    },
+    {
+      "id": "ambiguous_05",
+      "category": "ambiguous_vague",
+      "message": "Can you assist?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I certainly can! How can I help you today? Are you looking for information about your service plan, have a question about your bill, or are you experiencing some technical issues?",
+      "error": null
+    },
+    {
+      "id": "ambiguous_06",
+      "category": "ambiguous_vague",
+      "message": "I'm not sure what to do",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear you're feeling stuck. I'd be happy to help you get things sorted out!\n\nAre you having an issue with your service, a question about your bill, or something else entirely? Let me know what\u2019s going on, and I'll do my best to assist you.",
+      "error": null
+    },
+    {
+      "id": "ambiguous_07",
+      "category": "ambiguous_vague",
+      "message": "I'm confused",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I'm sorry to hear that you're feeling confused. I'd like to help you get things cleared up.\n\nCould you tell me a little bit more about what's going on? Are you having trouble with your service, a recent bill, or perhaps a question about your plan?",
+      "error": null
+    },
+    {
+      "id": "ambiguous_08",
+      "category": "ambiguous_vague",
+      "message": "What are my options?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [],
+          "actual": [],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": false,
+          "actual": false,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "To better assist you, could you please tell me a little more about what you are looking for? \n\nAre you interested in information about our current service plans, need help with a billing question, or are you experiencing an issue with your service that you would like to troubleshoot?",
+      "error": null
+    },
+    {
+      "id": "escalation_01",
+      "category": "escalation_explicit",
+      "message": "I want to speak to a human agent",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I have connected you with a human agent who will be with you shortly to assist you further.",
+      "error": null
+    },
+    {
+      "id": "escalation_02",
+      "category": "escalation_explicit",
+      "message": "Transfer me to a real person please",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I have requested to connect you with a live representative. Please hold for a moment while I transfer you.",
+      "error": null
+    },
+    {
+      "id": "escalation_03",
+      "category": "escalation_explicit",
+      "message": "I need to talk to a supervisor",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [],
+          "reason": "Missing tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": true,
+          "actual": false,
+          "reason": "Expected escalation but agent did not escalate"
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I would be happy to help you with that. To make sure I connect you with the right person, could you please let me know a little bit more about what you need assistance with today?",
+      "error": null
+    },
+    {
+      "id": "escalation_04",
+      "category": "escalation_explicit",
+      "message": "Can I speak with customer support directly?",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I have initiated a request for a human agent to assist you. Someone will be with you shortly to help.",
+      "error": null
+    },
+    {
+      "id": "escalation_05",
+      "category": "escalation_explicit",
+      "message": "This isn't helping, connect me to a live agent",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I understand. I am connecting you to a live agent now who will be able to assist you further. Please hold for just a moment.",
+      "error": null
+    },
+    {
+      "id": "escalation_06",
+      "category": "escalation_explicit",
+      "message": "I'd like to file a formal complaint with a manager",
+      "passed": false,
+      "checks": {
+        "tools": {
+          "passed": false,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [],
+          "reason": "Missing tools: ['escalate_to_human']"
+        },
+        "escalation": {
+          "passed": false,
+          "expected": true,
+          "actual": false,
+          "reason": "Expected escalation but agent did not escalate"
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I understand you would like to speak with a manager to file a formal complaint. I can certainly help you get that process started.\n\nSo that I can assist you correctly, could you please tell me a little bit about the issue you are experiencing? Once I have those details, I can escalate this request to a human agent who will be able to address your concerns and direct you to the appropriate management team.",
+      "error": null
+    },
+    {
+      "id": "escalation_07",
+      "category": "escalation_explicit",
+      "message": "Get me a human right now",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I understand. I am escalating your request to a live agent who will be with you shortly to assist you.",
+      "error": null
+    },
+    {
+      "id": "escalation_08",
+      "category": "escalation_explicit",
+      "message": "I don't want to talk to a bot, transfer me",
+      "passed": true,
+      "checks": {
+        "tools": {
+          "passed": true,
+          "expected": [
+            "escalate_to_human"
+          ],
+          "actual": [
+            "escalate_to_human"
+          ],
+          "reason": null
+        },
+        "escalation": {
+          "passed": true,
+          "expected": true,
+          "actual": true,
+          "reason": null
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        }
+      },
+      "response": "I understand. I am connecting you with a human representative now to assist you further. Please stand by.",
+      "error": null
+    }
+  ],
+  "summary": {
+    "timestamp": "2026-03-24T05:18:02.249931+00:00",
+    "test_file": "/Users/madnanrizqu/Code/Project/qna-chat-agent/eval/chat_test_cases.json",
+    "total_categories": 8
+  },
+  "metadata": {
+    "model": "gemini-3.1-flash-lite-preview",
+    "embedding_model": "gemini-embedding-001",
+    "embedding_dimensions": 3072,
+    "similarity_threshold": 0.6,
+    "max_search_results": 1,
+    "chunk_size": 200,
+    "chunk_overlap": 0,
+    "use_chunked_storage": false,
+    "environment": "development"
+  }
+}

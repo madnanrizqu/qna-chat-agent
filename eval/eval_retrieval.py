@@ -205,6 +205,7 @@ def evaluate_retrieval(queries_file: Path, output_file: Path) -> None:
 if __name__ == "__main__":
     eval_dir = Path(__file__).parent
     queries_file = eval_dir / "retrieval_queries.json"
-    output_file = eval_dir / "eval_results.json"
+    suffix = "" if settings.use_chunked_storage else "_not_chunked"
+    output_file = eval_dir / f"eval_results{suffix}.json"
 
     evaluate_retrieval(queries_file, output_file)

@@ -44,7 +44,7 @@ class Settings(BaseSettings):
     chunk_overlap: int = Field(default=0, validation_alias="CHUNK_OVERLAP")
 
     use_chunked_storage: bool = Field(
-        default=True, validation_alias="USE_CHUNKED_STORAGE"
+        default=False, validation_alias="USE_CHUNKED_STORAGE"
     )
 
     environment: str = Field(default="development", validation_alias="ENVIRONMENT")

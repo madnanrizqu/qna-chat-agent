@@ -416,7 +416,8 @@ def evaluate_chat(
 if __name__ == "__main__":
     eval_dir = Path(__file__).parent
     test_cases_file = eval_dir / "chat_test_cases.json"
-    output_file = eval_dir / "eval_results_chat.json"
+    suffix = "" if settings.use_chunked_storage else "_not_chunked"
+    output_file = eval_dir / f"eval_results_chat{suffix}.json"
 
     # Create agent with caching disabled for evaluation
     eval_runner = LangChainGeminiAgentRunner(

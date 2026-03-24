@@ -171,6 +171,6 @@ The LLM can synthesize a complete answer from multiple focused chunks rather tha
 
 ## Conclusion
 
-The chunking strategy delivers a **11% recall improvement** while having **86% precision**, making it an arguable improvement over baseline. The combination of semantic splitting at natural boundaries (`chunk_size=200`), zero overlap (due to self-contained bullets), and title post-processing creates embeddings that are both focused and contextually grounded.
+The chunking strategy delivers a **11% recall improvement** while having **86% precision**, making it an arguable improvement over baseline. The combination of semantic splitting at natural boundaries (`chunk_size=200`), zero overlap (due to self-contained bullets), and title post-processing creates embeddings that are both focused and contextually grounded. This finding is strengthened by the fact the chunked method results in overall **6% accuracy improvement** from the non chunked chat, which can be seen in ./eval/eval_results_chat.json and eval/eval_results_chat_not_chunked.json
 
 For bullet-point documents like ours, this approach is optimal. For prose documents (paragraphs, articles), consider adding `chunk_overlap=50-100` to preserve context across chunk boundaries.

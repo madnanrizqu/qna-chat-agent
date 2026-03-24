@@ -1,0 +1,1522 @@
+{
+  "metrics": {
+    "billing_policy": {
+      "recall": 0.9166666666666666,
+      "precision": 0.9705882352941176,
+      "total_queries": 36,
+      "queries_with_correct_results": 33,
+      "total_results": 34,
+      "correct_results": 33
+    },
+    "service_plans": {
+      "recall": 0.9166666666666666,
+      "precision": 1.0,
+      "total_queries": 36,
+      "queries_with_correct_results": 33,
+      "total_results": 33,
+      "correct_results": 33
+    },
+    "troubleshooting_guide": {
+      "recall": 0.8055555555555556,
+      "precision": 0.9354838709677419,
+      "total_queries": 36,
+      "queries_with_correct_results": 29,
+      "total_results": 31,
+      "correct_results": 29
+    },
+    "not_matching": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "total_queries": 36,
+      "queries_with_correct_results": 36,
+      "total_results": 0,
+      "correct_results": 36
+    },
+    "overall": {
+      "recall": 0.8796296296296297,
+      "precision": 0.9693877551020408,
+      "total_queries": 108,
+      "queries_with_correct_results": 95,
+      "total_results": 98,
+      "correct_results": 95
+    }
+  },
+  "detailed_results": {
+    "billing_policy": [
+      {
+        "query": "What happens if I pay my bill late?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.677707274096772,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much is the late payment fee?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.638574247615175,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can I dispute my invoice?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.655327996294023,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I want to set up automatic payments",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "Tell me about auto-pay options",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.625604837988658,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the deadline for billing disputes?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.701164564525033,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I missed my payment deadline, what should I do?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "How can I challenge my bill?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.637561006836771,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Do you offer autopay discounts?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.618933149766956,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "When are invoices due each month?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.65882003307343,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "When is my bill generated?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.686796048677088,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What date does billing happen?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.670753737047093,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I enroll in auto-pay?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.603271448417221,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Is there a penalty for overdue payments?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.619670683243677,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What is the IDR 50,000 fee for?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.628508969723114,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": false
+      },
+      {
+        "query": "Can I file a complaint about my bill?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.638624911554175,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How long do I have to dispute a charge?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.612297425455316,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My payment is 14 days late, will I be charged extra?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.627561111079495,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I set up automatic billing through the app?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.642595533860529,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What are the consequences of not paying on time?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.613733869381732,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can I contest charges on my invoice?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.635841862659694,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Where can I manage auto-pay in MyTelco?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.64007761239543,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What day of the month does my billing cycle start?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.64799304914516,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Is billing always on the first of the month or does it vary?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.664592524307751,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I just realized I forgot to pay my bill and it's been more than two weeks, am I going to get charged a late fee?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.649310547031248,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I noticed a charge on my invoice that I don't recognize and I want to know how I can dispute it before the deadline passes",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.602020079078098,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been thinking about setting up auto-pay so I don't have to worry about missing payments, how do I do that through the MyTelco app?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.655404986964766,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My friend told me there's a fee if you don't pay your bill on time, can you tell me how much it is and when it kicks in?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.678209937152296,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I received my invoice yesterday and I think there might be an error, what is the process for filing a billing dispute?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.681317886153404,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I want to make sure I never miss a payment again, is there a way to automatically pay my bill every month?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.614305565183361,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you explain your late payment policy? I want to know exactly how many days I have before the penalty applies",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.674294550758926,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been a customer for years and I just got hit with a late fee, is there any way to get it waived or contest it?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.636873998455654,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm looking at my bill and I see an IDR 50,000 charge that I wasn't expecting, can you tell me what that's about?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.648263815355812,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I want to dispute a charge on my latest invoice but I'm not sure if I'm still within the 30 day window to do so",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.647879561908272,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I just signed up last week and I'm wondering when I'll receive my first bill, is it always generated on the 1st of the month?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.69010082810817,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I need to plan my monthly budget and I want to know exactly when my MyTelco bill is generated so I can make sure I have enough funds in my account",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.727431004711793,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": true
+      }
+    ],
+    "service_plans": [
+      {
+        "query": "What plans do you offer?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.668088416343238,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much data do I get with Pro Plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.670758882670541,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What's included in the Unlimited Plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.635477542877197,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Tell me about your pricing",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "What's the difference between Pro and Unlimited?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.616374630223949,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Do you have streaming services?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.600535476175817,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Which package should I choose?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.611640031186347,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much does unlimited data cost?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.665014684200287,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What are the monthly rates?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.61097625559427,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can I upgrade to a better plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.601261156834995,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the Basic Plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.64692916237464,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Tell me about the cheapest plan",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.650804838490199,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much is the Pro Plan per month?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.636841912175474,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Does the Unlimited Plan include hotspot?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.667616804384185,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much hotspot data comes with Pro?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.674456119537354,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What streaming partners are included?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "Is there a plan with 50GB of data?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.669874349847518,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the cheapest plan available?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.66672452291543,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Do all plans include unlimited calls?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.651027002991856,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much is IDR 299,000 plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.72388170503865,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can I stream on weekends for free?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "What's the hotspot limit on the Unlimited Plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.655530752742762,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How much data do I get with the Basic Plan for IDR 99,000?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.77690341747959,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Does the Basic Plan include unlimited calls?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.66563526801643,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm trying to decide between the Pro Plan and the Unlimited Plan, can you break down what each one includes and how much they cost?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.677727539674788,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I use a lot of data for streaming and hotspot, which plan would you recommend for someone who needs more than 50GB per month?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.687432128940099,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I heard that your plans come with free streaming on weekends, can you tell me more about which streaming partners are included?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.64923360366022,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm currently on the Pro Plan but I feel like 50GB isn't enough for me, what would I get if I upgraded to the Unlimited Plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.655133544367573,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My family uses a lot of hotspot data and I want to know if 20GB of hotspot on the Unlimited Plan is shared or per device",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.641213459823916,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm looking for an affordable plan that includes unlimited calls and at least 50GB of data, what do you have available?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.709493465929066,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you tell me the exact monthly price for the plan that comes with unlimited data, unlimited calls, and 20GB hotspot?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.717339954296946,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I want a plan that lets me stream for free on weekends because I usually binge watch shows on Saturday and Sunday",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.689700802853728,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm comparing your plans to other providers, does the Pro Plan at IDR 199,000 include any hotspot data or is that extra?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.774553725828567,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I need a plan with a lot of hotspot data because I work remotely and use my phone as a wifi hotspot for my laptop",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.661315857885708,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm on a tight budget and I saw there's a Basic Plan for IDR 99,000 per month, can you tell me exactly what's included in that plan?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.755629270597789,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I don't use much data and mostly just make phone calls, would the Basic Plan at IDR 99,000 be a good fit for me or should I go with something higher?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 2 \u2014 Service Plans\n- Basic Plan: IDR 99,000/month \u2014 10GB data, unlimited calls\n- Pro Plan: I...",
+            "similarity": 0.76449331468424,
+            "matched_category": "service_plans"
+          }
+        ],
+        "correct_hit": true
+      }
+    ],
+    "troubleshooting_guide": [
+      {
+        "query": "My internet is slow, what should I do?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.62741048547847,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I fix poor call quality?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.647720697929763,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Where can I get a new SIM card?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.645236930535079,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I have a billing error, how do I report it?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.63890667673668,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": false
+      },
+      {
+        "query": "What's the customer service number?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.606884096411699,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Network speed is bad",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "Calls keep dropping",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.601453911998195,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Lost my SIM card",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.608182295723197,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My bill looks wrong",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "How do I reach customer support?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.610071054980259,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I fix slow internet?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.630300346288101,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Where to replace SIM?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.650397601652603,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Should I restart my device for slow internet?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.620088503350238,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I check signal strength?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "What does toggling airplane mode do?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "How do I check network congestion?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": false
+      },
+      {
+        "query": "What number do I call for support?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.615323561910313,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Can I call 123 from any network?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.622855708258703,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Where is the nearest authorized store for SIM replacement?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.663798293161818,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Do I need an ID to replace my SIM card?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.636484238184115,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I submit a billing ticket through the app?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 1 \u2014 Billing Policy\n- Bills are generated on the 1st of every month\n- Late payment fee of ID...",
+            "similarity": 0.656853100248988,
+            "matched_category": "billing_policy"
+          }
+        ],
+        "correct_hit": false
+      },
+      {
+        "query": "My calls sound choppy, what should I check?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.627394705439894,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "What should I do to improve call quality issues?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.647477511022565,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "Is it free to call 123 from other networks?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.623147659555785,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been having really slow internet all day and I already tried restarting my phone, is there anything else I can do to fix it?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.647894798031088,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My phone calls have been sounding terrible lately with lots of static and cutting out, how can I check if it's a network issue?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.634684731160195,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I lost my SIM card while traveling and I need to get a replacement as soon as possible, what do I need to bring to the store?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.664267500813622,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I noticed an overcharge on my latest bill and I want to report it, should I use the app or is there a phone number I can call?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.6085101107335,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I've tried toggling airplane mode and restarting my device but my internet is still really slow, what else should I try?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.658387267070362,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I need to replace my SIM card but I'm not sure which stores are authorized to do it, do I need to bring any identification?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.672270675166268,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My call quality has been awful this week and I suspect it might be network congestion in my area, how do I check that on the app?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.626429691399451,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I want to submit a ticket about a billing error but I'm not sure if I should do it through the MyTelco app or call customer service",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.723996049405107,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been experiencing dropped calls and poor signal strength for the past few days, is there a way to troubleshoot this on my end?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.684930318022858,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I accidentally damaged my SIM card and need a new one, can I go to any store or does it have to be an authorized location with my ID?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.633654606227424,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "My internet has been really slow today and I'm wondering if I should restart my device or if there's something else I should check like signal strength?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.660939018614451,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      },
+      {
+        "query": "I damaged my SIM card and need to get it replaced, can I go to any authorized store and what do I need to bring with me for identification?",
+        "num_results": 1,
+        "results": [
+          {
+            "content": "Document 3 \u2014 Troubleshooting Guide\n- For slow internet: restart the device, check signal strength, t...",
+            "similarity": 0.660389267043778,
+            "matched_category": "troubleshooting_guide"
+          }
+        ],
+        "correct_hit": true
+      }
+    ],
+    "not_matching": [
+      {
+        "query": "What's the weather today?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Tell me about your company",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Hello",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Help me",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What time is it?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Tell me a joke",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Who won the game yesterday?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the capital of France?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I bake a cake?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What movies are playing tonight?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Best coffee shops nearby",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I tie a tie?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you recommend a good restaurant?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What is the meaning of life?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "How tall is Mount Everest?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What programming language should I learn?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Who is the president?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you write me a poem?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the stock market doing?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I learn to play guitar?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What's the best laptop to buy?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Translate this to Spanish",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "How do I improve my resume for a marketing position?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "What are good exercises for lower back pain?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm planning a road trip next month and I want to know what the best route is from Jakarta to Bali by car",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you help me write a cover letter for a software engineering job that I'm applying to next week?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been thinking about adopting a pet and I want to know the pros and cons of getting a cat versus a dog",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "My laptop keeps crashing whenever I open too many Chrome tabs, do you have any tips for fixing this issue?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm trying to learn how to cook Italian food and I need a good recipe for homemade pasta from scratch",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you explain the difference between machine learning and deep learning in simple terms that a beginner can understand?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm looking for recommendations on the best hiking trails in Southeast Asia for someone who is a beginner hiker",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "My car is making a weird noise when I turn the steering wheel and I want to know if it's something serious",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I need help planning a birthday party for my daughter who is turning 7 next month and she loves unicorns",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "Can you tell me about the history of the Roman Empire and why it eventually collapsed after so many centuries?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I'm thinking about learning a new language and I can't decide between Japanese and Korean, which one would be more useful for someone living in Southeast Asia?",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      },
+      {
+        "query": "I've been wanting to start a small garden on my apartment balcony but I'm not sure which plants would survive in a tropical climate with limited sunlight",
+        "num_results": 0,
+        "results": [],
+        "correct_hit": true
+      }
+    ]
+  },
+  "summary": {
+    "timestamp": "2026-03-24T05:07:36.831818+00:00",
+    "queries_file": "/Users/madnanrizqu/Code/Project/qna-chat-agent/eval/retrieval_queries.json",
+    "total_categories": 4
+  },
+  "metadata": {
+    "model": "gemini-3.1-flash-lite-preview",
+    "embedding_model": "gemini-embedding-001",
+    "embedding_dimensions": 3072,
+    "similarity_threshold": 0.6,
+    "max_search_results": 1,
+    "chunk_size": 200,
+    "chunk_overlap": 0,
+    "use_chunked_storage": false,
+    "environment": "development"
+  }
+}
