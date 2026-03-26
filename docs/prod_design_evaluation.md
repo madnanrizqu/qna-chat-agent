@@ -2,7 +2,7 @@
 
 ## Design Document
 
-![Architecture Diagram](prod_design_architecture_diagram.png)
+![Architecture Diagram](prod_design_architecture_diagram/chart.png)
 
 ### Component Responsibilities
 
